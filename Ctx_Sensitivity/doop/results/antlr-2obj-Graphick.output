@@ -1,0 +1,32 @@
+[1m[40m[37mrunning dacapo benchmark: [1m[40m[32mantlr(B[m
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mdacapo.antlr.Main(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mGcCallback:Harness:MMTkCallback:MMTkHarness:MyCallback:antlr.**:dacapo.**(B[m
+using cached database (/home/minseokjeon/Graphick/Ctx_Sensitivity/doop/cache/input-database/jre1.6/c075c9227dcd33aa10f9fb7533453e6aff42c84e687241e95738c3db95bedb30/)
+loading 2-object-sensitive+heap+Data declarations ...
+elapsed time: 2.15s
+loading 2-object-sensitive+heap+Data delta rules ...
+elapsed time: 2.66s
+loading reflection delta rules ...
+elapsed time: 3.75s
+loading client delta rules ...
+elapsed time: 1.25s
+loading auxiliary delta rules ...
+elapsed time: 1.23s
+loading 2-object-sensitive+heap+Data rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m41.06s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              416,768
+loading statistics (simple) ...
+elapsed time: 3.49s
+
+[1m[40m[37mmaking database available at [1m[40m[32m/home/minseokjeon/Graphick/Ctx_Sensitivity/doop/results/2-object-sensitive+heap+Data/jre1.6/antlr.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 1,973,638(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 409(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 1,510(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 7,132(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 47,419(B[m
+
+disk footprint (with stats) (KB)                                                 432,128

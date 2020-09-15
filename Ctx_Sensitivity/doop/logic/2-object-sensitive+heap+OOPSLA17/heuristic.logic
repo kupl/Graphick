@@ -1,0 +1,8 @@
+D2(?meth)<-MethodSignatureRef(?meth),Feature14(?meth),Feature0(?meth),Feature11(?meth),Feature34(?meth),Feature19(?meth),Feature30(?meth),Feature22(?meth),Feature17(?meth),Feature5(?meth).
+
+D1(?meth)<-MethodSignatureRef(?meth),Feature17(?meth),Feature30(?meth),Feature19(?meth),Feature34(?meth),Feature11(?meth),Feature5(?meth),Feature15(?meth),Feature0(?meth),Feature13(?meth).
+
+D1(?meth)<-MethodSignatureRef(?meth),Feature10(?meth),Feature17(?meth),Feature27(?meth),Feature19(?meth),Feature30(?meth),Feature15(?meth),Feature33(?meth),Feature29(?meth),Feature13(?meth),Feature5(?meth),Feature0(?meth),Feature7(?meth).
+
+D1(?meth)<-MethodSignatureRef(?meth),Feature21(?meth),Feature23(?meth),Feature17(?meth),Feature27(?meth),Feature25(?meth),Feature5(?meth),Feature19(?meth),Feature30(?meth),Feature15(?meth),Feature0(?meth),Feature2(?meth),Feature33(?meth),Feature29(?meth),Feature13(?meth),Feature9(?meth).
+

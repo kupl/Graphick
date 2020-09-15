@@ -1,0 +1,597 @@
+net.sourceforge.pmd.RuleSets.getAllRules/new java.util.HashSet/0
+java.text.AttributedString.setAttributes/new java.util.Vector/0
+org.jaxen.expr.DefaultStep.evaluate/new java.util.ArrayList/1
+org.jaxen.expr.DefaultStep.evaluate/new java.util.ArrayList/0
+sun.security.jca.ProviderList.getJarList/new java.util.ArrayList/0
+java.util.IdentityHashMap.resize/new java.lang.Object[]/0
+net.sourceforge.pmd.rules.DoubleCheckedLocking.ifVerify/new java.util.ArrayList/0
+java.util.ServiceLoader.<init>/new java.util.LinkedHashMap/0
+net.sourceforge.pmd.renderers.PapariTextRenderer.getLine/new java.io.BufferedReader/0
+net.sourceforge.pmd.ast.JJTJavaParserState.<init>/new java.util.Stack/0
+sun.security.validator.SimpleValidator.<init>/new java.util.ArrayList/0
+javax.crypto.Cipher$r.<clinit>/new java.util.HashMap/0
+org.jaxen.Context.duplicate/new java.util.ArrayList/0
+java.util.jar.JarVerifier.<init>/new java.util.Hashtable/0
+org.jaxen.expr.PredicateSet.addPredicate/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/140
+javax.crypto.SunJCE_e.<init>/new java.util.Vector/0
+javax.crypto.SunJCE_h.<clinit>/new java.util.HashMap/0
+sun.misc.Launcher$1.run/new java.util.HashSet/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/118
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/119
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/110
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/111
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/112
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/113
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/114
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/115
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/116
+<net.sourceforge.pmd.symboltable.ImageFinderFunction: void <init>(java.util.List)>/new java.util.HashSet/0
+<java.util.logging.LogManager$LoggerContext: void <init>()>/new java.util.Hashtable/0
+net.sourceforge.pmd.symboltable.ScopeAndDeclarationFinder.<init>/new java.util.Stack/0
+net.sourceforge.pmd.symboltable.ClassScope.findVariableHere/new java.util.ArrayList/0
+sun.misc.MetaIndex.registerDirectory/new java.util.ArrayList/0
+net.sourceforge.pmd.symboltable.NameFinder.<init>/new java.util.LinkedList/0
+<java.security.cert.PKIXParameters: void <init>(java.util.Set)>/new java.util.ArrayList/1
+<java.security.cert.PKIXParameters: void <init>(java.util.Set)>/new java.util.ArrayList/0
+<net.sourceforge.pmd.symboltable.ImageFinderFunction: void <init>(java.lang.String)>/new java.util.HashSet/0
+sun.security.util.SignatureFileVerifier.getDigest/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/58
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/59
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/54
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/52
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/50
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.ArrayList/1
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.ArrayList/0
+java.io.DeleteOnExitHook.runHooks/new java.util.ArrayList/0
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/135
+java.util.PropertyPermissionCollection.<init>/new java.util.HashMap/0
+java.util.ListResourceBundle.loadLookup/new java.util.HashMap/0
+java.text.AttributedString.setAttributes/new java.util.Vector/1
+<sun.misc.SoftCache: void <init>(int)>/new java.util.HashMap/0
+sun.security.validator.PKIXValidator.initCommon/new java.util.ArrayList/0
+<javax.crypto.SunJCE_e: boolean a(java.lang.String,java.lang.String,java.util.Hashtable)>/new java.util.Hashtable/0
+<java.io.File: java.lang.String[] list(java.io.FilenameFilter)>/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/211
+net.sourceforge.pmd.ast.SimpleNode.getParentsOfType/new java.util.ArrayList/0
+sun.jkernel.DownloadManager.getBundleNames/new java.util.HashSet/0
+java.text.BreakIterator.createBreakInstance/new java.lang.Object[]/0
+<net.sourceforge.pmd.ExcludeLines: void <init>(java.io.Reader,java.lang.String)>/new java.util.HashSet/0
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>()>/new java.util.ArrayList/0
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>()>/new java.util.ArrayList/1
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>()>/new java.util.ArrayList/2
+net.sourceforge.pmd.ast.SimpleNode.jjtAddChild/new net.sourceforge.pmd.ast.Node[]/1
+java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/0
+java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/1
+sun.security.x509.X500Name.<clinit>/new java.util.HashMap/0
+net.sourceforge.pmd.dfa.variableaccess.VariableAccessVisitor.markUsages/new java.util.ArrayList/0
+org.jaxen.expr.PredicateSet.applyPredicate/new java.util.ArrayList/0
+org.jaxen.expr.PredicateSet.applyPredicate/new java.util.ArrayList/1
+<java.util.HashMap: void <init>(int,float)>/new java.util.HashMap$Entry[]/0
+java.security.Provider.implPut/new java.util.LinkedHashMap/0
+sun.security.x509.X500Name.asX500Principal/new java.lang.Object[]/0
+net.sourceforge.pmd.ast.JJTJavaParserState.<init>/new java.util.Stack/1
+sun.util.TimeZoneNameUtility.getZoneStrings/new java.lang.ref.SoftReference/0
+java.util.jar.JarFile.getManifestFromReference/new java.lang.ref.SoftReference/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/125
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/124
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/127
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/126
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/121
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/120
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/123
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/122
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/129
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/128
+javax.crypto.SunJCE_g.<init>/new java.util.Vector/0
+sun.util.PreHashedMap.<init>/new java.lang.Object[]/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/1
+org.jaxen.function.IdFunction.evaluate/new java.util.ArrayList/0
+net.sourceforge.pmd.RuleSet.<init>/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/49
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/48
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/45
+java.util.Locale.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/47
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/46
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/41
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/40
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/43
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/42
+net.sourceforge.pmd.sourcetypehandlers.SourceTypeHandlerBroker.<init>/new java.util.HashMap/0
+<java.util.TreeSet: void <init>()>/new java.util.TreeMap/0
+java.util.logging.Logger.doSetParent/new java.lang.ref.WeakReference/0
+<net.sourceforge.pmd.symboltable.ClassScope: void addDeclaration(net.sourceforge.pmd.symboltable.VariableNameDeclaration)>/new java.util.ArrayList/0
+<net.sourceforge.pmd.jsp.ast.JspParser: void <init>(net.sourceforge.pmd.jsp.ast.CharStream)>/new java.util.Vector/0
+sun.security.x509.X500Name$1.run/new java.lang.Object[]/0
+sun.util.calendar.ZoneInfoFile.addToCache/new java.util.HashMap/0
+<java.util.regex.Pattern: java.lang.String[] split(java.lang.CharSequence,int)>/new java.util.ArrayList/0
+net.sourceforge.pmd.Report.<init>/new java.util.ArrayList/2
+net.sourceforge.pmd.Report.<init>/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/132
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/133
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/130
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/131
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/136
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/137
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/134
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/138
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/139
+java.text.SimpleDateFormat.<clinit>/new java.util.concurrent.ConcurrentHashMap/1
+java.text.SimpleDateFormat.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+net.sourceforge.pmd.cpd.FileFinder.findFilesFrom/new java.util.ArrayList/0
+net.sourceforge.pmd.Report.getSummary/new java.util.HashMap/0
+sun.text.normalizer.VersionInfo.<clinit>/new java.util.HashMap/0
+java.security.Policy.<clinit>/new java.util.concurrent.atomic.AtomicReference/0
+net.sourceforge.pmd.dfa.report.ReportTree.addRuleViolation/new java.util.ArrayList/0
+java.security.PermissionsHash.<init>/new java.util.HashMap/0
+net.sourceforge.pmd.Language.<clinit>/new java.util.HashMap/0
+java.text.DateFormat.get/new java.lang.Object[]/0
+sun.text.normalizer.RuleCharacterIterator.getPos/new java.lang.Object[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/78
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/79
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/70
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/71
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/72
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/73
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/74
+<java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/76
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/77
+org.jaxen.expr.IdentitySet.<init>/new java.util.HashSet/0
+sun.security.x509.X509CertInfo.<clinit>/new java.util.HashMap/0
+net.sourceforge.pmd.SourceTypeToRuleLanguageMapper.<clinit>/new java.util.HashMap/0
+sun.util.TimeZoneNameUtility.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.jkernel.DownloadManager.getBundleProperties/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getBundleProperties/new java.util.HashMap/1
+<java.util.TreeSet: void <init>(java.util.Comparator)>/new java.util.TreeMap/0
+sun.security.x509.AlgorithmId.<clinit>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/117
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/83
+java.text.AttributedString.createRunAttributeDataVectors/new java.util.Vector[]/0
+dacapo.pmd.PmdHarness.collectFilesFromFile/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/86
+<net.sourceforge.pmd.symboltable.ClassScope: void addDeclaration(net.sourceforge.pmd.symboltable.MethodNameDeclaration)>/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/75
+net.sourceforge.pmd.rules.UselessOverridingMethod.findFirstDegreeChildrenOfType/new java.util.ArrayList/0
+java.security.Provider.<clinit>/new java.util.HashMap/0
+<net.sourceforge.pmd.symboltable.SourceFileScope: void <init>(java.lang.String)>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/185
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.ArrayList/0
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.ArrayList/1
+sun.util.resources.CurrencyNames_en_US.getContents/new java.lang.Object[]/0
+sun.security.x509.AVA.parseString/new java.util.ArrayList/0
+java.net.SocketPermissionCollection.<init>/new java.util.ArrayList/0
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.Vector/0
+org.apache.oro.util.GenericCache.<init>/new java.util.HashMap/0
+org.apache.oro.text.regex.Perl5Matcher.<init>/new java.util.Stack/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/67
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/65
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/64
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/63
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/62
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/61
+sun.text.resources.FormatData.getContents/new java.lang.Object[][]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/69
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/68
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.LinkedList/0
+sun.security.x509.X500Name.parseDN/new java.util.ArrayList/0
+sun.text.resources.FormatData_en_US.getContents/new java.lang.Object[][]/0
+sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/0
+<java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.HashMap/0
+<sun.security.jca.ProviderList: void <init>()>/new java.util.ArrayList/0
+java.lang.ThreadLocal$ThreadLocalMap.resize/new java.lang.ThreadLocal$ThreadLocalMap$Entry[]/0
+<net.sourceforge.pmd.ast.SimpleNode: java.util.List findChildrenOfType(java.lang.Class)>/new java.util.ArrayList/0
+sun.text.resources.FormatData_en.getContents/new java.lang.Object[][]/0
+java.util.TreeSet.clone/new java.util.TreeMap/0
+java.util.Hashtable.getIterator/new java.util.Hashtable$Enumerator/0
+<java.net.URLClassLoader: java.lang.Class defineClass(java.lang.String,sun.misc.Resource,boolean)>/new java.lang.Object[]/0
+sun.jkernel.DownloadManager.downloadRequestedBundles/new java.util.ArrayList/0
+net.sourceforge.pmd.jaxen.AttributeAxisIterator.<init>/new java.util.ArrayList/0
+java.security.cert.PKIXParameters.clone/new java.util.ArrayList/1
+java.security.cert.PKIXParameters.clone/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/8
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/9
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/1
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/2
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/3
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/4
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/5
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/6
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/7
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.Vector/0
+javax.crypto.SunJCE_l.elements/new java.util.Vector/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/12
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/13
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/10
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/11
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/16
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/17
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/14
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/15
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/18
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/19
+java.text.AttributedString$AttributedStringIterator.getAttributes/new java.util.Hashtable/0
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>(java.lang.String)>/new java.util.HashMap/2
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>(java.lang.String)>/new java.util.HashMap/1
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>(java.lang.String)>/new java.util.HashMap/0
+<org.jaxen.SimpleNamespaceContext: void <init>()>/new java.util.HashMap/0
+net.sourceforge.pmd.jsp.ast.JJTJspParserState.<init>/new java.util.Stack/0
+net.sourceforge.pmd.jsp.ast.JJTJspParserState.<init>/new java.util.Stack/1
+java.text.NumberFormat$Field.<clinit>/new java.util.HashMap/0
+java.lang.ThreadLocal.createMap/new java.lang.ThreadLocal$ThreadLocalMap/0
+java.util.jar.JarVerifier.<init>/new java.util.ArrayList/1
+java.util.jar.JarVerifier.<init>/new java.util.ArrayList/0
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.LinkedList/0
+java.util.logging.LogManager$LoggerContext.getNode/new java.util.HashMap/0
+java.net.URL.<clinit>/new java.util.Hashtable/0
+java.text.DecimalFormatSymbols.<clinit>/new java.util.Hashtable/0
+java.text.DateFormatSymbols.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/0
+java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/1
+java.lang.ProcessEnvironment.emptyEnvironment/new java.util.HashMap/0
+sun.jkernel.DownloadManager.readTreeMap/new java.util.HashMap/0
+net.sourceforge.pmd.dfa.Structure.<init>/new java.util.LinkedList/0
+sun.security.x509.AVA.parseQuotedString/new java.util.ArrayList/0
+java.security.Provider.getServices/new java.util.LinkedHashSet/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/172
+<java.util.PropertyResourceBundle: void <init>(java.io.InputStream)>/new java.util.HashMap/0
+sun.misc.Service.parse/new java.util.ArrayList/0
+sun.jkernel.DownloadManager.readTreeMap/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/56
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/57
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/55
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/53
+java.lang.ConditionalSpecialCasing.<clinit>/new java.util.HashSet/0
+sun.jkernel.Bundle.<clinit>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/51
+<java.text.DecimalFormat: java.text.FieldPosition[] expandAffix(java.lang.String)>/new java.util.ArrayList/0
+<java.text.DecimalFormat: java.text.FieldPosition[] expandAffix(java.lang.String)>/new java.util.ArrayList/1
+java.util.HashMap.createEntry/new java.util.HashMap$Entry/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.HashMap/0
+java.lang.ProcessEnvironment.<clinit>/new java.util.HashMap/0
+<java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.Hashtable/0
+org.jaxen.SimpleFunctionContext.<init>/new java.util.HashMap/0
+sun.security.provider.PolicyFile.getPrincipalInfo/new java.util.ArrayList/0
+java.text.NumberFormat.<clinit>/new java.util.Hashtable/0
+java.security.Provider$Service.addAttribute/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/29
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/28
+sun.misc.ClassFileTransformer.<clinit>/new java.lang.Object[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/23
+org.jaxen.expr.DefaultLocationPath.<init>/new java.util.LinkedList/0
+java.util.ServiceLoader.parse/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/27
+sun.security.pkcs.PKCS7.populateCertIssuerNames/new java.security.Principal[]/0
+<javax.crypto.Cipher: java.util.List b(java.lang.String)>/new java.util.ArrayList/0
+sun.security.validator.PKIXValidator.initCommon/new java.util.HashMap/0
+<java.util.LinkedList: void <init>()>/new java.util.LinkedList$Entry/0
+java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/0
+java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/1
+java.security.Provider$Service.getImplClass/new java.lang.ref.WeakReference/0
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>()>/new java.util.HashMap/0
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>()>/new java.util.HashMap/1
+<net.sourceforge.pmd.symboltable.ClassScope: void <init>()>/new java.util.HashMap/2
+java.lang.ClassLoader.<clinit>/new java.util.Vector/1
+java.text.AttributedCharacterIterator$Attribute.<clinit>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/209
+<sun.text.normalizer.UnicodeSet: void <init>()>/new java.util.TreeSet/0
+net.sourceforge.pmd.symboltable.MethodScope.addDeclaration/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/38
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/39
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/34
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/35
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/36
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/37
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/30
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/31
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/32
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/33
+<sun.misc.Service$LazyIterator: void <init>(java.lang.Class,java.lang.ClassLoader)>/new java.util.TreeSet/0
+org.jaxen.SimpleVariableContext.<init>/new java.util.HashMap/0
+<java.util.LinkedList: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+<java.util.Collections: java.util.Set synchronizedSet(java.util.Set,java.lang.Object)>/new java.util.Collections$SynchronizedSet/0
+java.util.logging.LogManager.contexts/new java.util.ArrayList/0
+sun.util.LocaleServiceProviderPool$AllAvailableLocales.<clinit>/new java.util.HashSet/0
+sun.security.provider.PolicyParser.parseGrantEntry/new java.util.LinkedList/0
+sun.security.jca.GetInstance$Instance.toArray/new java.lang.Object[]/0
+sun.util.calendar.ZoneInfoFile.getZoneAliases/new java.util.HashMap/0
+java.util.LinkedHashMap.createEntry/new java.util.LinkedHashMap$Entry/0
+<java.util.jar.Manifest: void <init>(java.io.InputStream)>/new java.util.HashMap/0
+java.security.Permissions.<init>/new java.util.HashMap/0
+sun.security.util.ManifestDigester.<init>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/183
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/182
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/181
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/180
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/187
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/186
+java.nio.charset.CoderResult$Cache.get/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/184
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/189
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/188
+<java.util.zip.ZipFile: void <init>(java.io.File,int)>/new java.util.Vector/0
+net.sourceforge.pmd.PMD.collect/new java.util.ArrayList/0
+<java.util.HashMap: void <init>()>/new java.util.HashMap$Entry[]/0
+java.text.CharacterIteratorFieldDelegate.<init>/new java.util.ArrayList/0
+<java.util.Collections: java.util.Collection synchronizedCollection(java.util.Collection,java.lang.Object)>/new java.util.Collections$SynchronizedCollection/0
+javax.crypto.SunJCE_d.<init>/new java.util.Hashtable/0
+org.jaxen.function.TranslateFunction.evaluate/new java.util.HashMap/0
+net.sourceforge.pmd.dfa.variableaccess.VariableAccessVisitor.collectDeclarations/new java.util.HashSet/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/22
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/21
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/20
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/26
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/25
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/24
+<sun.security.provider.PolicyFile$PolicyEntry: void <init>(java.security.CodeSource,java.util.List)>/new java.util.ArrayList/0
+net.sourceforge.pmd.PMD.collectFromCommaDelimitedString/new java.util.ArrayList/0
+java.io.FilePermissionCollection.<init>/new java.util.ArrayList/0
+<java.util.HashSet: void <init>()>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/198
+<java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>/new java.lang.Object[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/190
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/191
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/192
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/193
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/194
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/195
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/196
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/197
+java.util.concurrent.ConcurrentHashMap$Segment.rehash/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/199
+java.text.MessageFormat.formatToCharacterIterator/new java.util.ArrayList/0
+<class sun.text.normalizer.ICUData>
+org.jaxen.function.ext.MatrixConcatFunction.evaluate/new java.util.ArrayList/0
+org.jaxen.function.ext.MatrixConcatFunction.evaluate/new java.util.ArrayList/1
+<sun.security.x509.GeneralSubtrees: void <init>()>/new java.util.ArrayList/0
+sun.util.LocaleServiceProviderPool.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+org.jaxen.expr.DefaultFunctionCallExpr.evaluateParams/new java.util.ArrayList/0
+org.jaxen.JaxenHandler.<init>/new java.util.LinkedList/0
+java.nio.charset.CharsetEncoder.isLegalReplacement/new java.lang.ref.WeakReference/0
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+<net.sourceforge.pmd.dfa.SequenceChecker$Status: void <init>(int,boolean)>/new java.util.ArrayList/0
+sun.security.x509.RDN.toRFC2253StringInternal/new java.util.ArrayList/0
+org.jaxen.function.ext.MatrixConcatFunction.evaluate/new java.util.ArrayList/2
+net.sourceforge.pmd.Report.getCountSummary/new java.util.HashMap/0
+net.sourceforge.pmd.renderers.IDEAJRenderer$SourcePath.<init>/new java.util.HashSet/0
+sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/0
+sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/1
+sun.jkernel.Bundle.<clinit>/new java.util.HashSet/0
+org.jaxen.expr.DefaultNameStep.evaluate/new java.util.ArrayList/0
+org.jaxen.expr.DefaultNameStep.evaluate/new java.util.ArrayList/1
+org.jaxen.expr.DefaultNameStep.evaluate/new java.util.ArrayList/2
+org.jaxen.expr.DefaultNameStep.evaluate/new java.util.ArrayList/3
+<net.sourceforge.pmd.ast.JavaParser: void <init>(net.sourceforge.pmd.ast.CharStream)>/new java.util.Vector/0
+<sun.security.validator.PKIXValidator: void <init>(java.lang.String,java.util.Collection)>/new java.util.HashSet/0
+<sun.security.validator.PKIXValidator: void <init>(java.lang.String,java.util.Collection)>/new java.util.HashSet/1
+java.security.Provider.implRemove/new java.util.LinkedHashMap/0
+java.lang.ClassLoader.<clinit>/new java.util.Stack/0
+<java.util.Vector: void <init>(int,int)>/new java.lang.Object[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/213
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/212
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/210
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/215
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/214
+<java.lang.ProcessBuilder: void <init>(java.lang.String[])>/new java.util.ArrayList/0
+java.lang.ThreadLocal$ThreadLocalMap.replaceStaleEntry/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+net.sourceforge.pmd.dfa.Structure.<init>/new java.util.Stack/0
+net.sourceforge.pmd.dfa.Structure.<init>/new java.util.Stack/1
+sun.security.util.DerInputStream.readVector/new java.util.Vector/0
+java.text.BreakIterator.getBreakInstance/new java.lang.ref.SoftReference/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/147
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/146
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/145
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/144
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/143
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/142
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/141
+java.util.jar.JarVerifier.<init>/new java.util.Hashtable/1
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/149
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/148
+sun.util.LocaleServiceProviderPool.<init>/new java.util.concurrent.ConcurrentHashMap/0
+<net.sourceforge.pmd.rules.DoubleCheckedLocking: java.lang.Object visit(net.sourceforge.pmd.ast.ASTMethodDeclaration,java.lang.Object)>/new java.util.ArrayList/0
+net.sourceforge.pmd.symboltable.VariableUsageFinderFunction.<init>/new java.util.HashMap/0
+net.sourceforge.pmd.symboltable.MethodScope.<init>/new java.util.HashMap/0
+sun.util.resources.OpenListResourceBundle.createMap/new java.util.HashMap/0
+java.security.Security.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.security.provider.Sun.<init>/new java.util.LinkedHashMap/0
+java.util.TreeMap.put/new java.util.TreeMap$Entry/0
+<sun.util.TimeZoneNameUtility: java.lang.String[] retrieveDisplayNames(sun.util.resources.OpenListResourceBundle,java.lang.String,java.util.Locale)>/new java.lang.Object[]/0
+java.lang.StringCoding.set/new java.lang.ref.SoftReference/0
+java.util.logging.Level$KnownLevel.add/new java.util.ArrayList/0
+java.util.logging.Level$KnownLevel.add/new java.util.ArrayList/1
+java.security.UnresolvedPermissionCollection.<init>/new java.util.HashMap/0
+<sun.misc.JarIndex: void <init>()>/new java.util.HashMap/0
+<sun.misc.JarIndex: void <init>()>/new java.util.HashMap/1
+sun.util.TimeZoneNameUtility.<clinit>/new java.util.concurrent.ConcurrentHashMap/1
+sun.security.jca.ProviderList$ServiceList.addService/new java.util.ArrayList/0
+java.util.Calendar.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+<sun.security.provider.PolicyFile: boolean init(java.net.URL,sun.security.provider.PolicyFile$PolicyInfo)>/new java.lang.Object[]/0
+sun.security.pkcs.PKCS7.parseOldSignedData/new java.security.cert.X509Certificate[]/0
+<java.util.ArrayList: void <init>(int)>/new java.lang.Object[]/0
+sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/1
+sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/101
+<java.io.SequenceInputStream: void <init>(java.io.InputStream,java.io.InputStream)>/new java.util.Vector/0
+java.security.Provider.ensureLegacyParsed/new java.util.LinkedHashMap/0
+java.util.TimeZone.getDisplayNames/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/104
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/90
+java.lang.Class.privateGetPublicMethods/new java.lang.ref.SoftReference/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/91
+java.util.IdentityHashMap.init/new java.lang.Object[]/0
+net.sourceforge.pmd.dfa.report.AbstractReportNode.<init>/new java.util.ArrayList/0
+<java.security.SecureClassLoader: void <init>(java.lang.ClassLoader)>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/200
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/201
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/202
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/203
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/204
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/205
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/206
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/207
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/208
+java.util.TimeZone$DisplayNames.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/60
+<java.text.DecimalFormatSymbols: java.text.DecimalFormatSymbols getInstance(java.util.Locale)>/new java.lang.Object[]/0
+java.lang.ConditionalSpecialCasing.<clinit>/new java.util.Hashtable/0
+sun.util.calendar.CalendarSystem.initNames/new java.util.concurrent.ConcurrentHashMap/1
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/154
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/155
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/156
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/157
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/150
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/151
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/152
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/153
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/158
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/159
+java.security.ProtectionDomain.mergePermissions/new java.util.ArrayList/0
+sun.misc.Signal.<clinit>/new java.util.Hashtable/1
+sun.misc.Signal.<clinit>/new java.util.Hashtable/0
+<sun.misc.URLClassPath$JarLoader: sun.misc.Resource getResource(java.lang.String,boolean)>/new java.util.HashSet/0
+java.security.UnresolvedPermissionCollection.add/new java.util.ArrayList/0
+<sun.security.x509.GeneralNames: void <init>()>/new java.util.ArrayList/0
+net.sourceforge.pmd.rules.UnnecessaryConversionTemporary.<init>/new java.util.HashSet/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/98
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/99
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/92
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/93
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/96
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/97
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/94
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/95
+java.text.AttributedString$AttributeMap.entrySet/new java.util.HashSet/0
+<sun.security.x509.RDN: void <init>(java.lang.String,java.util.Map)>/new java.util.ArrayList/0
+<java.text.AttributedString: void <init>(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[])>/new java.util.HashSet/0
+java.security.BasicPermissionCollection.<init>/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getFileMap/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getFileMap/new java.util.HashMap/1
+<java.text.NumberFormat: java.text.NumberFormat getInstance(java.util.Locale,int)>/new java.lang.Object[]/0
+<java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>/new java.util.TreeMap$Entry/0
+java.security.cert.PKIXParameters.setTrustAnchors/new java.util.HashSet/0
+java.net.InetAddress$Cache.put/new java.util.LinkedList/0
+sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/1
+java.util.concurrent.ConcurrentHashMap$Segment.remove/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+<net.sourceforge.pmd.RuleSets: void <init>()>/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/161
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/160
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/163
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/162
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/165
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/164
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/167
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/166
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/169
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/168
+java.security.UnresolvedPermissionCollection.elements/new java.util.ArrayList/0
+org.jaxen.expr.DefaultFunctionCallExpr.<init>/new java.util.ArrayList/0
+net.sourceforge.pmd.SimpleRuleSetNameMapper.<init>/new java.util.HashMap/0
+java.util.Properties.propertyNames/new java.util.Hashtable/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/0
+<javax.crypto.SunJCE_c: java.util.List a(java.security.cert.Certificate[])>/new java.util.ArrayList/0
+java.security.Signature.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.text.DateFormat$Field.<clinit>/new java.util.HashMap/0
+java.util.ResourceBundle.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.net.InetAddress$Cache.<init>/new java.util.LinkedHashMap/0
+sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/1
+sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/0
+<java.util.jar.Attributes: void <init>(int)>/new java.util.HashMap/0
+java.util.TimeZone.getDisplayNames/new java.lang.ref.SoftReference/0
+java.util.ResourceBundle$Control.getCandidateLocales/new java.util.ArrayList/0
+net.sourceforge.pmd.symboltable.LocalScope.addDeclaration/new java.util.ArrayList/0
+org.jaxen.expr.DefaultLocationPath.evaluate/new java.util.ArrayList/0
+net.sourceforge.pmd.SourceTypeDiscoverer.<init>/new java.util.HashMap/0
+sun.util.calendar.LocalGregorianCalendar.getLocalGregorianCalendar/new java.util.ArrayList/0
+org.jaxen.expr.DefaultUnionExpr.evaluate/new java.util.HashSet/0
+<class sun.jkernel.DownloadManager>
+<java.util.AbstractCollection: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+sun.util.calendar.TzIDOldMapping.<clinit>/new java.util.HashMap/0
+sun.jkernel.DownloadManager.println/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/89
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/88
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/81
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/80
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/82
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/85
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/84
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/87
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry[]/0
+java.io.DeleteOnExitHook.<clinit>/new java.util.LinkedHashSet/0
+sun.security.util.DerIndefLenConverter.<init>/new java.util.ArrayList/0
+java.lang.ThreadLocal$ThreadLocalMap.set/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+sun.security.pkcs.SignerInfo.getCertificateChain/new java.util.ArrayList/0
+<net.sourceforge.pmd.PMD: void processFile(java.io.Reader,net.sourceforge.pmd.RuleSets,net.sourceforge.pmd.RuleContext,net.sourceforge.pmd.SourceType)>/new java.util.ArrayList/0
+<java.util.HashSet: void <init>(int)>/new java.util.HashMap/0
+<sun.security.provider.PolicyParser: void <init>()>/new java.util.Vector/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/178
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/179
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/176
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/177
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/174
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/175
+net.sourceforge.pmd.jaxen.AttributeAxisIterator.<clinit>/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/173
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/170
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/171
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.Stack/0
+<java.util.jar.Manifest: void <init>()>/new java.util.HashMap/0
+sun.security.provider.PolicyFile.addPermissions/new java.util.ArrayList/0
+sun.reflect.Reflection.<clinit>/new java.util.HashMap/0
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>(net.sourceforge.pmd.ast.SimpleNode,java.util.LinkedList)>/new java.util.ArrayList/0
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>(net.sourceforge.pmd.ast.SimpleNode,java.util.LinkedList)>/new java.util.ArrayList/1
+<net.sourceforge.pmd.dfa.DataFlowNode: void <init>(net.sourceforge.pmd.ast.SimpleNode,java.util.LinkedList)>/new java.util.ArrayList/2
+net.sourceforge.pmd.symboltable.LocalScope.<init>/new java.util.HashMap/0
+java.util.HashMap.resize/new java.util.HashMap$Entry[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/44
+sun.util.calendar.ZoneInfoFile.getZoneInfoMappings/new java.lang.ref.SoftReference/0
+java.text.AttributedString.addAttributeRunData/new java.util.Vector/0
+sun.security.validator.SimpleValidator.<init>/new java.util.HashMap/0
+sun.util.TimeZoneNameUtility.getBundle/new java.lang.ref.SoftReference/0
+org.jaxen.function.ext.MatrixConcatFunction$MatrixEnum.nextElement/new java.util.ArrayList/0
+sun.misc.MetaIndex.getJarMap/new java.util.HashMap/0
+<java.util.Currency: java.lang.String getSymbol(java.util.Locale)>/new java.lang.Object[]/0
+<java.util.HashSet: void <init>(java.util.Collection)>/new java.util.HashMap/0
+java.text.DateFormatSymbols.getCachedInstance/new java.lang.ref.SoftReference/0
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/1
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/0
+sun.security.pkcs.PKCS7.parseSignedData/new java.security.cert.X509Certificate[]/0
+<sun.security.x509.X509CRLImpl: void <init>(sun.security.util.DerValue)>/new java.util.TreeMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/109
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/108
+sun.security.pkcs.PKCS7.parseNetscapeCertChain/new java.security.cert.X509Certificate[]/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/103
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/102
+sun.security.util.SignatureFileVerifier.getSigners/new java.util.ArrayList/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/100
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/107
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/106
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/105
+java.util.logging.Logger.doSetParent/new java.util.ArrayList/0
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.HashMap/0
+java.lang.Character$UnicodeBlock.<clinit>/new java.util.HashMap/0
+java.security.ProtectionDomain.mergePermissions/new java.util.ArrayList/1
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[]/66
+<java.util.Hashtable: void <init>(int,float)>/new java.util.Hashtable$Entry[]/0
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.ArrayList/0
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.ArrayList/1
+org.jaxen.expr.DefaultUnionExpr.evaluate/new java.util.ArrayList/0
+sun.util.LocaleDataMetaInfo.<clinit>/new java.util.HashMap/0
+sun.util.calendar.ZoneInfo.getAliasTable/new java.lang.ref.SoftReference/0
+<sun.security.pkcs.PKCS9Attributes: void <init>(sun.security.util.DerInputStream,boolean)>/new java.util.Hashtable/0
+org.jaxen.expr.DefaultFunctionCallExpr.simplify/new java.util.ArrayList/0
+java.lang.Package.<clinit>/new java.util.HashMap/2
+java.lang.Package.<clinit>/new java.util.HashMap/1
+java.lang.Package.<clinit>/new java.util.HashMap/0
+org.apache.oro.text.regex.Perl5Compiler.<clinit>/new java.util.HashMap/0
+java.util.jar.JarVerifier.processEntry/new java.util.ArrayList/0
+sun.misc.JarIndex.addToList/new java.util.LinkedList/0
+org.jaxen.saxpath.base.XPathReader.setUpParse/new java.util.LinkedList/0
+<java.text.AttributedString: int ensureRunBreak(int,boolean)>/new java.util.Vector[]/0
+java.text.AttributedString.addAttributeRunData/new java.util.Vector/1
+javax.crypto.SunJCE_e$o.<init>/new java.util.Vector/0
+java.text.DateFormatSymbols.getProviderInstance/new java.lang.Object[]/0

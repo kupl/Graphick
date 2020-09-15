@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e 		# Exit immediately if a command exits with a nonzero exit status
+set -u 		# Treat unset variables as an error
+#set -x 	# Print commands and their arguments as they are executed (debugging)
+
+bloxbatch=$LOGICBLOX_HOME/bin/bloxbatch
+
+database=$1
+analysis=`cat $database/.doop-meta/analysis`
+CPPFLAGS=`cat $database/.doop-meta/CPPFLAGS`
+
+function size()
+{
+	$bloxbatch -db $database -popCount $1 | awk '{ print $2 }'
+}
+
+function print2()
+{
+	printf "%-40s %'d\n" "$1" "$2"
+	printf "%-40s %'d\n" "$1" "$2" >> tmp/temp.lb&
+}
+
+function print3()
+{
+	printf "%-40s %'d (insens) / %'d (sens)\n" "$1" "$2" "$3"
+	printf "%-40s %'d (insens) / %'d (sens)\n" "$1" "$2" "$3" >> tmp/temp.lb&
+}
+
+function print4()
+{
+	printf "%-40s %'d (callsites) / %'d (targets)\n" "$1" "$2" "$3"
+	printf "%-40s %'d (callsites) / %'d (targets)\n" "$1" "$2" "$3" >> tmp/temp.lb&
+}
+
+echo '-----------------------------------------------------------'
+echo 'Client results:'
+#print2 "    reachable casts" $(size Stats:Simple:ReachableCast)
+print2 "    #may-fail casts" $(size Stats:Simple:PotentiallyFailingCast)
+#print2 "    reachable application casts" $(size Stats:Simple:Application:ReachableCast)
+#print2 "    #Application may-fail casts" $(size Stats:Simple:Application:PotentiallyFailingCast)
+
+#print2 "    reachable virtual call sites" $(size Stats:Simple:ReachableVirtualMethodInvocation)
+print2 "    #poly call sites" $(size Stats:Simple:PolymorphicCallSite)
+
+#print3 "    var points-to" $(size Stats:Simple:InsensVarPointsTo) $(size VarPointsTo)
+#print2 "    regular call graph edges" $(size Stats:Simple:InsensCallGraphEdge) #$(size CallGraphEdge)
+#print2 "    reflective call graph edges" $(size InsensReflectiveCallGraphEdge) #$(size ReflectiveCallGraphEdge)
+print2 "    #call graph edges" $(size Stats:Simple:AllCallGraphEdge)
+#print3 "    instance field points-to" $(size Stats:Simple:InsensInstanceFieldPointsTo) $(size InstanceFieldPointsTo)
+#print3 "    reachable methods" $(size Reachable) $(size ReachableContext)
+echo '-----------------------------------------------------------'

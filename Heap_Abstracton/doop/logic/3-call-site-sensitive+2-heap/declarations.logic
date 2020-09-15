@@ -1,0 +1,13 @@
+#include "macros.logic"
+#include "../context-sensitive-declarations.logic"
+
+// For this analysis, contexts are method invocations, so this is
+// what the initial system objects should have.
+MySystemThreadGroup(?invo1, ?invo2, ?alloc) ->
+	MethodInvocationRef(?invo1), MethodInvocationRef(?invo2), HeapAllocationRef(?alloc).
+
+MyMainThreadGroup(?invo1, ?invo2, ?alloc) ->
+	MethodInvocationRef(?invo1), MethodInvocationRef(?invo2), HeapAllocationRef(?alloc).
+
+MyMainThread(?invo1, ?invo2, ?alloc) ->
+	MethodInvocationRef(?invo1), MethodInvocationRef(?invo2), HeapAllocationRef(?alloc).

@@ -1,0 +1,2 @@
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=390.
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),Succ(?heap0,?heap1),OutgoingFPGEdges[?heap1]>=390.

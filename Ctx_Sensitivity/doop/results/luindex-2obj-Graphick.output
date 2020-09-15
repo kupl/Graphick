@@ -1,0 +1,32 @@
+[1m[40m[37mrunning dacapo benchmark: [1m[40m[32mluindex(B[m
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mdacapo.luindex.Main(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mGcCallback:Harness:MMTkCallback:MMTkHarness:MyCallback:dacapo.**:org.**(B[m
+using cached database (/home/minseokjeon/Graphick/Ctx_Sensitivity/doop/cache/input-database/jre1.6/a53d88b330b05c072407f5e404e40e7895f1bf4d9dbd53a6506f6c507e33646f/)
+loading 2-object-sensitive+heap+Data declarations ...
+elapsed time: 1.34s
+loading 2-object-sensitive+heap+Data delta rules ...
+elapsed time: 1.84s
+loading reflection delta rules ...
+elapsed time: 2.26s
+loading client delta rules ...
+elapsed time: 0.89s
+loading auxiliary delta rules ...
+elapsed time: 0.86s
+loading 2-object-sensitive+heap+Data rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m28.70s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              241,664
+loading statistics (simple) ...
+elapsed time: 2.34s
+
+[1m[40m[37mmaking database available at [1m[40m[32m/home/minseokjeon/Graphick/Ctx_Sensitivity/doop/results/2-object-sensitive+heap+Data/jre1.6/luindex.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 1,453,418(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 297(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 682(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 6,259(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 29,045(B[m
+
+disk footprint (with stats) (KB)                                                 248,832

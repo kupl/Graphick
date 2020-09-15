@@ -1,0 +1,5 @@
+option,delimiter,"	"
+option,hasColumnNames,false
+
+fromFile,"/home/minseokjeon/Graphick/Heap_Abstracton/doop/HeapAbstraction.myfacts",a,heap,b,mergedheap
+toPredicate,HeapAbstraction,heap,mergedheap

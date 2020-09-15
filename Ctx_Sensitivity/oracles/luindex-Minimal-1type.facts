@@ -1,0 +1,202 @@
+<org.apache.lucene.index.IndexWriter: void <init>(org.apache.lucene.store.Directory,org.apache.lucene.analysis.Analyzer,boolean,boolean)>/new org.apache.lucene.index.SegmentInfos/0
+java.util.logging.LogManager.<init>/new java.util.logging.LogManager$Cleaner/0
+<java.lang.String: java.lang.String substring(int,int)>/new java.lang.String/0
+java.util.Arrays.asList/new java.util.Arrays$ArrayList/0
+sun.security.x509.X509CertInfo.parse/new sun.security.x509.CertificateExtensions/0
+<sun.text.normalizer.UnicodeSet: sun.text.normalizer.UnicodeSet add(int)>/new int[]/0
+<java.util.TimeZone: java.util.TimeZone getTimeZone(java.lang.String,boolean)>/new sun.util.calendar.ZoneInfo/0
+java.util.logging.LogManager.<init>/new java.util.Properties/0
+<java.security.ProtectionDomain: void <init>(java.security.CodeSource,java.security.PermissionCollection)>/new java.security.Principal[]/0
+java.text.DictionaryBasedBreakIterator.<init>/new java.text.BreakDictionary/0
+java.util.TreeSet.clone/new java.util.TreeMap/0
+sun.misc.ExtensionInfo.convertToken/new java.text.MessageFormat/0
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String,java.lang.String)>/new java.text.MessageFormat/0
+org.apache.lucene.analysis.standard.FastCharStream.GetImage/new java.lang.String/0
+sun.text.normalizer.UCharacterPropertyReader.<init>/new java.io.DataInputStream/0
+java.util.Currency$1.run/new java.io.BufferedInputStream/0
+<sun.util.calendar.Gregorian: sun.util.calendar.Gregorian$Date newCalendarDate(java.util.TimeZone)>/new sun.util.calendar.Gregorian$Date/0
+<sun.security.pkcs.PKCS9Attribute: void <init>(sun.security.util.DerValue)>/new sun.security.x509.CertificateExtensions/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$14/0
+java.util.ResourceBundle$CacheKey.clone/new java.util.ResourceBundle$LoaderReference/0
+java.net.InetAddress$Cache.put/new java.util.LinkedList/0
+java.util.zip.ZipInputStream.<init>/new java.io.PushbackInputStream/0
+sun.text.normalizer.ICUBinary.readHeader/new java.io.DataInputStream/0
+<sun.misc.CharacterDecoder: void decodeBuffer(java.io.InputStream,java.io.OutputStream)>/new java.io.PushbackInputStream/0
+java.util.Calendar.createCalendar/new sun.util.BuddhistCalendar/0
+dacapo.FileDigest.getBinary/new java.io.BufferedInputStream/0
+sun.security.x509.X500Name.parseDER/new sun.security.x509.RDN/0
+java.util.ResourceBundle.getBundleImpl/new java.util.ResourceBundle$CacheKey/0
+<sun.misc.URLClassPath$JarLoader: java.util.jar.JarFile getJarFile(java.net.URL)>/new java.util.jar.JarFile/0
+java.util.jar.Attributes.read/new java.lang.String/0
+<sun.net.www.ParseUtil: java.lang.String encodePath(java.lang.String,boolean)>/new java.lang.String/0
+sun.security.util.DerValue.getIA5String/new java.lang.String/0
+<sun.security.util.DerInputBuffer: byte[] getBitString(int)>/new byte[]/0
+sun.security.x509.X509CRLEntryImpl.parse/new sun.security.x509.CRLExtensions/0
+sun.reflect.NativeConstructorAccessorImpl.newInstance/new sun.reflect.MethodAccessorGenerator/0
+java.text.BreakIterator.createBreakInstance/new java.text.DictionaryBasedBreakIterator/0
+<sun.security.util.BitArray: void <init>(int)>/new byte[]/0
+org.apache.lucene.document.DateTools.timeToString/new java.text.SimpleDateFormat/0
+<sun.text.normalizer.Trie: void <init>(java.io.InputStream,sun.text.normalizer.Trie$DataManipulate)>/new java.io.DataInputStream/0
+java.text.MessageFormat.subformat/new java.text.MessageFormat/0
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/2
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/1
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/0
+sun.text.normalizer.Trie.unserialize/new java.io.DataInputStream/0
+<java.lang.String: java.lang.String replace(char,char)>/new java.lang.String/0
+sun.security.util.DerInputBuffer.toByteArray/new byte[]/0
+<sun.security.x509.X509CRLImpl: void <init>(sun.security.util.DerValue)>/new java.util.TreeMap/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/0
+sun.security.pkcs.PKCS7.parseNetscapeCertChain/new java.security.cert.X509Certificate[]/0
+sun.text.normalizer.NormalizerImpl.<clinit>/new sun.text.normalizer.NormalizerImpl/0
+<java.net.URLClassLoader: void <init>(java.net.URL[],java.lang.ClassLoader,java.net.URLStreamHandlerFactory)>/new sun.misc.URLClassPath/0
+sun.security.provider.PolicyParser.parseGrantEntry/new java.util.LinkedList/0
+<java.text.DecimalFormat: void <init>(java.lang.String,java.text.DecimalFormatSymbols)>/new java.text.DigitList/0
+java.security.Security.initialize/new java.util.Properties/1
+java.security.Security.initialize/new java.util.Properties/0
+java.util.TreeMap$EntrySet.iterator/new java.util.TreeMap$EntryIterator/0
+sun.security.util.DerInputStream.readVector/new java.io.DataInputStream/0
+java.lang.StringBuffer.toString/new java.lang.String/0
+<sun.security.util.DerValue: sun.security.util.DerInputStream init(byte,java.lang.String)>/new sun.security.util.DerInputBuffer/0
+java.text.Normalizer$Form.<clinit>/new java.text.Normalizer$Form[]/0
+java.lang.ref.Reference.<clinit>/new java.lang.ref.Reference$ReferenceHandler/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$21/0
+<java.security.cert.CertificateFactory: java.security.cert.CertificateFactory getInstance(java.lang.String)>/new java.security.cert.CertificateException/0
+sun.text.normalizer.UCharacterProperty.getInstance/new sun.text.normalizer.UCharacterProperty/0
+sun.util.resources.LocaleData.createLocaleList/new java.util.Locale[]/0
+java.net.InetAddress.getAddressFromNameService/new java.net.InetAddress[]/0
+sun.misc.URLClassPath$JarLoader$3.run/new sun.misc.URLClassPath$JarLoader/0
+<<string-constant>>
+java.security.ProtectionDomain$2.getProtectionDomainCache/new java.security.ProtectionDomain$2$1/0
+java.security.Provider.getServices/new java.util.LinkedHashSet/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/1
+<java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>/new java.text.MessageFormat/0
+java.util.TreeMap.keyIterator/new java.util.TreeMap$KeyIterator/0
+java.io.UnixFileSystem.list/new java.lang.String
+sun.reflect.MethodAccessorGenerator.generate/new sun.reflect.MethodAccessorGenerator$1/0
+java.util.regex.Pattern.family/new java.lang.String/1
+org.apache.lucene.index.CompoundFileWriter.<init>/new java.util.LinkedList/0
+sun.misc.Launcher.<init>/new java.lang.SecurityManager/0
+sun.security.pkcs.PKCS7.parseOldSignedData/new java.security.cert.X509Certificate[]/0
+<sun.security.util.BitArray: void <init>(int,byte[])>/new byte[]/0
+sun.security.util.SignatureFileVerifier.getSigners/new java.security.CodeSigner[]/0
+<java.util.zip.ZipFile: java.io.InputStream getInputStream(java.lang.String)>/new java.util.zip.ZipFile$2/0
+<java.security.ProtectionDomain: void <init>(java.security.CodeSource,java.security.PermissionCollection,java.lang.ClassLoader,java.security.Principal[])>/new java.security.Principal[]/0
+java.lang.ClassLoader.<clinit>/new java.util.Stack/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$18/0
+sun.security.provider.PolicyFile.getCertificates/new java.security.cert.Certificate[]/0
+<java.net.Inet6Address$Inet6AddressHolder: void <init>(java.net.Inet6Address)>/new byte[]/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$19/0
+<sun.security.provider.PolicyFile: boolean init(java.net.URL,sun.security.provider.PolicyFile$PolicyInfo)>/new java.text.MessageFormat/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.Stack/0
+java.text.DateFormat.get/new java.text.SimpleDateFormat/0
+sun.security.util.PolicyUtil.getKeyStore/new java.io.BufferedInputStream/0
+<java.util.TreeSet: void <init>()>/new java.util.TreeMap/0
+java.util.logging.LogManager$LoggerContext.addLocalLogger/new java.util.logging.LogManager$LoggerWeakRef/0
+java.util.Currency$1.run/new java.io.DataInputStream/0
+<sun.security.util.DerValue: void <init>(sun.security.util.DerInputBuffer)>/new java.io.DataInputStream/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$7/0
+java.util.TreeMap.values/new java.util.TreeMap$Values/0
+sun.misc.Launcher.getBootstrapClassPath/new sun.misc.URLClassPath/0
+<sun.security.util.DerValue: sun.security.util.DerInputStream init(boolean,java.io.InputStream)>/new sun.security.util.DerInputBuffer/0
+sun.security.provider.PolicyFile$SelfPermission.<init>/new java.security.cert.Certificate[]/0
+sun.security.util.DerInputStream.init/new sun.security.util.DerInputBuffer/1
+java.lang.Package.loadManifest/new java.util.jar.JarInputStream/0
+<sun.security.util.DerOutputStream: void putOrderedSet(byte,sun.security.util.DerEncoder[],java.util.Comparator)>/new byte[][]/0
+<java.lang.String: java.lang.String copyValueOf(char[],int,int)>/new java.lang.String/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$8/0
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/0
+java.security.CodeSource.getCertificates/new java.security.cert.Certificate[]/0
+sun.security.util.SignatureFileVerifier.updateSigners/new java.security.CodeSigner[]/0
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/1
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$6/0
+java.util.logging.Logger.doSetParent/new java.util.logging.LogManager$LoggerWeakRef/0
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/2
+sun.security.provider.PolicyParser.match/new java.text.MessageFormat/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$9/0
+sun.text.normalizer.IntTrie.unserialize/new java.io.DataInputStream/0
+sun.misc.Launcher$AppClassLoader$1.run/new sun.misc.Launcher$AppClassLoader/0
+<java.text.NumberFormat: java.text.NumberFormat getInstance(java.util.Locale,int)>/new java.text.DecimalFormat/0
+sun.util.calendar.ZoneInfoFile.createZoneInfo/new sun.util.calendar.ZoneInfo/0
+java.io.PrintStream.init/new java.io.BufferedWriter/0
+<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>/new java.lang.String/0
+sun.security.x509.X509CRLImpl.parse/new sun.security.x509.CRLExtensions/0
+<java.text.DecimalFormatSymbols: java.text.DecimalFormatSymbols getInstance(java.util.Locale)>/new java.text.DecimalFormatSymbols/0
+<java.util.jar.JarInputStream: void <init>(java.io.InputStream,boolean)>/new java.io.BufferedInputStream/0
+<java.util.Date: sun.util.calendar.BaseCalendar$Date normalize(sun.util.calendar.BaseCalendar$Date)>/new java.util.GregorianCalendar/0
+java.lang.Runtime.<clinit>/new java.lang.Runtime/0
+java.text.RuleBasedBreakIterator.getText/new java.text.StringCharacterIterator/0
+java.lang.ClassLoader.checkPackageAccess/new java.security.ProtectionDomain[]/0
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.LinkedList/0
+java.security.Security.initialize/new java.io.BufferedInputStream/0
+java.util.Hashtable.clone/new java.lang.InternalError/0
+java.math.RoundingMode.<clinit>/new java.math.RoundingMode[]/0
+sun.text.normalizer.NormalizerDataReader.<init>/new java.io.DataInputStream/0
+sun.security.x509.X500Name.parseDN/new sun.security.x509.RDN/1
+sun.security.x509.X500Name.parseDN/new sun.security.x509.RDN/0
+<sun.security.util.DerValue: sun.security.util.DerInputStream init(boolean,java.io.InputStream)>/new java.io.DataInputStream/0
+java.util.regex.Pattern.family/new java.lang.String/0
+java.lang.System.setProperties/new java.util.Properties/0
+sun.security.jca.Providers.<clinit>/new java.lang.InheritableThreadLocal/0
+java.lang.reflect.Proxy.<clinit>/new java.util.WeakHashMap/1
+java.lang.System.initializeSystemClass/new java.io.BufferedInputStream/0
+org.apache.lucene.index.IndexReader.aquireWriteLock/new java.io.IOException/0
+sun.security.util.DerInputStream.init/new sun.security.util.DerInputBuffer/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$12/0
+java.util.jar.Manifest.read/new java.util.jar.Manifest$FastInputStream/0
+java.io.FileSystem.getFileSystem/new java.io.UnixFileSystem
+sun.util.calendar.ZoneInfoFile.getCustomTimeZone/new sun.util.calendar.ZoneInfo/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$13/0
+sun.text.normalizer.UnicodeSet.ensureBufferCapacity/new int[]/0
+java.text.MessageFormat.makeFormat/new java.text.SimpleDateFormat/1
+java.text.MessageFormat.makeFormat/new java.text.SimpleDateFormat/0
+<sun.text.normalizer.UnicodeSet: void <init>()>/new int[]/0
+sun.util.calendar.LocalGregorianCalendar$1.run/new java.util.Properties/0
+sun.misc.JarIndex.addToList/new java.util.LinkedList/0
+java.util.ResourceBundle$CacheKey.<init>/new java.util.ResourceBundle$LoaderReference/0
+<java.lang.String: java.lang.String valueOf(char)>/new java.lang.String/0
+java.text.DateFormat.get/new java.text.SimpleDateFormat/1
+<<reflection-string-constant>>
+java.lang.ref.Finalizer.<clinit>/new java.lang.ref.Finalizer$FinalizerThread/0
+java.util.Properties.loadConvert/new java.lang.String/0
+sun.util.LocaleServiceProviderPool.<init>/new java.util.LinkedHashSet/0
+java.lang.String.concat/new java.lang.String/0
+sun.reflect.ReflectionFactory.newConstructorAccessor/new sun.reflect.MethodAccessorGenerator/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$20/0
+sun.security.util.Password.readPassword/new java.io.PushbackInputStream/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$16/0
+<sun.util.calendar.ZoneInfoFile$1: java.lang.String run()>/new java.io.BufferedInputStream/0
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.LinkedList/0
+java.util.zip.ZipInputStream.getUTF8String/new java.lang.String/0
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String)>/new java.text.MessageFormat/0
+java.text.BreakIterator.createBreakInstance/new java.text.RuleBasedBreakIterator/0
+<java.io.BufferedReader: java.lang.String readLine(boolean)>/new java.lang.String/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$10/0
+sun.security.provider.PolicyFile.getSignerCertificates/new java.security.cert.Certificate[]/0
+java.lang.System.initializeSystemClass/new java.util.Properties/0
+<java.util.Currency: java.util.Currency getInstance(java.lang.String,int,int)>/new java.util.Currency/0
+java.net.InetAddress.cacheInitIfNeeded/new java.net.InetAddress[]/0
+<sun.security.util.DerValue: void <init>(byte,byte[])>/new sun.security.util.DerInputBuffer/0
+sun.text.normalizer.CharTrie.unserialize/new java.io.DataInputStream/0
+<java.util.logging.LogManager: void readConfiguration()>/new java.io.BufferedInputStream/0
+java.util.logging.LogManager.reset/new java.util.Properties/0
+<java.util.Collections: java.util.Collection synchronizedCollection(java.util.Collection,java.lang.Object)>/new java.util.Collections$SynchronizedCollection/0
+sun.security.provider.PolicyFile.checkForTrustedIdentity/new java.security.cert.Certificate[]/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$11/0
+sun.text.normalizer.UnicodeSet.ensureCapacity/new int[]/0
+sun.misc.ExtensionDependency.getInstalledExtensions/new sun.misc.ExtensionDependency$3/0
+java.lang.StringBuilder.toString/new java.lang.String/0
+sun.misc.URLClassPath$3.run/new sun.misc.URLClassPath$JarLoader/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$15/0
+java.util.Calendar.createCalendar/new java.util.GregorianCalendar/0
+<java.util.Arrays: byte[] copyOf(byte[],int)>/new byte[]/0
+<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>/new java.lang.String/0
+sun.util.resources.LocaleData$LocaleDataResourceBundleControl.<clinit>/new sun.util.resources.LocaleData$LocaleDataResourceBundleControl/0
+sun.misc.ExtensionDependency.checkExtensionExists/new sun.misc.ExtensionDependency$2/0
+sun.security.pkcs.PKCS7.parseSignedData/new java.security.cert.X509Certificate[]/0
+sun.security.util.DerInputStream.readVector/new sun.security.util.DerInputBuffer/0
+java.util.jar.Attributes.read/new java.lang.String/2
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.regex.Pattern$CharPropertyNames$17/0
+java.util.ResourceBundle$Control.<clinit>/new java.util.ResourceBundle$Control/0
+sun.security.util.DerOutputStream.putTime/new java.text.SimpleDateFormat/0
+<sun.security.util.DerValue: void <init>(sun.security.util.DerInputBuffer)>/new sun.security.util.DerInputBuffer/0
+<sun.text.normalizer.UnicodeSet: void applyPattern(sun.text.normalizer.RuleCharacterIterator,sun.text.normalizer.SymbolTable,java.lang.StringBuffer,int)>/new sun.text.normalizer.UnicodeSet/0

@@ -1,0 +1,19 @@
+
+D2ObjHeap(?heap) <-
+  CanHeap2obj(?heap).
+
+
+D2ObjHeap(?heap) <-
+  string:like(?type,"%java.util%"),
+  HeapAllocation:Type[?heap] = ?type.
+
+
+D2TypeHeap(?heap) <-
+  CanHeap2type(?heap).
+
+
+D1TypeHeap(?heap) <-
+  CanHeap1type(?heap).
+
+
+

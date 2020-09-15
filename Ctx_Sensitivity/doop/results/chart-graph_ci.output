@@ -1,0 +1,43 @@
+[1m[40m[37mrunning dacapo benchmark: [1m[40m[32mchart(B[m
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mdacapo.chart.Main(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mGcCallback:Harness:MMTkCallback:MMTkHarness:MyCallback:dacapo.**:org.jfree.chart.**:org.jfree.data.**(B[m
+generating facts (jars/dacapo/chart.jar jars/dacapo/chart-deps.jar) in /home/graphick/CtxArtifacts/Scaler/artifact/doop/cache/input-facts/jre1.6/9a80f56e88d01cce0aaad1340056bba00d327ea53b6889bee302309dcd12b8d4/ ...
+elapsed time: 102.84s
+creating database in /home/graphick/CtxArtifacts/Scaler/artifact/doop/cache/input-database/jre1.6/9a80f56e88d01cce0aaad1340056bba00d327ea53b6889bee302309dcd12b8d4/ ...
+elapsed time: 0.57s
+loading fact declarations ...
+elapsed time: 2.10s
+loading facts 
+...
+elapsed time: 15.16s
+setting main class to dacapo.chart.Main
+loading context-insensitive declarations ...
+elapsed time: 2.73s
+loading context-insensitive delta rules ...
+elapsed time: 4.19s
+loading reflection delta rules ...
+elapsed time: 5.47s
+loading client delta rules ...
+elapsed time: 1.70s
+loading auxiliary delta rules ...
+elapsed time: 1.72s
+loading context-insensitive rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m40.52s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              488,448
+loading statistics (simple) ...
+elapsed time: 6.56s
+true
+loading graph heuristic (simple) ...
+elapsed time: 35.07s
+[1m[40m[37mmaking database available at [1m[40m[32m/home/graphick/CtxArtifacts/Scaler/artifact/doop/results/context-insensitive/jre1.6/chart.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 4,466,516(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 1,810(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 1,852(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 12,064(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 63,453(B[m
+
+disk footprint (with stats) (KB)                                                 544,768

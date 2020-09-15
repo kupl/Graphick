@@ -1,0 +1,41 @@
+[1m[40m[37mrunning dacapo benchmark: [1m[40m[32mfop(B[m
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mdacapo.fop.Main(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mGcCallback:Harness:MMTkCallback:MMTkHarness:MyCallback:dacapo.**:org.apache.fop.**(B[m
+generating facts (jars/dacapo/fop.jar jars/dacapo/fop-deps.jar) in /home/minseokjeon/Graphick/Ctx_Sensitivity/doop/cache/input-facts/jre1.6/01077943388fe2c7e500980177e2ccae45d693ab277c454f2536a577adb8094d/ ...
+elapsed time: 67.78s
+creating database in /home/minseokjeon/Graphick/Ctx_Sensitivity/doop/cache/input-database/jre1.6/01077943388fe2c7e500980177e2ccae45d693ab277c454f2536a577adb8094d/ ...
+elapsed time: 0.51s
+loading fact declarations ...
+elapsed time: 0.92s
+loading facts 
+...
+elapsed time: 11.34s
+setting main class to dacapo.fop.Main
+loading context-insensitive declarations ...
+elapsed time: 2.06s
+loading context-insensitive delta rules ...
+elapsed time: 2.92s
+loading reflection delta rules ...
+elapsed time: 4.50s
+loading client delta rules ...
+elapsed time: 1.38s
+loading auxiliary delta rules ...
+elapsed time: 1.42s
+loading context-insensitive rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m52.77s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              586,752
+loading statistics (simple) ...
+elapsed time: 7.86s
+
+[1m[40m[37mmaking database available at [1m[40m[32m/home/minseokjeon/Graphick/Ctx_Sensitivity/doop/results/context-insensitive/jre1.6/fop.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 7,178,997(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 2,458(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 3,585(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 17,154(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 84,330(B[m
+
+disk footprint (with stats) (KB)                                                 674,816

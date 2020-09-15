@@ -1,0 +1,39 @@
+
+ReachableHeap(?heap) <-
+  Stats:Simple:InsensVarPointsTo(?heap, _).  
+
+FPG(?baseheap,?heap) <-   
+  Stats:Simple:InsensInstanceFieldPointsTo(?heap, _, ?baseheap). 
+
+FPG(?baseheap,?heap) <-
+  Stats:Simple:InsensArrayIndexPointsTo(?heap, ?baseheap). 
+
+
+
+OutgoingFPGEdges[?fromHeap] = ?n <-
+  agg<<?n = count()>> FPG(?fromHeap, _).  
+
+
+IncomingFPGEdges[?toHeap] = ?n <-
+  agg<<?n = count()>> FPG(_, ?toHeap).
+
+
+
+Succ(?heap0,?heap1)<-
+  FPG(?heap0,?heap1).
+
+
+Succ(?heap0,?heap2)<-
+  FPG(?heap1,?heap2),
+  Succ(?heap0,?heap1).
+
+
+
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=250.
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),Succ(?heap0,?heap1),OutgoingFPGEdges[?heap1]>=250.
+
+
+
+
+
+

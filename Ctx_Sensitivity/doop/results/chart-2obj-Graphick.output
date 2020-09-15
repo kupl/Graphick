@@ -1,0 +1,32 @@
+[1m[40m[37mrunning dacapo benchmark: [1m[40m[32mchart(B[m
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mdacapo.chart.Main(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mGcCallback:Harness:MMTkCallback:MMTkHarness:MyCallback:dacapo.**:org.jfree.chart.**:org.jfree.data.**(B[m
+using cached database (/home/graphick/CtxArtifacts/Scaler/artifact/doop/cache/input-database/jre1.6/9a80f56e88d01cce0aaad1340056bba00d327ea53b6889bee302309dcd12b8d4/)
+loading 2-object-sensitive+heap+Data declarations ...
+elapsed time: 2.77s
+loading 2-object-sensitive+heap+Data delta rules ...
+elapsed time: 4.25s
+loading reflection delta rules ...
+elapsed time: 5.43s
+loading client delta rules ...
+elapsed time: 1.76s
+loading auxiliary delta rules ...
+elapsed time: 1.77s
+loading 2-object-sensitive+heap+Data rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m78.28s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              590,848
+loading statistics (simple) ...
+elapsed time: 5.79s
+
+[1m[40m[37mmaking database available at [1m[40m[32m/home/graphick/CtxArtifacts/Scaler/artifact/doop/results/2-object-sensitive+heap+Data/jre1.6/chart.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 5,567,991(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 998(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 1,392(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 11,351(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 52,544(B[m
+
+disk footprint (with stats) (KB)                                                 604,160

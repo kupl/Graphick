@@ -1,0 +1,38 @@
+Bloxbatch-Options: 
+[1m[40m[37mMain-Class: [1m[40m[32mat.laborg.briss.Briss(B[m
+[1m[40m[37mApplication-Classes: [1m[40m[32mat.**(B[m
+generating facts (jars/briss/briss-0.9.jar /home/graphick/CtxArtifacts/Scaler/artifact/doop/jars/empty.jar) in /home/graphick/CtxArtifacts/Scaler/artifact/doop/cache/input-facts/jre1.6-phantom/0bb9d05de4086ab3f8c8a6399bc87b422652546a469b1c7215243e8550027bd1/ ...
+elapsed time: 146.29s
+creating database in /home/graphick/CtxArtifacts/Scaler/artifact/doop/cache/input-database/jre1.6-phantom/0bb9d05de4086ab3f8c8a6399bc87b422652546a469b1c7215243e8550027bd1/ ...
+elapsed time: 0.49s
+loading fact declarations ...
+elapsed time: 2.00s
+loading facts ...
+elapsed time: 19.03s
+setting main class to at.laborg.briss.Briss
+loading 2-object-sensitive+heap+Data declarations ...
+elapsed time: 3.58s
+loading 2-object-sensitive+heap+Data delta rules ...
+elapsed time: 5.16s
+loading reflection delta rules ...
+elapsed time: 6.89s
+loading client delta rules ...
+elapsed time: 2.30s
+loading auxiliary delta rules ...
+elapsed time: 2.25s
+loading 2-object-sensitive+heap+Data rules ...
+[1m[40m[33mPointer analysis START(B[m
+[1m[40m[37manalysis time: [1m[40m[32m177.85s(B[m
+[1m[40m[33mPointer analysis FINISH(B[m
+disk footprint (KB)                                                              1,258,291
+loading statistics (simple) ...
+elapsed time: 19.07s
+[1m[40m[37mmaking database available at [1m[40m[32m/home/graphick/CtxArtifacts/Scaler/artifact/doop/results/2-object-sensitive+heap+Data/jre1.6-phantom/briss-0.9.jar(B[m
+[1m[40m[37mmaking database available at [1m[40m[32mlast-analysis(B[m
+[1m[40m[33m#var points-to           (B[m[1m[40m[32m 15,739,531(B[m
+[1m[40m[33m#may-fail casts          (B[m[1m[40m[32m 3,469(B[m
+[1m[40m[33m#poly calls              (B[m[1m[40m[32m 5,369(B[m
+[1m[40m[33m#reach methods           (B[m[1m[40m[32m 25,710(B[m
+[1m[40m[33m#call edges              (B[m[1m[40m[32m 153,191(B[m
+
+disk footprint (with stats) (KB)                                                 1,363,149

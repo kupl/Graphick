@@ -1,0 +1,216 @@
+/**
+ * Context-sensitive pointer analysis with context of 2 objects
+ * (AND for static calls 1 call-site).
+ *
+ * @author George Kastrinis
+ */
+#define ENABLE_SOBJ
+
+#include "strategy.logic"
+#include "macros.logic"
+#include "../context-sensitive.logic"
+#include "../library.logic"
+#include "../object-to-type.logic"
+
+
+// In this analysis, the real context is a pair of HeapAllocationRef AND
+// a MethodInvocationRef (for static calls) sometimes.
+// The real heap context is a single HeapAllocationRef. Keeping mapping 
+// functions is the way to handle analyses where HContext = Context 
+// (since the language considers them different types).
+// NOTE: Changed from HeapAllocationRef to CallGraphEdgeSourceRef
+// in order to use the invocation site for static calls.
+ContextFromRealContext[?heap1, ?heap2] = ?ctx ->
+  Context(?ctx), CallGraphEdgeSourceRef(?heap1), CallGraphEdgeSourceRef(?heap2).
+lang:skolem(`ContextFromRealContext).
+// NOTE: Use the following when using both the normal (caller's) context
+// and the invocation site for static calls.
+SpecialContextFromRealContext[?heap1, ?invocation, ?heap2] = ?ctx ->
+  CallGraphEdgeSourceRef(?heap1), CallGraphEdgeSourceRef(?heap2),
+  CallGraphEdgeSourceRef(?invocation), Context(?ctx). 
+lang:skolem(`SpecialContextFromRealContext).
+RealContext1FromContext[?ctx] = ?heap -> 
+  Context(?ctx), CallGraphEdgeSourceRef(?heap).
+RealContext2FromContext[?ctx] = ?heap -> 
+  Context(?ctx), CallGraphEdgeSourceRef(?heap).
+
+RealContext1FromContext[?ctx] = ?heap1,
+RealContext2FromContext[?ctx] = ?heap2 <- 
+  ContextFromRealContext[?heap1, ?heap2] = ?ctx.
+// NOTE: Use the following when using both the normal (caller's) context
+// and the invocation site for static calls.
+RealContext1FromContext[?ctx] = ?invocation,
+RealContext2FromContext[?ctx] = ?heap2 <- 
+  SpecialContextFromRealContext[_, ?invocation, ?heap2] = ?ctx.
+
+HContextFromRealHContext[?heap] = ?hctx ->
+  HContext(?hctx), CallGraphEdgeSourceRef(?heap).
+lang:skolem(`HContextFromRealHContext).
+RealHContextFromHContext[?hctx] = ?heap -> 
+  HContext(?hctx), CallGraphEdgeSourceRef(?heap).
+
+RealHContextFromHContext[?hctx] = ?heap <-
+  HContextFromRealHContext[?heap] = ?hctx.
+
+// Creating special immutable heap allocation constant
+ImmutableHeapValue[] = ?immHeap <-
+  HeapAllocationValue(?immHeap, "<<immutable>>").
+
+// Create initial objects with their heapcontexts.
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+SystemThreadGroup(?hctx, ?alloc) <-
+  MySystemThreadGroup(?heap, ?alloc).
+
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+MainThreadGroup(?hctx, ?alloc) <-
+  MyMainThreadGroup(?heap, ?alloc).
+
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+MainThread(?hctx, ?alloc) <-
+  MyMainThread(?heap, ?alloc).
+
+/**
+ * Merge optimization hack
+ */
+
+// For this analysis, we only need two of the parameters that may 
+// influence the new context object.
+MyMergeBasis(?hctx, ?heap) <-
+  MergeBasis(_, _, ?hctx, ?heap).
+
+
+// Handle special context objects.
+SpecialContextObject(?heapStr) -> string(?heapStr).
+SpecialContextObject("<<jvm-startup>>").
+SpecialContextObject("<<initial-context>>").
+SpecialContextObject("<<class-initialization>>").
+SpecialContextObject("<<immutable>>").
+
+ToTypeValue[?heapOrType] = ?heapOrType <-
+  MyMergeBasis(?hctx, _),
+  RealHContextFromHContext[?hctx] = ?heapOrType,
+  Type:Value(_:?heapOrType).
+
+ToTypeValue[?heapOrType] = ?typeValue <-
+  MyMergeBasis(?hctx, _),
+  RealHContextFromHContext[?hctx] = ?heapOrType,
+  !Type:Value(_:?heapOrType),
+  HeapAllocationValue(?heap, ?heapOrType),
+  !SpecialContextObject(?heapOrType),
+  DeclaringClassAllocation[?heap] = ?type,
+  Type:Value(?type:?typeValue).
+
+ToTypeValue[?heapStr] = ?heapStr <-
+  SpecialContextObject(?heapStr).
+
+
+
+
+
+/*
+// We create new context objects sparingly, because of the high cost.
+// We also cache them, so they can be looked up without a join.
+ToTypeValue[?heapOrType] = ?heapOrType <-
+  MyMergeBasis(?hctx, _, _),
+  RealHContextFromHContext[?hctx] = ?heapOrType,
+  Type:Value(_:?heapOrType).
+
+ToTypeValue[?heapOrType] = ?typeValue <-
+  MyMergeBasis(?hctx, _, _),
+  RealHContextFromHContext[?hctx] = ?heapOrType,
+  !Type:Value(_:?heapOrType),
+  HeapAllocationValue(?heap, ?heapOrType),
+  !SpecialContextObject(?heapOrType),
+  DeclaringClassAllocation[?heap] = ?type,
+  Type:Value(?type:?typeValue).
+
+ToTypeValue[?heapStr] = ?heapStr <-
+  SpecialContextObject(?heapStr).
+*/
+
+Context(?calleeCtx),
+ContextFromRealContext[RealHContextFromHContext[?hctx],?heap] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap] = ?calleeCtx <-
+  MyMergeBasis(?hctx, ?heap).
+
+
+/*
+Context(?calleeCtx),
+ContextFromRealContext[RealHContextFromHContext[?hctx],?heapValue] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap, ?tomethod] = ?calleeCtx <-
+  MyMergeBasis(?hctx, ?heap, ?tomethod),
+  HeapAllocationValue(?heap, ?heapValue).
+*/
+
+
+/*
+// every method is analyzed by 2-object
+Context(?calleeCtx),
+ContextFromRealContext[RealHContextFromHContext[?hctx],?heapValue] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap, ?tomethod] = ?calleeCtx <-
+  D2ObjHeap(?heap),
+  MyMergeBasis(?hctx, ?heap, ?tomethod),
+  HeapAllocationValue(?heap, ?heapValue).
+
+Context(?calleeCtx),
+ContextFromRealContext[?typeValue1,?typeValue2] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap, ?tomethod] = ?calleeCtx <-
+  MyMergeBasis(?hctx, ?heap, ?tomethod),
+  !D2ObjHeap(?heap),
+  D2TypeHeap(?heap),
+  ToTypeValue[RealHContextFromHContext[?hctx]] = ?typeValue1,
+  DeclaringClassAllocation[?heap] = ?type,
+  Type:Value(?type:?typeValue2).
+
+
+Context(?calleeCtx),
+ContextFromRealContext[ImmutableHeapValue[],?typeValue] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap, ?tomethod] = ?calleeCtx <-
+  MyMergeBasis(?hctx, ?heap, ?tomethod),
+  !D2ObjHeap(?heap),
+  !D2TypeHeap(?heap),
+  D1TypeHeap(?heap),
+  //ScalerMethodContext(?tomethod, "1-type"),
+  DeclaringClassAllocation[?heap] = ?type,
+  Type:Value(?type:?typeValue).
+
+
+Context(?calleeCtx),
+ContextFromRealContext[ImmutableHeapValue[],ImmutableHeapValue[]] = ?calleeCtx,
+OptimizeMerge[?hctx, ?heap, ?tomethod] = ?calleeCtx <-
+  !D2ObjHeap(?heap),
+  !D2TypeHeap(?heap),
+  !D1TypeHeap(?heap),
+  MyMergeBasis(?hctx, ?heap, ?tomethod).
+  //ScalerMethodContext(?tomethod, "context-insensitive").
+*/
+
+
+  
+/**
+ * Reachable
+ */
+ReachableContext(?ctx, ?method),
+ContextFromRealContext[?initheap,?initheap] = ?ctx,
+Context(?ctx)
+ <-
+  MainMethodDeclaration(?method),
+  HeapAllocationValue(?initheap, "<<initial-context>>").
+
+ReachableContext(?ctx, ?method),
+ContextFromRealContext[?startupheap,?startupheap] = ?ctx,
+Context(?ctx)
+ <-
+  ImplicitReachable(?method),
+  HeapAllocationValue(?startupheap, "<<jvm-startup>>").
+
+ReachableContext(?ctx, ?clinit),
+ContextFromRealContext[?clinitheap,?clinitheap] = ?ctx,
+Context(?ctx)
+ <-
+  InitializedClass(?class),
+  ClassInitializer[?class] = ?clinit,
+  HeapAllocationValue(?clinitheap, "<<class-initialization>>").

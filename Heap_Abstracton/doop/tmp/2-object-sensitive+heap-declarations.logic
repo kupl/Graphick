@@ -1,0 +1,209 @@
+/* Copyright (C) 1991-2016 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses Unicode 8.0.0.  Version 8.0 of the Unicode Standard is
+   synchronized with ISO/IEC 10646:2014, plus Amendment 1 (published
+   2015-05-15).  */
+/* We do not support C11 <threads.h>.  */
+/**
+ * Macros that fix the lack of ref-modes on subtypes in LB
+ */
+/**
+ * HeapAllocationRef cannot have a ref-mode, because it is a subtype
+ * of InstructionRef. To more or less hide this, we define a
+ * macro that uses the ref-mode (InstructionRef:Value) of the
+ * base type and checks if it is a HeapAllocationRef.
+ */
+/**
+ * Same for method invocations
+ */
+/*
+ * Similar for class type
+ */
+// For this analysis, every heap context recorded on allocation
+// corresponds to the most significant element of the calling 
+// context of the allocator method.
+// For this analysis the context of a method call corresponds to the
+// identity of the receiver object and the receiver object of the caller.
+// Again, this may trigger creation of a new object.
+// For this analysis, static calls just keep the same context as the
+// caller. *Not* creating a new one, but pretending to, nonetheless,
+// so the engine doesn't barf.
+// MergeThreadStart, MergeStartup, and MergeFinalizerRegisterContext
+// have the same logic as plain Merge for this analysis.
+// This is exactly equivalent to the regular merge logic, but written
+// differently. At finalization, we create a new hctx, based on the
+// callerCtx, and then use this new hctx as we would in regular Merge.
+// The macro below does this, without referring to the new hctx (i.e.,
+// using knowledge of how it is created). This is necessary because since
+// the new hctx is created in the same rule, it will not yet have values
+// for its inverse functions (RealHContextFromHContext), so the rule will never
+// fire if done naively. The signature of the macro (which does not accept a
+// hctx) is a hint for avoiding this problem.
+/**
+ * Generic declarations for context-sensitive pointer analysis.
+ */
+Context(?ctx) ->.
+lang:entity(`Context).
+lang:physical:storageModel[`Context]="ScalableSparse".
+//lang:physical:capacity[`Context] = 33554432.
+lang:physical:capacity[`Context] = 8388608.
+HContext(?hctx) ->.
+lang:entity(`HContext).
+lang:physical:storageModel[`HContext]="ScalableSparse".
+//lang:physical:capacity[`HContext] = 33554432.
+lang:physical:capacity[`HContext] = 8388608.
+VarPointsTo(?hctx, ?heap, ?ctx, ?var) ->
+  HContext(?hctx), HeapAllocationRef(?heap), Context(?ctx), VarRef(?var).
+InstanceFieldPointsTo(?hctx, ?heap, ?sig, ?basehctx, ?baseheap) ->
+  HContext(?hctx), HeapAllocationRef(?heap),
+  FieldSignatureRef(?sig),
+  HContext(?basehctx), HeapAllocationRef(?baseheap).
+StaticFieldPointsTo(?hctx, ?heap, ?sig) ->
+  FieldSignatureRef(?sig),
+  HContext(?hctx), HeapAllocationRef(?heap).
+// array-element insensitive
+ArrayIndexPointsTo(?hctx, ?heap, ?basehctx, ?baseheap) ->
+  HContext(?basehctx), HeapAllocationRef(?baseheap),
+  HContext(?hctx), HeapAllocationRef(?heap).
+Assign(?type, ?toCtx, ?to, ?fromCtx, ?from) ->
+  Type(?type),
+  Context(?toCtx), VarRef(?to),
+  Context(?fromCtx), VarRef(?from).
+/**
+ * Call graph
+ */
+CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?method) ->
+  Context(?callerCtx), CallGraphEdgeSourceRef(?invocation),
+  Context(?calleeCtx), MethodSignatureRef(?method).
+/**
+ * Reachable
+ */
+Reachable(?method) ->
+  MethodSignatureRef(?method).
+ReachableContext(?ctx, ?method) ->
+  Context(?ctx), MethodSignatureRef(?method).
+OptLoadInstanceField(?to, ?signature, ?base) ->
+  VarRef(?base),
+  FieldSignatureRef(?signature),
+  VarRef(?to).
+OptLoadStaticField(?ctx, ?to, ?signature) ->
+  FieldSignatureRef(?signature),
+  Context(?ctx), VarRef(?to).
+OptStoreStaticField(?signature, ?from) ->
+  VarRef(?from),
+  FieldSignatureRef(?signature).
+OptStoreInstanceField(?from, ?signature, ?base) ->
+  VarRef(?from),
+  VarRef(?base),
+  FieldSignatureRef(?signature).
+/*
+ReachableSpecialMethodInvocation(?invocation, ?base) ->
+  MethodInvocationRef(?invocation),
+  VarRef(?base).
+
+ReachableVirtualMethodInvocation(?invocation, ?base) ->
+  MethodInvocationRef(?invocation),
+  VarRef(?base).
+*/
+OptLoadArrayIndex(?to, ?base) ->
+  VarRef(?base),
+  VarRef(?to).
+OptStoreArrayIndex(?from, ?base) ->
+  VarRef(?from),
+  VarRef(?base).
+/**
+ * Optimizations
+ */
+LoadHeapInstanceField(?ctx, ?to, ?sig, ?basehctx, ?baseheap) ->
+  HContext(?basehctx), HeapAllocationRef(?baseheap),
+  FieldSignatureRef(?sig),
+  Context(?ctx), VarRef(?to).
+StoreHeapInstanceField(?sig, ?basehctx, ?baseheap, ?ctx, ?from) ->
+  Context(?ctx), VarRef(?from),
+  FieldSignatureRef(?sig),
+  HContext(?basehctx), HeapAllocationRef(?baseheap).
+LoadHeapArrayIndex(?ctx, ?to, ?basehctx, ?baseheap) ->
+  Context(?ctx), VarRef(?to),
+  HContext(?basehctx), HeapAllocationRef(?baseheap).
+StoreHeapArrayIndex(?basehctx, ?baseheap, ?ctx, ?from) ->
+  HContext(?basehctx), HeapAllocationRef(?baseheap),
+  Context(?ctx), VarRef(?from).
+AssignNormalHeapAllocation(?heap, ?var, ?inmethod) ->
+  HeapAllocationRef(?heap), VarRef(?var), MethodSignatureRef(?inmethod).
+AssignAuxiliaryHeapAllocation(?heap, ?var, ?inmethod) ->
+  HeapAllocationRef(?heap), VarRef(?var), MethodSignatureRef(?inmethod).
+AssignContextInsensitiveHeapAllocation(?heap, ?var, ?inmethod) ->
+  HeapAllocationRef(?heap), VarRef(?var), MethodSignatureRef(?inmethod).
+/**
+ * Special heap abstractions.
+ */
+SystemThreadGroup(?hctx, ?heap) ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+MainThreadGroup(?hctx, ?heap) ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+MainThread(?hctx, ?heap) ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+/**
+ * Filter predicate for refinement-based/adaptive analyses
+ */
+SiteToRefine(?heap,?invocation) ->
+  MethodInvocationRef(?invocation),
+  HeapAllocationRef(?heap).
+TempSiteToRefine(?heap,?invocation) ->
+  MethodInvocationRef(?invocation),
+  HeapAllocationRef(?heap).
+ObjectToRefine(?heap) ->
+  HeapAllocationRef(?heap).
+TempObjectToRefine(?heap) ->
+  HeapAllocationRef(?heap).
+// Is the SiteToRefine the real list of objects needing
+// refinement or its negation?
+NegativeSiteFilter(?v) -> string(?v).
+TempNegativeSiteFilter(?v) -> string(?v).
+// I could also declare a constant: NegativeSiteFilter() ->. But this is not
+// exportable due to an apparent bug. Also, I tried boolean instead of string,
+// but this also fails during import 
+// ("cannot convert string 'boolean' to type '[].[boolean]')
+// Is the ObjectToRefine the real list of objects needing
+// refinement or its negation?
+NegativeObjectFilter(?v) -> string(?v) .
+TempNegativeObjectFilter(?v) -> string(?v).
+/**
+ * Predicate to store runtime info
+ */
+Stats:Runtime(?value, ?attr) -> decimal[64](?value), string(?attr).
+// For this analysis, contexts are heap objects, so this is
+// what the initial system objects should have.
+MySystemThreadGroup(?heap, ?alloc) ->
+  HeapAllocationRef(?heap), HeapAllocationRef(?alloc).
+MyMainThreadGroup(?heap, ?alloc) ->
+  HeapAllocationRef(?heap), HeapAllocationRef(?alloc).
+MyMainThread(?heap, ?alloc) ->
+  HeapAllocationRef(?heap), HeapAllocationRef(?alloc).

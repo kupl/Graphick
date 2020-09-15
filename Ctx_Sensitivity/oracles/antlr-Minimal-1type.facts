@@ -1,0 +1,372 @@
+antlr.actions.cpp.ActionLexer.mINT_OR_FLOAT/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mID/new java.lang.String/0
+antlr.actions.java.ActionLexer.mID_ELEMENT/new java.lang.String/0
+<sun.text.normalizer.UnicodeSet: sun.text.normalizer.UnicodeSet add(int)>/new int[]/0
+<java.security.ProtectionDomain: void <init>(java.security.CodeSource,java.security.PermissionCollection)>/new java.security.Principal[]/0
+java.text.DictionaryBasedBreakIterator.<init>/new java.text.BreakDictionary/0
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String,java.lang.String)>/new java.text.MessageFormat/0
+java.util.logging.LogManager.<init>/new java.util.logging.LogManager$Cleaner/0
+java.nio.charset.Charset.providers/new java.nio.charset.Charset$1/0
+<sun.misc.Service: void fail(java.lang.Class,java.lang.String,java.lang.Throwable)>/new sun.misc.ServiceConfigurationError/0
+java.util.ResourceBundle$CacheKey.clone/new java.util.ResourceBundle$LoaderReference/0
+antlr.preprocessor.PreprocessorLexer.mSL_COMMENT/new java.lang.String/0
+antlr.actions.java.ActionLexer.mACTION/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mAST_CONSTRUCTOR/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mSTRING/new java.lang.String/0
+antlr.actions.java.ActionLexer.mINT_OR_FLOAT/new java.lang.String/0
+antlr.ANTLRLexer.mACTION/new java.lang.String/1
+sun.util.TimeZoneNameUtility$TimeZoneNameGetter.<clinit>/new sun.util.TimeZoneNameUtility$TimeZoneNameGetter/0
+antlr.CSharpCodeGenerator.<init>/new java.util.HashSet/0
+antlr.ANTLRLexer.mML_COMMENT/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mWS/new java.lang.String/0
+java.util.ResourceBundle.getBundleImpl/new java.util.ResourceBundle$CacheKey/0
+antlr.preprocessor.PreprocessorLexer.mNEWLINE/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mML_COMMENT/new java.lang.String/0
+sun.security.x509.X509CRLEntryImpl.parse/new sun.security.x509.CRLExtensions/0
+java.util.ServiceLoader.reload/new java.util.ServiceLoader$LazyIterator/0
+java.text.BreakIterator.createBreakInstance/new java.text.DictionaryBasedBreakIterator/0
+<sun.security.util.BitArray: void <init>(int)>/new byte[]/0
+LLkParser
+antlr.ANTLRTokdefLexer.mINT/new java.lang.String/0
+java.util.logging.LogManager.<init>/new java.util.Properties/0
+antlr.preprocessor.PreprocessorLexer.mBANG/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mTREE/new java.lang.String/0
+antlr.actions.java.ActionLexer.mAST_CONSTRUCTOR/new java.lang.String/0
+antlr.actions.java.ActionLexer.mAST_CTOR_ELEMENT/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mCURLY_BLOCK_SCARF/new java.lang.String/0
+<sun.security.provider.PolicyFile: void init(java.net.URL)>/new sun.security.provider.PolicyFile$PolicyInfo/0
+dacapo.Benchmark.unpackZipStream/new java.util.zip.ZipInputStream/0
+sun.util.calendar.ZoneInfo.getLastRuleInstance/new java.util.SimpleTimeZone/1
+sun.security.provider.PolicyParser.parseGrantEntry/new java.util.LinkedList/0
+java.security.Security.initialize/new java.util.Properties/1
+java.security.Security.initialize/new java.util.Properties/0
+<java.text.DateFormat: java.lang.StringBuffer format(java.lang.Object,java.lang.StringBuffer,java.text.FieldPosition)>/new java.util.Date/0
+antlr.ANTLRLexer.mTOKEN_REF/new java.lang.String/0
+sun.misc.ExtensionDependency.checkExtensionsDependencies/new sun.misc.ExtensionDependency/0
+antlr.actions.cpp.ActionLexer.mID_ELEMENT/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mTEXT_ARG_ELEMENT/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mARG/new java.lang.String/0
+antlr.ANTLRLexer.mWILDCARD/new java.lang.String/0
+<sun.misc.URLClassPath$JarLoader: sun.misc.Resource getResource(java.lang.String,boolean)>/new java.util.HashSet/0
+antlr.actions.csharp.ActionLexer.mSTRING/new java.lang.String/0
+sun.util.calendar.Era.<init>/new sun.util.calendar.ImmutableGregorianDate/0
+antlr.actions.cpp.ActionLexer.mSL_COMMENT/new java.lang.String/0
+java.text.Normalizer$Form.<clinit>/new java.text.Normalizer$Form[]/0
+antlr.DefineGrammarSymbols.endOptions/new antlr.SimpleTokenManager/1
+sun.util.resources.LocaleData.createLocaleList/new java.util.Locale[]/0
+antlr.actions.java.ActionLexer.mINT/new java.lang.String/0
+java.security.Timestamp.getTimestamp/new java.util.Date/0
+antlr.preprocessor.PreprocessorLexer.mSUBRULE_BLOCK/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mDIGIT/new java.lang.String/0
+antlr.ANTLRLexer.mOPEN_ELEMENT_OPTION/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mSTUFF/new java.lang.String/0
+<java.text.MessageFormat: java.lang.String format(java.lang.String,java.lang.Object[])>/new java.text.MessageFormat/0
+antlr.preprocessor.PreprocessorLexer.mID/new java.lang.String/1
+antlr.actions.csharp.ActionLexer.mESC/new java.lang.String/0
+java.util.TreeMap.keyIterator/new java.util.TreeMap$KeyIterator/0
+antlr.actions.java.ActionLexer.mSTUFF/new java.lang.String/0
+antlr.ANTLRLexer.mRCURLY/new java.lang.String/0
+java.io.UnixFileSystem.list/new java.lang.String
+java.text.AttributedString$AttributeMap.entrySet/new java.util.HashSet/0
+antlr.actions.cpp.ActionLexer.mTEXT_ARG_ID_ELEMENT/new java.lang.String/0
+sun.security.util.SignatureFileVerifier.getSigners/new java.security.CodeSigner[]/0
+antlr.NameSpace.<init>/new java.lang.String/0
+antlr.ANTLRLexer.mRPAREN/new java.lang.String/0
+antlr.actions.java.ActionLexer.mTREE_ELEMENT/new java.lang.String/0
+java.lang.ClassLoader.<clinit>/new java.util.Stack/0
+antlr.actions.csharp.ActionLexer.mTEXT_ITEM/new java.lang.String/0
+sun.security.provider.PolicyFile.getCertificates/new java.security.cert.Certificate[]/0
+<java.net.Inet6Address$Inet6AddressHolder: void <init>(java.net.Inet6Address)>/new byte[]/0
+antlr.ANTLRStringBuffer.toString/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mRCURLY/new java.lang.String/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.Stack/0
+<java.util.TreeSet: void <init>()>/new java.util.TreeMap/0
+antlr.ANTLRTokdefLexer.mASSIGN/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mDIGIT/new java.lang.String/0
+antlr.ANTLRLexer.mESC/new java.lang.String/0
+antlr.ANTLRLexer.mCOMMENT/new java.lang.String/0
+sun.security.jca.ProviderConfig.doLoadProvider/new sun.security.jca.ProviderConfig$3/0
+java.lang.ConditionalSpecialCasing.<clinit>/new java.util.HashSet/0
+antlr.ANTLRTokdefLexer.mWS/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mVAR_ASSIGN/new java.lang.String/0
+java.lang.Package.loadManifest/new java.util.jar.JarInputStream/0
+antlr.ANTLRLexer.mINTERNAL_RULE_REF/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mACTION/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mTEXT_ARG_ELEMENT/new java.lang.String/0
+java.security.CodeSource.getCertificates/new java.security.cert.Certificate[]/0
+java.util.logging.LogManager.loadLoggerHandlers/new java.util.logging.LogManager$4/0
+sun.security.util.SignatureFileVerifier.updateSigners/new java.security.CodeSigner[]/0
+sun.security.provider.PolicyParser.match/new java.text.MessageFormat/0
+antlr.actions.cpp.ActionLexer.mTREE_ELEMENT/new java.lang.String/0
+antlr.ANTLRTokdefLexer.mSL_COMMENT/new java.lang.String/0
+sun.misc.Launcher$1.run/new java.util.HashSet/0
+sun.misc.Launcher$AppClassLoader$1.run/new sun.misc.Launcher$AppClassLoader/0
+<java.text.NumberFormat: java.text.NumberFormat getInstance(java.util.Locale,int)>/new java.text.DecimalFormat/0
+sun.util.calendar.ZoneInfoFile.createZoneInfo/new sun.util.calendar.ZoneInfo/0
+<java.util.Date: sun.util.calendar.BaseCalendar$Date normalize(sun.util.calendar.BaseCalendar$Date)>/new java.util.GregorianCalendar/0
+java.util.Collections$SynchronizedMap.values/new java.util.Collections$SynchronizedCollection/0
+sun.security.x509.X509CRLImpl.parse/new sun.security.x509.CRLExtensions/0
+<java.text.DecimalFormatSymbols: java.text.DecimalFormatSymbols getInstance(java.util.Locale)>/new java.text.DecimalFormatSymbols/0
+sun.security.util.DerOutputStream.putTime/new java.text.SimpleDateFormat/0
+<java.text.AttributedString: void <init>(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[])>/new java.util.HashSet/0
+java.text.SimpleDateFormat.formatToCharacterIterator/new java.util.Date/0
+antlr.actions.csharp.ActionLexer.mINT/new java.lang.String/0
+TreeParser
+java.net.InetAddress.getAddressFromNameService/new java.net.InetAddress[]/0
+antlr.actions.java.ActionLexer.mSL_COMMENT/new java.lang.String/0
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.LinkedList/0
+CodeGenerator
+antlr.actions.cpp.ActionLexer.mCOMMENT/new java.lang.String/0
+sun.misc.JarIndex.addToList/new java.util.LinkedList/0
+java.lang.System.setProperties/new java.util.Properties/0
+antlr.CppCodeGenerator.<init>/new java.util.HashSet/0
+<sun.misc.Service: java.util.Iterator providers(java.lang.Class,java.lang.ClassLoader)>/new sun.misc.Service$LazyIterator/0
+antlr.actions.java.ActionLexer.mTEXT_ITEM/new java.lang.String/0
+antlr.ANTLRLexer.mWS/new java.lang.String/0
+sun.util.calendar.ZoneInfoFile.getCustomTimeZone/new sun.util.calendar.ZoneInfo/0
+java.lang.String.concat/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mALT/new java.lang.String/0
+sun.util.calendar.LocalGregorianCalendar$1.run/new java.util.Properties/0
+<sun.security.jca.ProviderList: void <init>()>/new sun.security.jca.ProviderConfig/1
+<sun.security.jca.ProviderList: void <init>()>/new sun.security.jca.ProviderConfig/0
+antlr.actions.java.ActionLexer.mVAR_ASSIGN/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mCHAR/new java.lang.String/0
+java.util.logging.LogManager.reset/new java.util.Properties/0
+antlr.ANTLRTokdefLexer.mRPAREN/new java.lang.String/0
+java.lang.ref.Finalizer.<clinit>/new java.lang.ref.Finalizer$FinalizerThread/0
+java.util.Properties.loadConvert/new java.lang.String/0
+antlr.actions.java.ActionLexer.mAST_ITEM/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mCOMMENT/new java.lang.String/0
+antlr.actions.java.ActionLexer.mSTRING/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mAST_ITEM/new java.lang.String/0
+java.net.InetAddress$Cache.put/new java.util.LinkedList/0
+sun.security.provider.PolicyFile.addPermissions/new sun.security.provider.PolicyParser$PrincipalEntry/0
+sun.misc.Launcher$ExtClassLoader$1.run/new sun.misc.Launcher$ExtClassLoader/0
+antlr.actions.csharp.ActionLexer.mSTUFF/new java.lang.String/0
+java.util.zip.ZipInputStream.getUTF8String/new java.lang.String/0
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String)>/new java.text.MessageFormat/0
+antlr.actions.csharp.ActionLexer.mID_ELEMENT/new java.lang.String/0
+java.text.BreakIterator.createBreakInstance/new java.text.RuleBasedBreakIterator/0
+<java.io.BufferedReader: java.lang.String readLine(boolean)>/new java.lang.String/0
+antlr.ANTLRTokdefLexer.mESC/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mELEMENT/new java.lang.String/0
+antlr.collections.impl.BitSet.of/new antlr.collections.impl.BitSet/0
+java.util.ResourceBundle$CacheKey.<init>/new java.util.ResourceBundle$LoaderReference/0
+java.net.InetAddress.cacheInitIfNeeded/new java.net.InetAddress[]/0
+antlr.actions.csharp.ActionLexer.mTEXT_ARG_ID_ELEMENT/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mARG/new java.lang.String/0
+<sun.util.calendar.LocalGregorianCalendar: sun.util.calendar.LocalGregorianCalendar$Date newCalendarDate(java.util.TimeZone)>/new sun.util.calendar.LocalGregorianCalendar$Date/0
+antlr.ANTLRLexer.mCOMMA/new java.lang.String/0
+java.lang.StringBuilder.toString/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mAST_CTOR_ELEMENT/new java.lang.String/0
+<java.lang.String: java.lang.String copyValueOf(char[],int,int)>/new java.lang.String/0
+java.util.Calendar.createCalendar/new java.util.GregorianCalendar/0
+antlr.preprocessor.PreprocessorLexer.mESC/new java.lang.String/0
+antlr.ANTLRLexer.mNOT_OP/new java.lang.String/0
+sun.util.resources.LocaleData$LocaleDataResourceBundleControl.<clinit>/new sun.util.resources.LocaleData$LocaleDataResourceBundleControl/0
+<antlr.Lookahead: void <init>()>/new antlr.collections.impl.BitSet/0
+antlr.actions.csharp.ActionLexer.mTEXT_ARG/new java.lang.String/0
+java.util.jar.Attributes.read/new java.lang.String/2
+java.util.Calendar.getTime/new java.util.Date/0
+sun.util.LocaleServiceProviderPool.<init>/new sun.util.LocaleServiceProviderPool$1/0
+antlr.actions.cpp.ActionLexer.mTEXT_ARG/new java.lang.String/0
+sun.security.x509.X509CertInfo.parse/new sun.security.x509.CertificateExtensions/0
+java.io.PrintStream.ensureOpen/new java.io.IOException/0
+<java.lang.String: java.lang.String substring(int,int)>/new java.lang.String/0
+<java.util.ResourceBundle$RBClassLoader$1: java.util.ResourceBundle$RBClassLoader run()>/new java.util.ResourceBundle$RBClassLoader/0
+antlr.actions.java.ActionLexer.mTEXT_ARG/new java.lang.String/0
+<java.util.TimeZone: java.util.TimeZone getTimeZone(java.lang.String,boolean)>/new sun.util.calendar.ZoneInfo/0
+antlr.actions.java.ActionLexer.mCHAR/new java.lang.String/0
+antlr.ANTLRLexer.mCHAR_LITERAL/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mACTION/new java.lang.String/0
+sun.misc.ExtensionInfo.convertToken/new java.text.MessageFormat/0
+sun.security.provider.PolicyFile.addPermissions/new java.util.HashSet/0
+antlr.ANTLRLexer.mACTION/new java.lang.String/0
+<sun.util.calendar.Gregorian: sun.util.calendar.Gregorian$Date newCalendarDate(java.util.TimeZone)>/new sun.util.calendar.Gregorian$Date/0
+<java.text.DateFormatSymbols: java.text.DateFormatSymbols getInstance(java.util.Locale)>/new java.text.DateFormatSymbols/0
+antlr.ANTLRLexer.mRULE_REF/new java.lang.String/0
+<sun.security.pkcs.PKCS9Attribute: void <init>(sun.security.util.DerValue)>/new sun.security.x509.CertificateExtensions/0
+java.util.logging.LogManager$1.run/new java.util.logging.LogManager$RootLogger/0
+antlr.preprocessor.PreprocessorLexer.mCOMMA/new java.lang.String/0
+sun.security.util.DerInputBuffer.getTime/new java.util.Date/0
+sun.security.provider.PolicyParser.parseGrantEntry/new javax.security.auth.x500.X500Principal/0
+sun.security.provider.PolicyParser.parseGrantEntry/new javax.security.auth.x500.X500Principal/1
+antlr.ANTLRLexer.mCLOSE_ELEMENT_OPTION/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mAST_CONSTRUCTOR/new java.lang.String/0
+sun.security.provider.PolicyParser.read/new sun.security.provider.PolicyParser$ParsingException/0
+antlr.preprocessor.PreprocessorLexer.mSTRING_LITERAL/new java.lang.String/0
+java.util.Calendar.createCalendar/new sun.util.BuddhistCalendar/0
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.LinkedList/0
+antlr.actions.java.ActionLexer.mTEXT_ARG_ID_ELEMENT/new java.lang.String/0
+java.util.jar.Attributes.read/new java.lang.String/0
+<sun.net.www.ParseUtil: java.lang.String encodePath(java.lang.String,boolean)>/new java.lang.String/0
+antlr.ANTLRLexer.mLPAREN/new java.lang.String/0
+antlr.actions.java.ActionLexer.mDIGIT/new java.lang.String/0
+sun.security.provider.PolicyFile.addPermissions/new javax.security.auth.Subject/0
+antlr.actions.java.ActionLexer.mCOMMENT/new java.lang.String/0
+java.text.RuleBasedBreakIterator.setText/new java.text.RuleBasedBreakIterator$SafeCharIterator/0
+antlr.preprocessor.PreprocessorLexer.mML_COMMENT/new java.lang.String/0
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/1
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/0
+java.text.MessageFormat.subformat/new java.text.MessageFormat/0
+dacapo.Benchmark.<init>/new dacapo.TeePrintStream/1
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/1
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/0
+dacapo.Benchmark.<init>/new dacapo.TeePrintStream/0
+antlr.ANTLRTokdefLexer.mLPAREN/new java.lang.String/0
+java.security.Timestamp.<init>/new java.util.Date/0
+<java.lang.String: java.lang.String replace(char,char)>/new java.lang.String/0
+antlr.ANTLRLexer.mOR/new java.lang.String/0
+<sun.security.x509.X509CRLImpl: void <init>(sun.security.util.DerValue)>/new java.util.TreeMap/0
+java.util.logging.Logger.findSystemResourceBundle/new java.util.logging.Logger$1/0
+antlr.actions.csharp.ActionLexer.mTREE/new java.lang.String/0
+sun.security.pkcs.PKCS7.parseNetscapeCertChain/new java.security.cert.X509Certificate[]/0
+sun.text.normalizer.NormalizerImpl.<clinit>/new sun.text.normalizer.NormalizerImpl/0
+<java.net.URLClassLoader: void <init>(java.net.URL[],java.lang.ClassLoader,java.net.URLStreamHandlerFactory)>/new sun.misc.URLClassPath/0
+<java.text.DecimalFormat: void <init>(java.lang.String,java.text.DecimalFormatSymbols)>/new java.text.DigitList/0
+antlr.ANTLRLexer.mQUESTION/new java.lang.String/0
+sun.security.provider.PolicyFile.expandPermissionName/new java.text.MessageFormat/2
+java.util.TreeMap$EntrySet.iterator/new java.util.TreeMap$EntryIterator/0
+antlr.ANTLRLexer.mRANGE/new java.lang.String/0
+antlr.ANTLRLexer.mINT/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mARG_ACTION/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mDIGIT/new java.lang.String/0
+<<reflection-string-constant>>
+antlr.LexerGrammar.<init>/new antlr.collections.impl.BitSet/0
+antlr.actions.csharp.ActionLexer.mWS/new java.lang.String/0
+java.lang.ref.Reference.<clinit>/new java.lang.ref.Reference$ReferenceHandler/0
+antlr.ANTLRTokdefLexer.mSTRING/new java.lang.String/0
+<java.util.Currency: java.util.Currency getInstance(java.lang.String,int,int)>/new java.util.Currency/0
+sun.text.normalizer.UCharacterProperty.getInstance/new sun.text.normalizer.UCharacterProperty/0
+antlr.ANTLRLexer.mNESTED_ARG_ACTION/new java.lang.String/0
+antlr.actions.java.ActionLexer.mESC/new java.lang.String/0
+TokenTypes
+sun.security.provider.PolicyFile.getDN/new javax.security.auth.x500.X500Principal/0
+<<string-constant>>
+antlr.preprocessor.PreprocessorLexer.mRULE_BLOCK/new java.lang.String/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Stack/1
+antlr.DefineGrammarSymbols.endOptions/new antlr.SimpleTokenManager/0
+antlr.actions.cpp.ActionLexer.mCHAR/new java.lang.String/0
+<java.security.ProtectionDomain: void <init>(java.security.CodeSource,java.security.PermissionCollection,java.lang.ClassLoader,java.security.Principal[])>/new java.security.Principal[]/0
+antlr.ANTLRLexer.mNESTED_ACTION/new java.lang.String/0
+sun.security.pkcs.PKCS7.parseSignedData/new java.security.cert.X509Certificate[]/0
+sun.security.pkcs.PKCS7.parseOldSignedData/new java.security.cert.X509Certificate[]/0
+<sun.security.util.BitArray: void <init>(int,byte[])>/new byte[]/0
+Parser
+<sun.security.provider.PolicyFile: boolean init(java.net.URL,sun.security.provider.PolicyFile$PolicyInfo)>/new java.text.MessageFormat/0
+java.util.logging.LogManager.<clinit>/new java.util.logging.LogManager$1/0
+antlr.ANTLRTokdefLexer.mXDIGIT/new java.lang.String/0
+<sun.util.calendar.ZoneInfo: int getOffsets(long,int[],int)>/new java.util.Date/0
+sun.security.util.DerInputStream.init/new sun.security.util.DerInputBuffer/1
+antlr.ANTLRLexer.mCARET/new java.lang.String/0
+java.util.logging.LogManager$LoggerContext.addLocalLogger/new java.util.logging.LogManager$LoggerWeakRef/0
+java.security.Policy.getPolicyNoCheck/new sun.security.provider.PolicyFile/0
+java.math.RoundingMode.<clinit>/new java.math.RoundingMode[]/0
+java.util.TreeMap.values/new java.util.TreeMap$Values/0
+antlr.actions.cpp.ActionLexer.mML_COMMENT/new java.lang.String/0
+java.lang.System.initializeSystemClass/new java.util.Properties/0
+<sun.security.util.DerValue: sun.security.util.DerInputStream init(boolean,java.io.InputStream)>/new sun.security.util.DerInputBuffer/0
+sun.security.provider.PolicyFile$SelfPermission.<init>/new java.security.cert.Certificate[]/0
+sun.security.util.DerInputBuffer.toByteArray/new byte[]/0
+antlr.actions.csharp.ActionLexer.mSL_COMMENT/new java.lang.String/0
+<sun.security.util.DerOutputStream: void putOrderedSet(byte,sun.security.util.DerEncoder[],java.util.Comparator)>/new byte[][]/0
+antlr.preprocessor.PreprocessorLexer.mXDIGIT/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mTEXT_ITEM/new java.lang.String/0
+java.lang.Character.toUpperCaseEx/new java.lang.AssertionError/0
+antlr.ANTLRTokdefLexer.mDIGIT/new java.lang.String/0
+sun.security.jca.ProviderList.getJarList/new sun.security.jca.ProviderConfig/0
+sun.security.pkcs.PKCS9Attribute.<clinit>/new java.lang.ExceptionInInitializerError/0
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/1
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/0
+java.util.logging.Logger.doSetParent/new java.util.logging.LogManager$LoggerWeakRef/0
+sun.security.provider.PolicyFile.addGrantEntry/new java.text.MessageFormat/2
+sun.util.calendar.ZoneInfo.getLastRuleInstance/new java.util.SimpleTimeZone/0
+antlr.ANTLRLexer.mASSIGN/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mWS/new java.lang.String/0
+antlr.actions.java.ActionLexer.mARG/new java.lang.String/0
+CharScanner
+antlr.actions.csharp.ActionLexer.mAST_CTOR_ELEMENT/new java.lang.String/0
+sun.security.jca.ProviderConfig.getLock/new sun.security.jca.ProviderConfig$1/0
+antlr.actions.java.ActionLexer.mTEXT_ARG_ELEMENT/new java.lang.String/0
+antlr.JavaCodeGenerator.<init>/new java.util.HashSet/0
+antlr.actions.cpp.ActionLexer.mINT/new java.lang.String/0
+antlr.ANTLRLexer.mPLUS/new java.lang.String/0
+antlr.ANTLRLexer.mWS_LOOP/new java.lang.String/0
+<antlr.LLkAnalyzer: antlr.Lookahead look(int,antlr.WildcardElement)>/new antlr.collections.impl.BitSet/0
+antlr.ANTLRLexer.mBANG/new java.lang.String/0
+<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>/new java.lang.String/0
+antlr.actions.cpp.ActionLexer.mVAR_ASSIGN/new java.lang.String/0
+<sun.security.jca.ProviderList: void <init>()>/new sun.security.jca.ProviderList$3/0
+antlr.preprocessor.PreprocessorLexer.mCOMMENT/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mSEMI/new java.lang.String/0
+<sun.security.jca.ProviderList: void <init>(sun.security.jca.ProviderConfig[],boolean)>/new sun.security.jca.ProviderList$3/0
+java.lang.Runtime.<clinit>/new java.lang.Runtime/0
+java.util.TreeSet.clone/new java.util.TreeMap/0
+<java.lang.String: java.lang.String valueOf(char)>/new java.lang.String/0
+java.lang.ClassLoader.checkPackageAccess/new java.security.ProtectionDomain[]/0
+<java.net.URL: void <init>(java.lang.String,java.lang.String,int,java.lang.String,java.net.URLStreamHandler)>/new java.net.MalformedURLException/0
+java.util.logging.LogManager$1.run/new java.util.logging.LogManager/0
+antlr.ANTLRLexer.mSEMI/new java.lang.String/0
+sun.misc.Launcher.<clinit>/new sun.misc.Launcher/0
+sun.security.provider.PolicyFile.addGrantEntry/new sun.security.provider.PolicyFile$SelfPermission/0
+java.util.regex.Pattern.family/new java.lang.String/1
+java.util.regex.Pattern.family/new java.lang.String/0
+java.util.Calendar.createCalendar/new java.util.JapaneseImperialCalendar/0
+sun.security.jca.Providers.<clinit>/new java.lang.InheritableThreadLocal/0
+sun.security.provider.PolicyParser.parseGrantEntry/new sun.security.provider.PolicyParser$PrincipalEntry/0
+sun.security.util.DerInputStream.init/new sun.security.util.DerInputBuffer/0
+antlr.ANTLRLexer.mTREE_BEGIN/new java.lang.String/0
+java.security.SecureClassLoader.getProtectionDomain/new java.security.ProtectionDomain/0
+antlr.ANTLRLexer.mIMPLIES/new java.lang.String/0
+java.text.SimpleDateFormat.initializeDefaultCentury/new java.util.Date/0
+antlr.actions.csharp.ActionLexer.mINT_OR_FLOAT/new java.lang.String/0
+sun.text.normalizer.UnicodeSet.ensureBufferCapacity/new int[]/0
+java.text.MessageFormat.makeFormat/new java.text.SimpleDateFormat/1
+java.text.MessageFormat.makeFormat/new java.text.SimpleDateFormat/0
+antlr.preprocessor.PreprocessorLexer.mACTION/new java.lang.String/0
+<sun.text.normalizer.UnicodeSet: void <init>()>/new int[]/0
+<sun.security.util.DerInputBuffer: byte[] getBitString(int)>/new byte[]/0
+antlr.actions.cpp.ActionLexer.mESC/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mID_OR_KEYWORD/new java.lang.String/0
+antlr.ANTLRLexer.mCOLON/new java.lang.String/0
+antlr.ANTLRLexer.mSTRING_LITERAL/new java.lang.String/0
+antlr.actions.java.ActionLexer.mWS/new java.lang.String/0
+java.text.DateFormat.get/new java.text.SimpleDateFormat/1
+java.text.DateFormat.get/new java.text.SimpleDateFormat/0
+antlr.ANTLRLexer.mSL_COMMENT/new java.lang.String/0
+sun.security.util.DerValue.getIA5String/new java.lang.String/0
+antlr.actions.csharp.ActionLexer.mTREE_ELEMENT/new java.lang.String/0
+antlr.ANTLRLexer.mXDIGIT/new java.lang.String/0
+antlr.actions.java.ActionLexer.mTREE/new java.lang.String/0
+antlr.ANTLRLexer.mSTAR/new java.lang.String/0
+antlr.ANTLRLexer.mARG_ACTION/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mASSIGN_RHS/new java.lang.String/0
+sun.security.provider.PolicyFile.getSignerCertificates/new java.security.cert.Certificate[]/0
+<sun.security.util.DerValue: sun.security.util.DerInputStream init(byte,java.lang.String)>/new sun.security.util.DerInputBuffer/0
+<java.security.SignatureSpi: void engineUpdate(java.nio.ByteBuffer)>/new java.security.ProviderException/0
+java.util.ResourceBundle$Control.<clinit>/new java.util.ResourceBundle$Control/0
+antlr.actions.csharp.ActionLexer.mAST_ITEM/new java.lang.String/0
+sun.security.x509.X509CertInfo.parse/new sun.security.x509.CertificateX509Key/0
+java.lang.Class.getEnclosingMethod/new java.lang.InternalError/0
+antlr.ANTLRTokdefLexer.mID/new java.lang.String/0
+antlr.ANTLRTokdefLexer.mML_COMMENT/new java.lang.String/0
+<java.lang.Object: void wait(long,int)>/new java.lang.IllegalArgumentException/0
+sun.security.provider.PolicyFile.checkForTrustedIdentity/new java.security.cert.Certificate[]/0
+java.security.Policy.getPolicyNoCheck/new java.security.Policy$2/0
+sun.text.normalizer.UnicodeSet.ensureCapacity/new int[]/0
+<java.util.Arrays: byte[] copyOf(byte[],int)>/new byte[]/0
+<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>/new java.lang.String/0
+java.lang.StringBuffer.toString/new java.lang.String/0
+<sun.security.pkcs.PKCS7: void <init>(byte[])>/new sun.security.pkcs.ParsingException/0
+antlr.actions.java.ActionLexer.mML_COMMENT/new java.lang.String/0
+java.security.ProtectionDomain$2$1.<init>/new java.util.WeakHashMap/0
+sun.security.util.DerInputStream.readVector/new sun.security.util.DerInputBuffer/0
+antlr.actions.java.ActionLexer.mID/new java.lang.String/0
+antlr.preprocessor.PreprocessorLexer.mCHAR_LITERAL/new java.lang.String/0
+antlr.CommonToken
+<sun.security.util.DerValue: void <init>(byte,byte[])>/new sun.security.util.DerInputBuffer/0
+antlr.actions.cpp.ActionLexer.mID/new java.lang.String/0
+<sun.security.provider.PolicyFile: boolean init(java.net.URL,sun.security.provider.PolicyFile$PolicyInfo)>/new sun.security.provider.PolicyParser/0
+<sun.security.util.DerValue: void <init>(sun.security.util.DerInputBuffer)>/new sun.security.util.DerInputBuffer/0
+<sun.text.normalizer.UnicodeSet: void applyPattern(sun.text.normalizer.RuleCharacterIterator,sun.text.normalizer.SymbolTable,java.lang.StringBuffer,int)>/new sun.text.normalizer.UnicodeSet/0

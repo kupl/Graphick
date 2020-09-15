@@ -1,0 +1,89 @@
+D2(?meth)<-
+  string:like(?meth,"%java%"),//0
+  string:notlike(?meth,"%sun%"),//5
+  string:like(?meth,"%util%"),//14
+  string:notlike(?meth,"%String%"),//17
+  string:notlike(?meth,"%security%"),//11
+  !NopStmtInMeth(?meth),//43
+  !RetStmtInMeth(?meth),//45
+  !LookupStmtInMeth(?meth),//41
+  !GotoStmtInMeth(?meth),//37
+  !IfStmtInMeth(?meth),//39
+  !ReturnVoidStmtInMeth(?meth),//47
+  !TableSwitchStmtInMeth(?meth),//49
+  !ExitMonitorStmtInMeth(?meth),//35
+  !EnterMonitorStmtInMeth(?meth),//33
+  !BreakpointStmtInMeth(?meth),//31
+  MethodSignatureRef(?meth).
+//  MethodSignatureRef(?sig),
+//  MethodDeclaration[?sig] = ?meth.
+
+D1(?meth)<-
+  string:like(?meth,"%java%"),//0
+  string:like(?meth,"%lang%"),//2
+  string:notlike(?meth,"%sun%"),//5
+  string:notlike(?meth,"%security%"),//11
+  string:notlike(?meth,"%int%"),//13
+  string:notlike(?meth,"%util%"),//15
+  string:notlike(?meth,"%String%"),//17
+  !NopStmtInMeth(?meth),//43
+  !RetStmtInMeth(?meth),//45
+  !LookupStmtInMeth(?meth),//41
+  !GotoStmtInMeth(?meth),//37
+  !IfStmtInMeth(?meth),//39
+  !ReturnVoidStmtInMeth(?meth),//47
+  !TableSwitchStmtInMeth(?meth),//49
+  !ExitMonitorStmtInMeth(?meth),//35
+  !EnterMonitorStmtInMeth(?meth),//33
+  !BreakpointStmtInMeth(?meth),//31
+  MethodSignatureRef(?meth).
+//  MethodSignatureRef(?sig),
+//  MethodDeclaration[?sig] = ?meth.
+
+D1(?meth)<-
+  string:notlike(?meth,"%java%"),//1
+  string:notlike(?meth,"%lang%"),//3
+  string:like(?meth,"%util%"),//14
+  string:like(?meth,"%void%"),//8
+  string:notlike(?meth,"%String%"),//17
+  AssignStmtInMeth(?meth),//20
+  IdentityStmtInMeth(?meth),//22
+  !ReturnStmtInMeth(?meth),//27
+  !ThrowStmtInMeth(?meth),//29
+  !NopStmtInMeth(?meth),//43
+  !RetStmtInMeth(?meth),//45
+  !LookupStmtInMeth(?meth),//41
+  !GotoStmtInMeth(?meth),//37
+  !IfStmtInMeth(?meth),//39
+  !ReturnVoidStmtInMeth(?meth),//47
+  !TableSwitchStmtInMeth(?meth),//49
+  !ExitMonitorStmtInMeth(?meth),//35
+  !EnterMonitorStmtInMeth(?meth),//33
+  !BreakpointStmtInMeth(?meth),//31
+  MethodSignatureRef(?meth).
+//  MethodSignatureRef(?sig),
+//  MethodDeclaration[?sig] = ?meth.
+
+D1(?meth)<-
+  string:notlike(?meth,"%sun%"),//5
+  string:notlike(?meth,"%()%"),//7
+  string:notlike(?meth,"%int%"),//13
+  string:notlike(?meth,"%util%"),//15
+  string:notlike(?meth,"%String%"),//17
+  string:like(?meth,"%init%"),//18
+  AssignStmtInMeth(?meth),//20
+  IdentityStmtInMeth(?meth),//22
+  !NopStmtInMeth(?meth),//43
+  !RetStmtInMeth(?meth),//45
+  !LookupStmtInMeth(?meth),//41
+  !GotoStmtInMeth(?meth),//37
+  !IfStmtInMeth(?meth),//39
+  !ReturnVoidStmtInMeth(?meth),//47
+  !TableSwitchStmtInMeth(?meth),//49
+  !ExitMonitorStmtInMeth(?meth),//35
+  !EnterMonitorStmtInMeth(?meth),//33
+  !BreakpointStmtInMeth(?meth),//31
+  MethodSignatureRef(?meth).
+//  MethodSignatureRef(?sig),
+//  MethodDeclaration[?sig] = ?meth.
+

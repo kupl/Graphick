@@ -1,0 +1,12 @@
+#ifdef HEAP_ABSTRACTION
+HeapAllocation:Merge[?heap] = ?mergedHeap <-
+  ObjectToBeMerged(?heap),
+  HeapAbstraction[?heap] = ?mergedHeap.
+
+ObjectToBeMerged(?heap) <-
+  HeapAbstraction[?heap] = ?mergedHeap,
+  NumberOfObjectsMergedTo[?mergedHeap] > 1.
+  
+NumberOfObjectsMergedTo[?mergedHeap] = n <-
+  agg<<n = count()>> HeapAbstraction[_] = ?mergedHeap.
+#endif

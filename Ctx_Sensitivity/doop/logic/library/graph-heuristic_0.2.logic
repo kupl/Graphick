@@ -1,0 +1,264 @@
+
+Invocation:In[?invocation] = ?inmethod <-
+  SpecialMethodInvocation:In(?invocation, ?inmethod).
+
+Invocation:In[?invocation] = ?inmethod <-
+  VirtualMethodInvocation:In(?invocation, ?inmethod).
+
+Invocation:In[?invocation] = ?inmethod <-
+  StaticMethodInvocation:In(?invocation, ?inmethod).
+
+StaticMethod(?meth)<-
+  StaticMethodInvocation:Signature[_] = ?meth.
+
+
+StaticToStatic(?inmeth, ?tometh)<-
+  StaticMethod(?inmeth),
+  StaticMethodInvocation:Signature[?invo] = ?tometh,
+  StaticMethodInvocation:In(?invo, ?inmeth).
+
+NonStaticToStatic(?fromMethod,?tomethod)<-
+  !StaticMethod(?fromMethod),
+  StaticMethodInvocation:In(?invocation, ?fromMethod),
+  StaticMethodInvocation:Signature[?invocation] = ?tomethod.
+
+
+NonStaticToStatic(?fromMethod,?tomethod2) <-
+  StaticToStatic(?tomethod,?tomethod2),
+  NonStaticToStatic(?fromMethod,?tomethod).
+
+
+OAG(?fromHeap,?toHeap) <-
+  Stats:Simple:InsensVarPointsTo(?fromHeap, ?var),
+  NonStaticToStatic(?fromMethod,?inmethod),
+  StaticMethod(?inmethod),
+  ThisVar[?fromMethod] = ?var,
+  AssignHeapAllocation(?toHeap, _, ?inmethod).
+
+
+OAG(?fromHeap,?toHeap) <-
+  Stats:Simple:InsensVarPointsTo(?fromHeap, ?var),
+  !StaticMethod(?inmethod),
+  ThisVar[?inmethod] = ?var,
+  AssignHeapAllocation(?toHeap, _, ?inmethod).
+
+
+OutgoingOAGEdges[?fromHeap] = ?n <-
+  agg<<?n = count()>> OAG(?fromHeap, _).  
+
+
+IncomingOAGEdges[?toHeap] = ?n <-
+  agg<<?n = count()>> OAG(_, ?toHeap).
+
+
+
+
+ReachableHeap(?heap) <-
+  Stats:Simple:InsensVarPointsTo(?heap, _).
+
+
+CandidateHeap2obj(?heap)->HeapAllocationRef(?heap).
+CandidateHeap2type(?heap)->HeapAllocationRef(?heap).
+CandidateHeap1type(?heap)->HeapAllocationRef(?heap).
+
+
+
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=23,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=52,IncomingOAGEdges[?heap1]<=60.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46,IncomingOAGEdges[?heap1]<=52.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=21,OutgoingOAGEdges[?heap0]<=25.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=7),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46,IncomingOAGEdges[?heap1]<=139,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=22,IncomingOAGEdges[?heap0]<=33,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=0).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=11,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=23,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=29),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=46.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=30,OutgoingOAGEdges[?heap0]<=77,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=22.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=76,OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=208,IncomingOAGEdges[?heap0]<=228.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=53,OutgoingOAGEdges[?heap1]<=61,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=5).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=117,OutgoingOAGEdges[?heap0]<=145,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=5,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OutgoingOAGEdges[?heap1]<=29,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=23.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=5,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=2,IncomingOAGEdges[?heap1]<=3,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=11,IncomingOAGEdges[?heap2]<=27.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=22,IncomingOAGEdges[?heap1]<=46,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=23.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=57,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=5,IncomingOAGEdges[?heap1]<=16.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=77,OutgoingOAGEdges[?heap0]<=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=25,OutgoingOAGEdges[?heap1]<=29,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=4,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=139),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=38.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46,IncomingOAGEdges[?heap1]<=52,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=57,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=8.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=53,OutgoingOAGEdges[?heap1]<=57,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=3).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=73,OutgoingOAGEdges[?heap0]<=77,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=5,OutgoingOAGEdges[?heap1]<=6,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=33,IncomingOAGEdges[?heap2]<=46.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=36,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=46,(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=14),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=36,OutgoingOAGEdges[?heap1]<=39,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=139),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=24.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=46),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=5),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=3,IncomingOAGEdges[?heap2]<=3.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=30,OutgoingOAGEdges[?heap1]<=77,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=8,IncomingOAGEdges[?heap1]<=11,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=3,IncomingOAGEdges[?heap2]<=5.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=5,IncomingOAGEdges[?heap0]<=11,OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=2).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=22,IncomingOAGEdges[?heap0]<=46,OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=5,OutgoingOAGEdges[?heap1]<=7.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=5,IncomingOAGEdges[?heap0]<=11,OutgoingOAGEdges[?heap0]>=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=2,IncomingOAGEdges[?heap0]<=3,OutgoingOAGEdges[?heap0]>=100,OutgoingOAGEdges[?heap0]<=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=139),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=117.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=4,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=14),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=29,OutgoingOAGEdges[?heap1]<=43,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=30.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=22,OutgoingOAGEdges[?heap2]>=8,OutgoingOAGEdges[?heap2]<=10.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=8),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=33.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=3,IncomingOAGEdges[?heap0]<=5,OutgoingOAGEdges[?heap0]>=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=171,IncomingOAGEdges[?heap0]<=203,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=5,OutgoingOAGEdges[?heap0]<=7,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=7),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=8,OutgoingOAGEdges[?heap0]<=10,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=2,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=60,IncomingOAGEdges[?heap2]<=76.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=7,OutgoingOAGEdges[?heap0]<=29,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=43,OutgoingOAGEdges[?heap1]<=61,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=3).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=7,OutgoingOAGEdges[?heap0]<=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=15,OutgoingOAGEdges[?heap1]<=17,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=100.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=10,OutgoingOAGEdges[?heap1]<=12,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=10,OutgoingOAGEdges[?heap2]<=12.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=7,OutgoingOAGEdges[?heap0]<=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=29,OutgoingOAGEdges[?heap1]<=61,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=10,OutgoingOAGEdges[?heap0]<=11,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=9,IncomingOAGEdges[?heap1]<=10.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=10,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=23,OutgoingOAGEdges[?heap0]>=61,OutgoingOAGEdges[?heap0]<=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OutgoingOAGEdges[?heap1]<=29,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=11),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=53,OutgoingOAGEdges[?heap0]<=55,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),OutgoingOAGEdges[?heap0]>=46,OutgoingOAGEdges[?heap0]<=48,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=49,OutgoingOAGEdges[?heap0]<=51,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=43,OutgoingOAGEdges[?heap0]<=46,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=4,OutgoingOAGEdges[?heap2]<=10.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=21,OutgoingOAGEdges[?heap1]<=29,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=46,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=61,OutgoingOAGEdges[?heap1]<=100,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=3).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=29),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=11),OutgoingOAGEdges[?heap1]>=73,OutgoingOAGEdges[?heap1]<=77,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=3).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=12,OutgoingOAGEdges[?heap1]<=12,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=16,OutgoingOAGEdges[?heap0]<=16,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=26,OutgoingOAGEdges[?heap0]<=26,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=2),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=8,OutgoingOAGEdges[?heap0]<=9,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=3,IncomingOAGEdges[?heap1]<=3,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=23,IncomingOAGEdges[?heap2]<=76.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=31,OutgoingOAGEdges[?heap0]<=63,OAG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=64,OutgoingOAGEdges[?heap0]<=69,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=10),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=5,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=17,OutgoingOAGEdges[?heap0]<=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=76,IncomingOAGEdges[?heap1]<=139.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=3,IncomingOAGEdges[?heap1]<=3,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=23.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=19,OutgoingOAGEdges[?heap0]<=20,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=100.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OutgoingOAGEdges[?heap0]<=77,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=4,OutgoingOAGEdges[?heap1]<=9,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=1,OutgoingOAGEdges[?heap2]<=3.
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=46),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=2,IncomingOAGEdges[?heap1]<=3.
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=69,OutgoingOAGEdges[?heap0]<=77,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=21,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=0).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=43,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=38,IncomingOAGEdges[?heap2]<=82.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),OutgoingOAGEdges[?heap0]>=4,OutgoingOAGEdges[?heap0]<=9,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=2),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+CandidateHeap2obj(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=64,OutgoingOAGEdges[?heap1]<=67,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2obj(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),OutgoingOAGEdges[?heap0]>=3,OutgoingOAGEdges[?heap0]<=4.
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=6,OutgoingOAGEdges[?heap0]<=6,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap2obj(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=21,OutgoingOAGEdges[?heap0]<=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=22),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=0).
+
+
+
+
+
+
+
+
+
+
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=60,IncomingOAGEdges[?heap1]<=76,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap2type(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=105,IncomingOAGEdges[?heap0]<=155.
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=171,IncomingOAGEdges[?heap1]<=228,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2type(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=84,IncomingOAGEdges[?heap0]<=91.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=60,IncomingOAGEdges[?heap0]<=76,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=29),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=3,OutgoingOAGEdges[?heap1]<=4,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=6.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=14),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=10,OutgoingOAGEdges[?heap1]<=11,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=8,IncomingOAGEdges[?heap2]<=11.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=1),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=11,OutgoingOAGEdges[?heap1]<=11,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=8.
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=36,OutgoingOAGEdges[?heap0]<=39,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=73,OutgoingOAGEdges[?heap1]<=75.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=10,OutgoingOAGEdges[?heap0]<=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=10,OutgoingOAGEdges[?heap1]<=10,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=46,IncomingOAGEdges[?heap0]<=76,OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=48,OutgoingOAGEdges[?heap0]<=51,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=17,OutgoingOAGEdges[?heap1]<=21,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=76,OutgoingOAGEdges[?heap0]>=12,OutgoingOAGEdges[?heap0]<=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=11),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=3,OutgoingOAGEdges[?heap0]<=7,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=12,OutgoingOAGEdges[?heap1]<=12,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=53,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=9,OutgoingOAGEdges[?heap1]<=9,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=11),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=43,OutgoingOAGEdges[?heap0]<=53,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=25,OutgoingOAGEdges[?heap1]<=29,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=61,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=46,OutgoingOAGEdges[?heap2]<=48.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=8,OutgoingOAGEdges[?heap0]<=9,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=36,OutgoingOAGEdges[?heap0]<=36,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=17,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=13,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap2type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=38,OutgoingOAGEdges[?heap0]<=38,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=61.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=101,OutgoingOAGEdges[?heap0]<=103,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=29,OutgoingOAGEdges[?heap1]<=61,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46),OutgoingOAGEdges[?heap2]>=7,OutgoingOAGEdges[?heap2]<=10.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=31,OutgoingOAGEdges[?heap0]<=31,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=11,IncomingOAGEdges[?heap2]<=16.
+CandidateHeap2type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=7,OutgoingOAGEdges[?heap0]<=10,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=14),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=61,OutgoingOAGEdges[?heap2]<=77.
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=101,OutgoingOAGEdges[?heap0]<=103,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=12,OutgoingOAGEdges[?heap1]<=12,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=29).
+CandidateHeap2type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=15,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46).
+CandidateHeap2type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OutgoingOAGEdges[?heap0]<=107,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=15,OutgoingOAGEdges[?heap1]<=15,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=11).
+
+
+
+
+
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=46,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=46.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=61.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=29.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=60,OAG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=2),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=14),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=29.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=2),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=29,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=9,IncomingOAGEdges[?heap1]<=11,OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=22),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=7),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=33.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=53,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=7),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=1),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=8,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=11.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=76,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=46.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=100,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=11,IncomingOAGEdges[?heap1]<=22,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=100.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OutgoingOAGEdges[?heap1]<=15,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=5).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=36,OutgoingOAGEdges[?heap2]<=43.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=171.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=14),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=11,IncomingOAGEdges[?heap1]<=11.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=171.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OutgoingOAGEdges[?heap0]<=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=9,OutgoingOAGEdges[?heap1]<=9,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=46,OutgoingOAGEdges[?heap2]>=61.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=43,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=7,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=17,OutgoingOAGEdges[?heap0]<=17,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=3,IncomingOAGEdges[?heap1]<=4.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=64,OutgoingOAGEdges[?heap0]<=69,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=10,OutgoingOAGEdges[?heap1]<=11,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=29.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=3,IncomingOAGEdges[?heap0]<=5,(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=61),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=29),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=29,OutgoingOAGEdges[?heap2]<=61.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=5),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=29,OutgoingOAGEdges[?heap2]<=43.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=10,OutgoingOAGEdges[?heap0]<=11,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=5,IncomingOAGEdges[?heap1]<=5.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=46.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=182,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=9,OutgoingOAGEdges[?heap1]<=10,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=5).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=46,OutgoingOAGEdges[?heap0]>=29,OutgoingOAGEdges[?heap0]<=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=36.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=61,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=3,OutgoingOAGEdges[?heap2]<=4.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=29,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=46.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),OutgoingOAGEdges[?heap0]>=18,OutgoingOAGEdges[?heap0]<=19,OAG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=21,OutgoingOAGEdges[?heap0]<=29,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=13,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=7),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=11.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=35,OutgoingOAGEdges[?heap0]<=36,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=36,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=1),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=8,OutgoingOAGEdges[?heap1]<=8,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,OutgoingOAGEdges[?heap2]>=61.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=6,OutgoingOAGEdges[?heap0]<=7,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=22,IncomingOAGEdges[?heap2]<=46.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=3,OutgoingOAGEdges[?heap0]<=7,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=7,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=46.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=17,OutgoingOAGEdges[?heap0]<=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=8,OutgoingOAGEdges[?heap1]<=9,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=11,IncomingOAGEdges[?heap2]<=22.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=8,OutgoingOAGEdges[?heap0]<=10,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=8,OutgoingOAGEdges[?heap1]<=8,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=46),OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=10,OutgoingOAGEdges[?heap1]<=12,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=2,IncomingOAGEdges[?heap2]<=3.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=78.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=13,IncomingOAGEdges[?heap2]<=16.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=10,OutgoingOAGEdges[?heap0]<=10,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=5),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=46),OutgoingOAGEdges[?heap0]>=100,OutgoingOAGEdges[?heap0]<=107,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=3),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=1).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=19,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=56,OutgoingOAGEdges[?heap0]<=57,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=7,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=14,OutgoingOAGEdges[?heap1]<=14,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=5,IncomingOAGEdges[?heap2]<=11.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OutgoingOAGEdges[?heap0]<=21,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=1),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46).
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=17,OutgoingOAGEdges[?heap0]<=18,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=3,OutgoingOAGEdges[?heap1]<=3,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=11,IncomingOAGEdges[?heap2]<=22.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=14,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=46.
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=14),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=33,IncomingOAGEdges[?heap1]<=46,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61),OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=22).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=61,OutgoingOAGEdges[?heap1]<=77,OAG(?heap1,?heap2),ReachableHeap(?heap2),IncomingOAGEdges[?heap2]>=6,IncomingOAGEdges[?heap2]<=7.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=100,OutgoingOAGEdges[?heap2]<=117.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2),OutgoingOAGEdges[?heap2]>=36.
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=112,OutgoingOAGEdges[?heap0]<=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=21,OutgoingOAGEdges[?heap1]<=23,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=15,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=76,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=17,OutgoingOAGEdges[?heap0]<=17,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=11,IncomingOAGEdges[?heap1]<=22,(!OutgoingOAGEdges[?heap1]=_;OutgoingOAGEdges[?heap1]<=61).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=3),OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=15,IncomingOAGEdges[?heap1]<=15.
+CandidateHeap1type(?heap1)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=48,OutgoingOAGEdges[?heap0]<=51,OAG(?heap0,?heap1),ReachableHeap(?heap1),OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=5,OutgoingOAGEdges[?heap0]<=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=5).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),IncomingOAGEdges[?heap0]>=5,OAG(?heap0,?heap1),ReachableHeap(?heap1),IncomingOAGEdges[?heap1]>=76,OAG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap1type(?heap0)<-ReachableHeap(?heap0),(!IncomingOAGEdges[?heap0]=_;IncomingOAGEdges[?heap0]<=0),(!OutgoingOAGEdges[?heap0]=_;OutgoingOAGEdges[?heap0]<=0).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=117,OutgoingOAGEdges[?heap0]<=182,OAG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingOAGEdges[?heap1]>=43,OutgoingOAGEdges[?heap1]<=53,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingOAGEdges[?heap2]=_;IncomingOAGEdges[?heap2]<=46),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+CandidateHeap1type(?heap2)<-ReachableHeap(?heap0),OutgoingOAGEdges[?heap0]>=100,OutgoingOAGEdges[?heap0]<=117,OAG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingOAGEdges[?heap1]=_;IncomingOAGEdges[?heap1]<=46),OutgoingOAGEdges[?heap1]>=39,OutgoingOAGEdges[?heap1]<=43,OAG(?heap1,?heap2),ReachableHeap(?heap2),(!OutgoingOAGEdges[?heap2]=_;OutgoingOAGEdges[?heap2]<=61).
+

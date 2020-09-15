@@ -1,0 +1,1384 @@
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,626
+    #call graph edges                    51,043
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      375
+    #poly call sites                     817
+    #call graph edges                    34,192
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,133
+    #call graph edges                    44,016
+    #may-fail casts                      1,922
+    #poly call sites                     2,756
+    #call graph edges                    79,892
+    #may-fail casts                      1,022
+    #poly call sites                     2,168
+    #call graph edges                    65,943
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      535
+    #poly call sites                     1,591
+    #call graph edges                    45,950
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,116
+    #call graph edges                    36,237
+    #may-fail casts                      2,276
+    #poly call sites                     4,961
+    #call graph edges                    94,625
+    #may-fail casts                      1,226
+    #poly call sites                     4,139
+    #call graph edges                    79,370
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,671
+    #poly call sites                     3,534
+    #call graph edges                    86,985
+    #may-fail casts                      413
+    #poly call sites                     925
+    #call graph edges                    33,392
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,626
+    #call graph edges                    51,043
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      375
+    #poly call sites                     817
+    #call graph edges                    34,192
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,626
+    #call graph edges                    51,043
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      375
+    #poly call sites                     817
+    #call graph edges                    34,192
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,133
+    #call graph edges                    44,016
+    #may-fail casts                      1,922
+    #poly call sites                     2,756
+    #call graph edges                    79,892
+    #may-fail casts                      1,022
+    #poly call sites                     2,168
+    #call graph edges                    65,943
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      535
+    #poly call sites                     1,591
+    #call graph edges                    45,950
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,116
+    #call graph edges                    36,237
+    #may-fail casts                      2,276
+    #poly call sites                     4,961
+    #call graph edges                    94,625
+    #may-fail casts                      463
+    #poly call sites                     1,626
+    #call graph edges                    51,043
+    #may-fail casts                      375
+    #poly call sites                     817
+    #call graph edges                    34,192
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      871
+    #poly call sites                     1,133
+    #call graph edges                    44,016
+    #may-fail casts                      1,022
+    #poly call sites                     2,168
+    #call graph edges                    65,943
+    #may-fail casts                      535
+    #poly call sites                     1,591
+    #call graph edges                    45,950
+    #may-fail casts                      372
+    #poly call sites                     1,116
+    #call graph edges                    36,237
+    #may-fail casts                      1,226
+    #poly call sites                     4,139
+    #call graph edges                    79,370
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,671
+    #poly call sites                     3,534
+    #call graph edges                    86,985
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      374
+    #poly call sites                     923
+    #call graph edges                    33,421
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      374
+    #poly call sites                     923
+    #call graph edges                    33,421
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      371
+    #poly call sites                     923
+    #call graph edges                    33,393
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      372
+    #poly call sites                     923
+    #call graph edges                    33,421
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      374
+    #poly call sites                     923
+    #call graph edges                    33,421
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      388
+    #poly call sites                     1,121
+    #call graph edges                    36,293
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      391
+    #poly call sites                     822
+    #call graph edges                    34,248
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      478
+    #poly call sites                     1,631
+    #call graph edges                    51,071
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      886
+    #poly call sites                     1,138
+    #call graph edges                    44,077
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      548
+    #poly call sites                     1,596
+    #call graph edges                    46,014
+    #may-fail casts                      2,568
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    #may-fail casts                      2,092
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      2,568
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    #may-fail casts                      2,092
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,127
+    #call graph edges                    36,298
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,630
+    #call graph edges                    51,058
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,142
+    #call graph edges                    44,094
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      376
+    #poly call sites                     830
+    #call graph edges                    34,259
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      539
+    #poly call sites                     1,601
+    #call graph edges                    46,026
+    #may-fail casts                      2,092
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    #may-fail casts                      1,247
+    #poly call sites                     1,593
+    #call graph edges                    56,535
+    #may-fail casts                      2,568
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    #may-fail casts                      1,331
+    #poly call sites                     2,078
+    #call graph edges                    72,746
+    #may-fail casts                      1,922
+    #poly call sites                     2,756
+    #call graph edges                    79,892
+    #may-fail casts                      1,085
+    #poly call sites                     2,202
+    #call graph edges                    66,321
+    #may-fail casts                      2,276
+    #poly call sites                     4,961
+    #call graph edges                    94,625
+    #may-fail casts                      1,300
+    #poly call sites                     4,211
+    #call graph edges                    79,864
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,774
+    #poly call sites                     3,576
+    #call graph edges                    87,459
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      413
+    #poly call sites                     922
+    #call graph edges                    33,383
+    #may-fail casts                      413
+    #poly call sites                     922
+    #call graph edges                    33,383
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     933
+    #call graph edges                    33,444
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,132
+    #call graph edges                    36,316
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,633
+    #call graph edges                    51,073
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,146
+    #call graph edges                    44,103
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,900
+    #poly call sites                     3,573
+    #call graph edges                    87,756
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     933
+    #call graph edges                    33,470
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,132
+    #call graph edges                    36,317
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,642
+    #call graph edges                    51,126
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,146
+    #call graph edges                    44,105
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,791
+    #poly call sites                     3,577
+    #call graph edges                    87,709
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     934
+    #call graph edges                    33,444
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,132
+    #call graph edges                    36,316
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,641
+    #call graph edges                    51,116
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,146
+    #call graph edges                    44,105
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      2,161
+    #poly call sites                     3,604
+    #call graph edges                    88,658
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     915
+    #call graph edges                    33,362
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,113
+    #call graph edges                    36,234
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,623
+    #call graph edges                    51,042
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,130
+    #call graph edges                    44,006
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,752
+    #poly call sites                     3,553
+    #call graph edges                    87,206
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,127
+    #call graph edges                    36,298
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,630
+    #call graph edges                    51,058
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,142
+    #call graph edges                    44,094
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,774
+    #poly call sites                     3,576
+    #call graph edges                    87,459
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     934
+    #call graph edges                    33,447
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,133
+    #call graph edges                    36,319
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,643
+    #call graph edges                    51,127
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,147
+    #call graph edges                    44,106
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,917
+    #poly call sites                     3,579
+    #call graph edges                    87,849
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     934
+    #call graph edges                    33,444
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,132
+    #call graph edges                    36,316
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,641
+    #call graph edges                    51,116
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,146
+    #call graph edges                    44,105
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      2,160
+    #poly call sites                     3,604
+    #call graph edges                    88,658
+    #may-fail casts                      526
+    #poly call sites                     824
+    #call graph edges                    32,167
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,116
+    #call graph edges                    36,237
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,626
+    #call graph edges                    51,043
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,133
+    #call graph edges                    44,022
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,680
+    #poly call sites                     3,537
+    #call graph edges                    87,008
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     915
+    #call graph edges                    33,356
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,623
+    #call graph edges                    51,035
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      3,470
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    #may-fail casts                      1,019
+    #poly call sites                     1,219
+    #call graph edges                    42,760
+    #may-fail casts                      1,019
+    #Application may-fail casts          2
+    #poly call sites                     1,219
+    #call graph edges                    42,760
+    #may-fail casts                      786
+    #Application may-fail casts          2
+    #poly call sites                     1,095
+    #call graph edges                    39,027
+    #may-fail casts                      486
+    #Application may-fail casts          2
+    #poly call sites                     868
+    #call graph edges                    35,363
+    #may-fail casts                      793
+    #Application may-fail casts          1
+    #poly call sites                     1,099
+    #call graph edges                    39,322
+    reachable casts                      1,507
+    #may-fail casts                      1,026
+    reachable application casts          2
+    #Application may-fail casts          1
+    #poly call sites                     1,223
+    #call graph edges                    43,055
+    reachable casts                      1,502
+    #may-fail casts                      1,019
+    reachable application casts          2
+    #Application may-fail casts          2
+    #poly call sites                     1,219
+    #call graph edges                    42,760
+    reachable casts                      1,502
+    #may-fail casts                      1,019
+    reachable application casts          2
+    #Application may-fail casts          2
+    #poly call sites                     1,219
+    #call graph edges                    42,759
+    reachable casts                      1,472
+    #may-fail casts                      784
+    reachable application casts          2
+    #Application may-fail casts          0
+    #poly call sites                     1,095
+    #call graph edges                    39,026
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,312
+    #may-fail casts                      358
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     934
+    #call graph edges                    33,446
+    reachable casts                      1,517
+    #may-fail casts                      1,039
+    reachable application casts          160
+    #Application may-fail casts          136
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    reachable casts                      1,411
+    #may-fail casts                      372
+    reachable application casts          149
+    #Application may-fail casts          21
+    #poly call sites                     1,133
+    #call graph edges                    36,318
+    reachable casts                      1,622
+    #may-fail casts                      1,131
+    reachable application casts          308
+    #Application may-fail casts          262
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    reachable casts                      1,525
+    #may-fail casts                      463
+    reachable application casts          307
+    #Application may-fail casts          119
+    #poly call sites                     1,642
+    #call graph edges                    51,126
+    reachable casts                      2,070
+    #may-fail casts                      1,566
+    reachable application casts          618
+    #Application may-fail casts          580
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    reachable casts                      1,969
+    #may-fail casts                      871
+    reachable application casts          613
+    #Application may-fail casts          436
+    #poly call sites                     1,146
+    #call graph edges                    44,105
+    reachable casts                      4,333
+    #may-fail casts                      3,470
+    reachable application casts          1,644
+    #Application may-fail casts          1,537
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    reachable casts                      4,216
+    #may-fail casts                      2,253
+    reachable application casts          1,630
+    #Application may-fail casts          904
+    #poly call sites                     3,620
+    #call graph edges                    89,147
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,395
+    #may-fail casts                      795
+    reachable application casts          96
+    #Application may-fail casts          61
+    #poly call sites                     1,128
+    #call graph edges                    37,898
+    reachable casts                      1,517
+    #may-fail casts                      1,039
+    reachable application casts          160
+    #Application may-fail casts          136
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    reachable casts                      1,503
+    #may-fail casts                      884
+    reachable application casts          160
+    #Application may-fail casts          122
+    #poly call sites                     1,331
+    #call graph edges                    41,211
+    reachable casts                      1,622
+    #may-fail casts                      1,131
+    reachable application casts          308
+    #Application may-fail casts          262
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    reachable casts                      1,608
+    #may-fail casts                      1,002
+    reachable application casts          308
+    #Application may-fail casts          269
+    #poly call sites                     1,836
+    #call graph edges                    55,745
+    reachable casts                      2,070
+    #may-fail casts                      1,566
+    reachable application casts          618
+    #Application may-fail casts          580
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    reachable casts                      2,054
+    #may-fail casts                      1,418
+    reachable application casts          618
+    #Application may-fail casts          571
+    #poly call sites                     1,388
+    #call graph edges                    50,365
+    reachable casts                      1,392
+    #may-fail casts                      923
+    reachable application casts          46
+    #Application may-fail casts          33
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    reachable casts                      1,376
+    #may-fail casts                      779
+    reachable application casts          46
+    #Application may-fail casts          30
+    #poly call sites                     1,034
+    #call graph edges                    38,629
+    reachable casts                      1,878
+    #may-fail casts                      1,266
+    reachable application casts          482
+    #Application may-fail casts          343
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    reachable casts                      1,868
+    #may-fail casts                      1,093
+    reachable application casts          482
+    #Application may-fail casts          314
+    #poly call sites                     1,876
+    #call graph edges                    51,761
+    reachable casts                      2,675
+    #may-fail casts                      2,092
+    reachable application casts          1,346
+    #Application may-fail casts          1,219
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    reachable casts                      2,659
+    #may-fail casts                      1,926
+    reachable application casts          1,346
+    #Application may-fail casts          1,185
+    #poly call sites                     1,793
+    #call graph edges                    64,220
+    reachable casts                      3,503
+    #may-fail casts                      2,568
+    reachable application casts          232
+    #Application may-fail casts          196
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    reachable casts                      3,415
+    #may-fail casts                      2,299
+    reachable application casts          232
+    #Application may-fail casts          189
+    #poly call sites                     2,363
+    #call graph edges                    82,952
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,395
+    #may-fail casts                      795
+    reachable application casts          96
+    #Application may-fail casts          61
+    #poly call sites                     1,128
+    #call graph edges                    37,898
+    reachable casts                      1,517
+    #may-fail casts                      1,039
+    reachable application casts          160
+    #Application may-fail casts          136
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    reachable casts                      1,503
+    #may-fail casts                      884
+    reachable application casts          160
+    #Application may-fail casts          122
+    #poly call sites                     1,331
+    #call graph edges                    41,211
+    reachable casts                      1,622
+    #may-fail casts                      1,131
+    reachable application casts          308
+    #Application may-fail casts          262
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    reachable casts                      1,608
+    #may-fail casts                      1,002
+    reachable application casts          308
+    #Application may-fail casts          269
+    #poly call sites                     1,836
+    #call graph edges                    55,745
+    reachable casts                      2,070
+    #may-fail casts                      1,566
+    reachable application casts          618
+    #Application may-fail casts          580
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    reachable casts                      2,054
+    #may-fail casts                      1,418
+    reachable application casts          618
+    #Application may-fail casts          571
+    #poly call sites                     1,388
+    #call graph edges                    50,365
+    reachable casts                      1,392
+    #may-fail casts                      923
+    reachable application casts          46
+    #Application may-fail casts          33
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    reachable casts                      1,376
+    #may-fail casts                      779
+    reachable application casts          46
+    #Application may-fail casts          30
+    #poly call sites                     1,034
+    #call graph edges                    38,629
+    reachable casts                      1,878
+    #may-fail casts                      1,266
+    reachable application casts          482
+    #Application may-fail casts          343
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    reachable casts                      1,868
+    #may-fail casts                      1,093
+    reachable application casts          482
+    #Application may-fail casts          314
+    #poly call sites                     1,876
+    #call graph edges                    51,761
+    reachable casts                      2,675
+    #may-fail casts                      2,092
+    reachable application casts          1,346
+    #Application may-fail casts          1,219
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    reachable casts                      2,659
+    #may-fail casts                      1,926
+    reachable application casts          1,346
+    #Application may-fail casts          1,185
+    #poly call sites                     1,793
+    #call graph edges                    64,220
+    reachable casts                      3,503
+    #may-fail casts                      2,568
+    reachable application casts          232
+    #Application may-fail casts          196
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    reachable casts                      3,415
+    #may-fail casts                      2,299
+    reachable application casts          232
+    #Application may-fail casts          189
+    #poly call sites                     2,363
+    #call graph edges                    82,952
+    reachable casts                      2,742
+    #may-fail casts                      1,922
+    reachable application casts          336
+    #Application may-fail casts          272
+    #poly call sites                     2,756
+    #call graph edges                    79,892
+    reachable casts                      2,690
+    #may-fail casts                      1,749
+    reachable application casts          334
+    #Application may-fail casts          253
+    #poly call sites                     2,489
+    #call graph edges                    77,962
+    reachable casts                      3,302
+    #may-fail casts                      2,276
+    reachable application casts          262
+    #Application may-fail casts          239
+    #poly call sites                     4,961
+    #call graph edges                    94,625
+    reachable casts                      3,241
+    #may-fail casts                      2,007
+    reachable application casts          262
+    #Application may-fail casts          232
+    #poly call sites                     4,646
+    #call graph edges                    91,248
+    reachable casts                      4,333
+    #may-fail casts                      3,470
+    reachable application casts          1,644
+    #Application may-fail casts          1,537
+    #poly call sites                     4,495
+    #call graph edges                    106,236
+    reachable casts                      4,277
+    #may-fail casts                      3,089
+    reachable application casts          1,644
+    #Application may-fail casts          1,308
+    #poly call sites                     4,281
+    #call graph edges                    103,014
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,313
+    #may-fail casts                      374
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     923
+    #call graph edges                    33,421
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,313
+    #may-fail casts                      374
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     923
+    #call graph edges                    33,421
+    reachable casts                      1,517
+    #may-fail casts                      1,039
+    reachable application casts          160
+    #Application may-fail casts          136
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    reachable casts                      1,412
+    #may-fail casts                      388
+    reachable application casts          149
+    #Application may-fail casts          21
+    #poly call sites                     1,121
+    #call graph edges                    36,293
+    reachable casts                      1,622
+    #may-fail casts                      1,131
+    reachable application casts          308
+    #Application may-fail casts          262
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    reachable casts                      1,526
+    #may-fail casts                      478
+    reachable application casts          307
+    #Application may-fail casts          119
+    #poly call sites                     1,631
+    #call graph edges                    51,071
+    reachable casts                      2,070
+    #may-fail casts                      1,566
+    reachable application casts          618
+    #Application may-fail casts          580
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    reachable casts                      1,969
+    #may-fail casts                      886
+    reachable application casts          613
+    #Application may-fail casts          436
+    #poly call sites                     1,138
+    #call graph edges                    44,077
+    reachable casts                      1,392
+    #may-fail casts                      923
+    reachable application casts          46
+    #Application may-fail casts          33
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    reachable casts                      1,295
+    #may-fail casts                      391
+    reachable application casts          46
+    #Application may-fail casts          17
+    #poly call sites                     822
+    #call graph edges                    34,248
+    reachable casts                      1,878
+    #may-fail casts                      1,266
+    reachable application casts          482
+    #Application may-fail casts          343
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    reachable casts                      1,781
+    #may-fail casts                      548
+    reachable application casts          479
+    #Application may-fail casts          162
+    #poly call sites                     1,596
+    #call graph edges                    46,014
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,313
+    #may-fail casts                      374
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     923
+    #call graph edges                    33,421
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,312
+    #may-fail casts                      358
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     928
+    #call graph edges                    33,450
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,312
+    #may-fail casts                      358
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     928
+    #call graph edges                    33,450
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,312
+    #may-fail casts                      358
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     928
+    #call graph edges                    33,450
+    reachable casts                      1,409
+    #may-fail casts                      931
+    reachable application casts          96
+    #Application may-fail casts          62
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    reachable casts                      1,312
+    #may-fail casts                      358
+    reachable application casts          95
+    #Application may-fail casts          14
+    #poly call sites                     928
+    #call graph edges                    33,450
+    reachable casts                      1,517
+    #may-fail casts                      1,039
+    reachable application casts          160
+    #Application may-fail casts          136
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    reachable casts                      1,411
+    #may-fail casts                      372
+    reachable application casts          149
+    #Application may-fail casts          21
+    #poly call sites                     1,127
+    #call graph edges                    36,298
+    reachable casts                      2,070
+    #may-fail casts                      1,566
+    reachable application casts          618
+    #Application may-fail casts          580
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    reachable casts                      1,969
+    #may-fail casts                      871
+    reachable application casts          613
+    #Application may-fail casts          436
+    #poly call sites                     1,142
+    #call graph edges                    44,094
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,630
+    #call graph edges                    51,058
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      358
+    #poly call sites                     918
+    #call graph edges                    33,365
+    #may-fail casts                      1,083
+    #poly call sites                     1,276
+    #call graph edges                    45,310
+    #may-fail casts                      383
+    #poly call sites                     818
+    #call graph edges                    33,597
+    #may-fail casts                      887
+    #poly call sites                     1,168
+    #call graph edges                    38,031
+    #may-fail casts                      335
+    #poly call sites                     809
+    #call graph edges                    31,859
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      795
+    #poly call sites                     1,128
+    #call graph edges                    37,898
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      376
+    #poly call sites                     830
+    #call graph edges                    34,259
+    #may-fail casts                      1,131
+    #poly call sites                     1,980
+    #call graph edges                    57,241
+    #may-fail casts                      463
+    #poly call sites                     1,630
+    #call graph edges                    51,058
+    #may-fail casts                      923
+    #poly call sites                     1,199
+    #call graph edges                    40,268
+    #may-fail casts                      376
+    #poly call sites                     830
+    #call graph edges                    34,259
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      1,566
+    #poly call sites                     1,570
+    #call graph edges                    52,132
+    #may-fail casts                      871
+    #poly call sites                     1,142
+    #call graph edges                    44,094
+    #may-fail casts                      2,092
+    #poly call sites                     2,253
+    #call graph edges                    67,234
+    #may-fail casts                      1,247
+    #poly call sites                     1,593
+    #call graph edges                    56,535
+    #may-fail casts                      2,568
+    #poly call sites                     2,725
+    #call graph edges                    86,179
+    #may-fail casts                      1,331
+    #poly call sites                     2,078
+    #call graph edges                    72,746
+    #may-fail casts                      1,266
+    #poly call sites                     2,036
+    #call graph edges                    53,199
+    #may-fail casts                      539
+    #poly call sites                     1,601
+    #call graph edges                    46,026
+    #may-fail casts                      1,039
+    #poly call sites                     1,498
+    #call graph edges                    42,897
+    #may-fail casts                      372
+    #poly call sites                     1,127
+    #call graph edges                    36,298
+    #may-fail casts                      2,276
+    #poly call sites                     4,961
+    #call graph edges                    94,625
+    #may-fail casts                      1,300
+    #poly call sites                     4,211
+    #call graph edges                    79,864
+    #may-fail casts                      1,922
+    #poly call sites                     2,756
+    #call graph edges                    79,892
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      795
+    #poly call sites                     1,128
+    #call graph edges                    37,898
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      16,756
+    #poly call sites                     16,403
+    #call graph edges                    417,145
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      358
+    #poly call sites                     928
+    #call graph edges                    33,450
+    #may-fail casts                      931
+    #poly call sites                     1,287
+    #call graph edges                    39,564
+    #may-fail casts                      795
+    #poly call sites                     1,128
+    #call graph edges                    37,898

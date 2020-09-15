@@ -1,0 +1,2412 @@
+/* Copyright (C) 1991-2016 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   Lesser General Public License for more details.
+
+   You should have received a copy of the GNU Lesser General Public
+   License along with the GNU C Library; if not, see
+   <http://www.gnu.org/licenses/>.  */
+/* This header is separate from features.h so that the compiler can
+   include it implicitly at the start of every compilation.  It must
+   not itself include <features.h> or any other header that includes
+   <features.h> because the implicit include comes before any feature
+   test macros that may be defined in a source file before it first
+   explicitly includes a system header.  GCC knows the name of this
+   header in order to preinclude it.  */
+/* glibc's intent is to support the IEC 559 math functionality, real
+   and complex.  If the GCC (4.9 and later) predefined macros
+   specifying compiler intent are available, use them to determine
+   whether the overall intent is to support these features; otherwise,
+   presume an older compiler has intent to support these features and
+   define these macros by default.  */
+/* wchar_t uses Unicode 8.0.0.  Version 8.0 of the Unicode Standard is
+   synchronized with ISO/IEC 10646:2014, plus Amendment 1 (published
+   2015-05-15).  */
+/* We do not support C11 <threads.h>.  */
+/**
+ * Context-sensitive pointer analysis with context of 1 object and a
+ * context-sensitive heap abstraction.
+ *
+ * @author Martin Bravenboer
+ * @author Yannis Smaragdakis
+ */
+/**
+ * Macros that fix the lack of ref-modes on subtypes in LB
+ */
+/**
+ * HeapAllocationRef cannot have a ref-mode, because it is a subtype
+ * of InstructionRef. To more or less hide this, we define a
+ * macro that uses the ref-mode (InstructionRef:Value) of the
+ * base type and checks if it is a HeapAllocationRef.
+ */
+/**
+ * Same for method invocations
+ */
+/*
+ * Similar for class type
+ */
+// For this analysis, every heap context recorded on allocation
+// corresponds to the calling context of the allocator method.
+// Subtle point: this may need to be created because even though it
+// exists as a Context it may not exist as an HContext.
+// For this analysis the context of a method call corresponds to the
+// identity of the receiver object. Again, this may trigger creation of
+// a new object.
+// For this analysis, static calls just keep the same context as the
+// caller. *Not* creating a new one, but pretending to, nonetheless,
+// so the engine doesn't barf.
+// MergeThreadStart, MergeStartup, and MergeFinalizerRegisterContext
+// have the same logic as plain Merge for this analysis.
+/**
+ * Generic context-sensitive pointer analysis
+ *
+ * @author Martin Bravenboer
+ * @author Yannis Smaragdakis
+ * @author George Kastrinis
+ */
+// There should be no need for this. It's a bad sign if there is.
+//lang:compiler:disableError:NEGATION_RECURSION[]=true.
+// Ignore verification of calculation in head
+lang:compiler:warning:SPECIFIC_STARRED_EDGE_IN_SAFETY_GRAPH_CYCLE[] = false.
+// This is a temporary hack. See near bottom for a proper definition of
+// these predicates. Unfortunately derived predicates don't seem to
+// be supported by the join optimizer currently.
+/**
+ * Heap allocation
+ */
+AssignNormalHeapAllocationSkolemOpt(?heap, ?ctx, ?var) ->
+  HeapAllocationRef(?heap), Context(?ctx), VarRef(?var).
+AssignNormalHeapAllocationSkolemOpt(?heap, ?ctx, ?var) <-
+  AssignNormalHeapAllocation(?heap, ?var, ?inmethod),
+  ReachableContext(?ctx, ?inmethod),
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?var) <-
+  AssignNormalHeapAllocationSkolemOpt(?heap, ?ctx, ?var).
+// There is scarcely any logical explanation, but breaking up the rule
+// as above results in faster execution!
+//RecordMacro(?ctx, ?heap, ?hctx),
+//VarPointsTo(?hctx, ?heap, ?ctx, ?var) <-
+//  AssignNormalHeapAllocation(?heap, ?var, ?inmethod),
+//  ReachableContext(?ctx, ?inmethod),
+//  ObjectShouldNotBeRefined(?heap).
+AssignAuxiliaryHeapAllocationSkolemOpt(?heap, ?ctx, ?var) ->
+  HeapAllocationRef(?heap), Context(?ctx), VarRef(?var).
+AssignAuxiliaryHeapAllocationSkolemOpt(?heap, ?ctx, ?var) <-
+  AssignAuxiliaryHeapAllocation(?heap, ?var, ?inmethod),
+  ReachableContext(?ctx, ?inmethod).
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?var) <-
+  AssignAuxiliaryHeapAllocationSkolemOpt(?heap, ?ctx, ?var).
+AssignContextInsensitiveHeapAllocationSkolemOpt(?heap, ?ctx, ?var) ->
+  HeapAllocationRef(?heap), Context(?ctx), VarRef(?var).
+AssignContextInsensitiveHeapAllocationSkolemOpt(?heap, ?ctx, ?var) <-
+  AssignContextInsensitiveHeapAllocation(?heap, ?var, ?inmethod),
+  ReachableContext(?ctx, ?inmethod).
+HContext(?immCtx), HContextFromRealHContext[ImmutableHeapValue[]] = ?immCtx,
+VarPointsTo(?immCtx, ?heap, ?ctx, ?var) <-
+  AssignContextInsensitiveHeapAllocationSkolemOpt(?heap, ?ctx, ?var).
+/**
+ * Various assignments. Assign is a catch-all relation for
+ * assignments not worth the effort to optimize specially.
+ * Originally this used to be almost all assignments, but it
+ * changed for performance reasons.
+ */
+VarPointsTo(?hctx, ?heap, ?toCtx, ?to) <-
+  VarPointsTo(?hctx, ?heap, ?fromCtx, ?from),
+  Assign(?type, ?toCtx, ?to, ?fromCtx, ?from),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  AssignCompatible(?type, ?heaptype).
+/**
+ * Local assignments
+Assign(?type, ?ctx, ?to, ?ctx, ?from) <-
+  AssignLocal(?from, ?to, ?inmethod),
+  ReachableContext(?ctx, ?inmethod),
+  Var:Type[?to] = ?type.
+*/
+/*
+// Assertion for sanity checking
+VarPointsTo(_, ?heap, _, ?to) -> 
+  AssignCompatible(Var:Type[?to], HeapAllocation:Type[?heap]).
+*/
+// No need to check if type compatible: check is done at original
+// inputs to VarPointsTo
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  VarPointsTo(?hctx, ?heap, ?ctx, ?from),
+  OptAssignLocal(?to, ?from).
+OptAssignLocal(?to, ?from) -> VarRef(?to), VarRef(?from).
+OptAssignLocal(?to, ?from) <-
+  Reachable(?inmethod),
+  AssignLocal(?from, ?to, ?inmethod).
+/**
+ * Cast assignments
+ */
+Assign(?type, ?ctx, ?to, ?ctx, ?from) <-
+  AssignCast(?type, ?from, ?to, ?inmethod),
+  ReachableContext(?ctx, ?inmethod).
+/**
+ * Load instance fields
+ *
+ * ctx would not hurt in ReachableLoadInstanceField, but it's not necessary.
+ * TODO: might it help?
+ */
+/**
+ * GKASTRINIS: Two ways to do field-based analysis.
+ * Either based on the static type or on the dynamic one.
+ */
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  LoadHeapInstanceField(?ctx, ?to, ?signature, ?basehctx, ?baseheap),
+  InstanceFieldPointsTo(?hctx, ?heap, ?signature, ?basehctx, ?baseheap).
+LoadHeapInstanceField(?ctx, ?to, ?sig, ?basehctx, ?baseheap) <-
+  ReachableLoadInstanceFieldBase(?base),
+  OptLoadInstanceField(?to, ?sig, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+ReachableLoadInstanceFieldBase(?base) -> VarRef(?base).
+ReachableLoadInstanceFieldBase(?base) <-
+  LoadInstanceField(?base, _, _, ?inmethod),
+  Reachable(?inmethod).
+//
+// TODO eliminate by reordering the input fact.
+//
+OptLoadInstanceField(?to, ?sig, ?base) <-
+  LoadInstanceField(?base, ?sig, ?to, _).
+/* YANNIS
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  LoadHeapInstanceField(?ctx, ?to, ?signature, ?basehctx, ?baseheap),
+  InstanceFieldPointsTo(?hctx, ?heap, ?signature, ?basehctx, ?baseheap).
+
+LoadHeapInstanceField(?ctx, ?to, ?sig, ?basehctx, ?baseheap) <-
+  ReachableLoadInstanceField(?to, ?sig, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+#endif
+
+ReachableLoadInstanceField(?to, ?sig, ?base) -> 
+  VarRef(?to), FieldSignatureRef(?sig), VarRef(?base).
+ReachableLoadInstanceField(?to, ?sig, ?base) <-
+  LoadInstanceField(?base, ?sig, ?to, ?inmethod),
+  Reachable(?inmethod).
+*/
+/**
+ * Store instance fields
+ */
+InstanceFieldPointsTo(?hctx, ?heap, ?signature, ?basehctx, ?baseheap) <-
+  StoreHeapInstanceField(?signature, ?basehctx, ?baseheap, ?ctx, ?from),
+  VarPointsTo(?hctx, ?heap, ?ctx, ?from).
+StoreHeapInstanceField(?signature, ?basehctx, ?baseheap, ?ctx, ?from) <-
+  ReachableStoreInstanceFieldBase(?base),
+  OptStoreInstanceField(?from, ?signature, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+ReachableStoreInstanceFieldBase(?base) -> VarRef(?base).
+ReachableStoreInstanceFieldBase(?base) <-
+  StoreInstanceField(_, ?base, _, ?inmethod),
+  Reachable(?inmethod).
+/**
+ * TODO eliminate
+ */
+OptStoreInstanceField(?from, ?signature, ?base) <-
+  StoreInstanceField(?from, ?base, ?signature, _).
+/**
+ * Load static fields
+ */
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  OptLoadStaticField(?ctx, ?to, ?sig),
+  StaticFieldPointsTo(?hctx, ?heap, ?sig).
+OptLoadStaticField(?ctx, ?to, ?sig) <-
+  LoadStaticField(?sig, ?to, ?inmethod),
+  ReachableContext(?ctx, ?inmethod).
+/**
+ * Store static fields
+ *
+ * TODO: I don't think context actually matters. double check.
+ */
+StaticFieldPointsTo(?hctx, ?heap, ?signature) <-
+  ReachableStoreStaticFieldFrom(?from),
+  OptStoreStaticField(?signature, ?from),
+  VarPointsTo(?hctx, ?heap, _, ?from).
+OptStoreStaticField(?signature, ?from) <-
+  StoreStaticField(?from, ?signature, _).
+ReachableStoreStaticFieldFrom(?from) -> VarRef(?from).
+ReachableStoreStaticFieldFrom(?from) <-
+  StoreStaticField(?from, _, ?inmethod),
+  Reachable(?inmethod).
+/**
+ * Load array index
+ */
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  LoadHeapArrayIndex(?ctx, ?to, ?basehctx, ?baseheap),
+  ArrayIndexPointsTo(?hctx, ?heap, ?basehctx, ?baseheap),
+  Var:Type[?to] = ?type,
+  HeapAllocation:Type[?baseheap] = ?baseheaptype,
+  ComponentType[?baseheaptype] = ?basecomponenttype,
+  AssignCompatible(?type, ?basecomponenttype).
+/* YANNIS: used to be the much less precise:
+  HeapAllocation:Type[?heap] = ?heaptype,
+  AssignCompatible(?type, ?heaptype).
+*/
+// the correct code has been moved to reflective.logic
+LoadHeapArrayIndex(?ctx, ?to, ?basehctx, ?baseheap) <-
+  ReachableLoadArrayIndexBase(?base),
+  OptLoadArrayIndex(?to, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+OptLoadArrayIndex(?to, ?base) <-
+  LoadArrayIndex(?base, ?to, _).
+ReachableLoadArrayIndexBase(?base) -> VarRef(?base).
+ReachableLoadArrayIndexBase(?base) <-
+  LoadArrayIndex(?base, _, ?inmethod),
+  Reachable(?inmethod).
+/**
+ * Store array index
+ */
+ArrayIndexPointsTo(?hctx, ?heap, ?basehctx, ?baseheap) <-
+  StoreHeapArrayIndex(?basehctx, ?baseheap, ?ctx, ?from),
+  VarPointsTo(?hctx, ?heap, ?ctx, ?from),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  HeapAllocation:Type[?baseheap] = ?baseheaptype,
+  ComponentType[?baseheaptype] = ?componenttype,
+  AssignCompatible(?componenttype, ?heaptype).
+StoreHeapArrayIndex(?basehctx, ?baseheap, ?ctx, ?from) <-
+  ReachableStoreArrayIndexBase(?base),
+  OptStoreArrayIndex(?from, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+ReachableStoreArrayIndexBase(?base) -> VarRef(?base).
+ReachableStoreArrayIndexBase(?base) <-
+  StoreArrayIndex(_, ?base, ?inmethod),
+  Reachable(?inmethod).
+OptStoreArrayIndex(?from, ?base) <-
+  StoreArrayIndex(?from, ?base, _).
+/*
+StoreHeapArrayIndex(?basehctx, ?baseheap, ?ctx, ?from) <-
+	ReachableStoreArrayIndex(?from, ?base),
+	VarPointsTo(?basehctx, ?baseheap, ?ctx, ?base).
+
+ReachableStoreArrayIndex(?from, ?base) <-
+	StoreArrayIndex(?from, ?base, ?inmethod),
+	Reachable(?inmethod).
+*/
+/**
+ * Assignments for method invocations
+ */
+OptInterproceduralAssign(?toCtx, ?to, ?fromCtx, ?from) ->
+  Context(?toCtx), VarRef(?to), Context(?fromCtx), VarRef(?from).
+OptInterproceduralAssign(?calleeCtx, ?formal, ?callerCtx, ?actual)
+  <-
+  CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?method),
+  FormalParam[?index, ?method] = ?formal,
+  ActualParam[?index, ?invocation] = ?actual.
+OptInterproceduralAssign(?callerCtx, ?local, ?calleeCtx, ?return)
+  <-
+  ReturnVar(?return, ?method),
+  CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?method),
+  AssignReturnValue[?invocation] = ?local.
+VarPointsTo(?hctx, ?heap, ?toCtx, ?to) <-
+  VarPointsTo(?hctx, ?heap, ?fromCtx, ?from),
+  OptInterproceduralAssign(?toCtx, ?to, ?fromCtx, ?from).
+/**
+ * Static method invocations
+ */
+// Again, breaking up the rule minimizes skolem creation cost!
+StaticMethodInvocationSkolemOpt(?callerCtx, ?invocation, ?tomethod) ->
+  Context(?callerCtx), CallGraphEdgeSourceRef(?invocation),
+  MethodSignatureRef(?tomethod).
+StaticMethodInvocationSkolemOpt(?callerCtx, ?invocation, ?tomethod) <-
+  ReachableContext(?callerCtx, ?inmethod),
+  StaticMethodInvocation(?invocation, ?signature, ?inmethod),
+  MethodDeclaration[?signature] = ?tomethod.
+Context(?calleeCtx), ContextFromRealContext[RealContextFromContext[?callerCtx]] = ?calleeCtx,
+CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?tomethod) <-
+  StaticMethodInvocationSkolemOpt(?callerCtx, ?invocation, ?tomethod).
+/**
+ * Virtual Method Invocation
+ */
+OptVirtualMethodInvocationBase(?invocation, ?base) ->
+  VarRef(?base), MethodInvocationRef(?invocation).
+OptVirtualMethodInvocationBase(?invocation, ?base) <-
+  Reachable(?inmethod),
+  VirtualMethodInvocation:In(?invocation, ?inmethod),
+  VirtualMethodInvocation:Base[?invocation] = ?base.
+// This rule is the default logic for the majority of analyses
+// This is the "proper" form of the rule. We diverge from it
+// only for reasons of optimization. Skolem object creation
+// is currently very slow and we shouldn't invoke it for
+// all the different combinations that will yield the same object.
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?tomethod),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?this)
+ <-
+  VarPointsTo(?hctx, ?heap, ?callerCtx, ?base),
+  OptVirtualMethodInvocationBase(?invocation, ?base),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  VirtualMethodInvocation:SimpleName[?invocation] = ?simplename,
+  VirtualMethodInvocation:Descriptor[?invocation] = ?descriptor,
+  MethodLookup[?simplename, ?descriptor, ?heaptype] = ?tomethod,
+  ThisVar[?tomethod] = ?this,
+  ((!NegativeSiteFilter("true"), !SiteToRefine(?heap,?invocation)); (NegativeSiteFilter("true"), SiteToRefine(?heap,?invocation))).
+/**
+ * Special method invocations. Optimized much like virtual methods.
+ */
+OptSpecialMethodInvocationBase(?invocation, ?base) ->
+  VarRef(?base), MethodInvocationRef(?invocation).
+OptSpecialMethodInvocationBase(?invocation, ?base) <-
+  Reachable(?inmethod),
+  SpecialMethodInvocation:In(?invocation, ?inmethod),
+  SpecialMethodInvocation:Base[?invocation] = ?base.
+// Default, unoptimized behavior
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?tomethod),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?this) <-
+  VarPointsTo(?hctx, ?heap, ?callerCtx, ?base),
+  OptSpecialMethodInvocationBase(?invocation, ?base),
+  SpecialMethodInvocation:Signature[?invocation] = ?signature,
+  MethodDeclaration[?signature] = ?tomethod,
+  ThisVar[?tomethod] = ?this,
+  ((!NegativeSiteFilter("true"), !SiteToRefine(?heap,?invocation)); (NegativeSiteFilter("true"), SiteToRefine(?heap,?invocation))).
+ReachableContext(?ctx, ?method) <-
+  CallGraphEdge(_, _, ?ctx, ?method).
+Reachable(?method) <-
+  ReachableContext(_, ?method).
+/**
+ * Logic to decide whether to apply refined or regular bindings for
+ * methods and objects
+ */
+// We want to allow predicates that express the *complement* of the set
+// of objects to refine. We introduce derived-only temp predicates to
+// avoid logic replication in the points-to rule itself.
+/*
+// Below is the proper way to write this but it's currently not well
+// supported by the query optimizer so I have to resort to brute
+// force (macro-)inlining.
+ObjectShouldNotBeRefined(?heap) -> 
+  HeapAllocationRef(?heap).
+lang:derivationType[`ObjectShouldNotBeRefined] = "Derived".
+
+ObjectShouldNotBeRefined(?heap) <-
+  NegativeObjectFilter("true"), ObjectToRefine(?heap).
+
+ObjectShouldNotBeRefined(?heap) <-
+  !(NegativeObjectFilter("true")), !ObjectToRefine(?heap).
+
+ObjectShouldBeRefined(?heap) -> 
+  HeapAllocationRef(?heap).
+lang:derivationType[`ObjectShouldBeRefined] = "Derived".
+
+ObjectShouldBeRefined(?heap) <-
+  !NegativeObjectFilter("true"), ObjectToRefine(?heap).
+
+ObjectShouldBeRefined(?heap) <-
+  NegativeObjectFilter("true"), !ObjectToRefine(?heap).
+
+SiteShouldNotBeRefined(?heap,?invocation) -> 
+  MethodInvocationRef(?invocation),
+  HeapAllocationRef(?heap).
+lang:derivationType[`SiteShouldNotBeRefined] = "Derived".
+
+SiteShouldNotBeRefined(?heap,?invocation) <-
+  !NegativeSiteFilter("true"), !SiteToRefine(?heap,?invocation).
+
+SiteShouldNotBeRefined(?heap,?invocation) <-
+  NegativeSiteFilter("true"), SiteToRefine(?heap,?invocation).
+
+SiteShouldBeRefined(?heap,?invocation) -> 
+  MethodInvocationRef(?invocation),
+  HeapAllocationRef(?heap).
+lang:derivationType[`SiteShouldBeRefined] = "Derived".
+
+SiteShouldBeRefined(?heap,?invocation) <-
+  !NegativeSiteFilter("true"), SiteToRefine(?heap,?invocation).
+
+SiteShouldBeRefined(?heap,?invocation) <-
+  NegativeSiteFilter("true"), !SiteToRefine(?heap,?invocation).
+*/
+/**
+ * Assignment compatibility is for now defined in terms of
+ * checkcast. Assignment compatibility is only relevant for reference
+ * types, and for reference types the specification of checkcast en
+ * assignment compatible are the same.
+ */
+AssignCompatible(?target, ?source) -> Type(?source), Type(?target).
+AssignCompatible(?target, ?source) <-
+  CheckCast(?source, ?target).
+/**
+ * Type ?s can be cast to type ?t.
+ *
+ * TODO: null_type?
+ */
+CheckCast(?s, ?t) ->
+  Type(?s),
+  Type(?t).
+/**
+ *   - If S is an ordinary (nonarray) class, then:
+ *
+ *         o If T is a class type, then S must be the 
+ *           same class as T, or a subclass of T.
+ */
+CheckCast(?s, ?s) <-
+  ClassType(?s).
+CheckCast(?s, ?t) <-
+  Subclass(?t, ?s).
+/**
+ *         o If T is an interface type, then S must implement interface T. 
+ */
+CheckCast(?s, ?t) <-
+  ClassType(?s),
+  Superinterface(?t, ?s).
+/**
+ *  - If S is an interface type, then:
+ *
+ *         o If T is a class type, then T must be Object
+ */
+CheckCast(?s, t) <-
+  InterfaceType(?s),
+  Type:Value(t:"java.lang.Object").
+/**
+ *         o If T is an interface type, then T must be the same interface 
+ *           as S or a superinterface of S
+ */
+CheckCast(?s, ?s) <-
+  InterfaceType(?s).
+CheckCast(?s, ?t) <-
+  InterfaceType(?s),
+  Superinterface(?t, ?s).
+/**
+ *  - If S is a class representing the array type SC[], that is,
+ *    an array of components of type SC, then:
+ *
+ *        o If T is a class type, then T must be Object.
+ */
+CheckCast(?s, t) <-
+  ArrayType(?s),
+  Type:Value(t:"java.lang.Object").
+/**
+ *        o If T is an array type TC[], that is, an array of 
+ *          components of type TC, then one of the following must be true:
+ *
+ *              + TC and SC are the same primitive type
+ */
+CheckCast(?s, ?t) <-
+  ArrayType(?s),
+  ArrayType(?t),
+  ComponentType[?s] = ?sc,
+  ComponentType[?t] = ?sc,
+  PrimitiveType(?sc).
+/**
+ *              + TC and SC are reference types (2.4.6), and type SC can be 
+ *                cast to TC by recursive application of these rules.
+ */
+CheckCast(?s, ?t) <-
+  ComponentType[?s] = ?sc,
+  ComponentType[?t] = ?tc,
+  ReferenceType(?sc),
+  ReferenceType(?tc),
+  CheckCast(?sc, ?tc).
+/**
+ *       o If T is an interface type, T must be one of the interfaces 
+ *         implemented by arrays (2.15). 
+ */
+CheckCast(?s, t) <-
+  ArrayType(?s),
+  InterfaceType(t),
+  Type:Value(t:"java.lang.Cloneable").
+CheckCast(?s, t) <-
+  ArrayType(?s),
+  InterfaceType(t),
+  Type:Value(t:"java.io.Serializable").
+/**
+ * Class initializer ?method of a ?type.
+ *
+ * TODO declare this is a ReferenceType (or ClassOrInterfaceType?)
+ */
+ClassInitializer[?type] = ?method ->
+  MethodSignatureRef(?method),
+  Type(?type).
+/**
+ * TODO: this is not efficient.
+ */
+ClassInitializer[?type] = ?method <-
+  SimpleNameRef:Value(?simplename:"<clinit>"),
+  MethodDescriptorRef:Value(?descriptor:"void()"),
+  MethodImplemented[?simplename, ?descriptor, ?type] = ?method.
+/**
+ * Virtual method resolution
+ *
+ * TODO Test for accessibility.
+ */
+MethodLookup[?simplename, ?descriptor, ?type] = ?method ->
+  Type(?type),
+  SimpleNameRef(?simplename),
+  MethodDescriptorRef(?descriptor),
+  MethodSignatureRef(?method).
+MethodLookup[?simplename, ?descriptor, ?type] = ?method <-
+  MethodImplemented[?simplename, ?descriptor, ?type] = ?method.
+MethodLookup[?simplename, ?descriptor, ?type] = ?method <-
+  DirectSuperclass[?type] = ?supertype,
+  MethodLookup[?simplename, ?descriptor, ?supertype] = ?method,
+  !(MethodImplemented[?simplename, ?descriptor, ?type]=_).
+/**
+ * Arrays
+ *
+ * TODO MethodLookup of clone in an array type now results in
+ *      Object.clone. This is not according to the spec, but in the
+ *      Sun JVM arrays don't have a declared clone method either. The
+ *      bytecode does indicate a call to clone in the array class, but
+ *      the Jimple code turns this into a call of
+ *      java.lang.Object.clone()
+ *
+ * TODO Alternative, better implementation: just make java.lang.Object
+ *      a direct superclass of array types, something we should do
+ *      anyway.
+ */
+MethodLookup[?simplename, ?descriptor, ?arraytype] = ?method <-
+  ArrayType(?arraytype),
+  Type:Value(?object:"java.lang.Object"),
+  MethodImplemented[?simplename, ?descriptor, ?object] = ?method.
+/**
+ * Is there a non-abstract method declaration?
+ */
+MethodImplemented[?simplename, ?descriptor, ?type] = ?method ->
+  Type(?type),
+  SimpleNameRef(?simplename),
+  MethodDescriptorRef(?descriptor),
+  MethodSignatureRef(?method).
+MethodImplemented[?simplename, ?descriptor, ?type] = ?method <-
+  MethodSignature:Type[?signature] = ?type,
+  MethodSignature:SimpleName[?signature] = ?simplename,
+  MethodSignature:Descriptor[?signature] = ?descriptor,
+  MethodDeclaration[?signature] = ?method,
+  ModifierRef:Value(?abstract:"abstract"),
+  ! MethodModifier(?abstract, ?method).
+/*************************************************************
+
+ * Special objects
+
+ *
+
+ * Some objects are so common that they heavily impact performance if
+
+ * every allocation is distinguished or a context-sensitive heap
+
+ * abstraction is used. In many cases, this precision is not actually
+
+ * useful for a points-to analysis, so handling them in a less precise
+
+ * way is beneficial.
+
+ *
+
+ * @author Martin Bravenboer
+
+ * @author Yannis Smaragdakis
+
+ *************************************************************/
+/**
+
+ * Objects that should not be allocated as normal.
+
+ */
+HeapAllocation:Special(?heap) -> HeapAllocationRef(?heap).
+/**
+
+ * Objects that should use a context-insensitive heap abstraction.
+
+ */
+HeapAllocation:ContextInsensitive(?heap) ->
+  HeapAllocationRef(?heap).
+HeapAllocation:Special(?heap) <-
+  HeapAllocation:ContextInsensitive(?heap).
+/**
+
+ * Objects that should be merged to some heap abstraction (implies context-insensitive)
+
+ */
+HeapAllocation:Merge[?heap] = ?mergeHeap ->
+  HeapAllocationRef(?heap),
+  HeapAllocationRef(?mergeHeap).
+/**
+
+ * Join with AssignHeapAllocation for performance.
+
+ */
+AssignNormalHeapAllocation(?heap, ?var, ?inmethod) <-
+  AssignHeapAllocation(?heap, ?var, ?inmethod),
+  ! HeapAllocation:Special(?heap).
+HeapAllocation:Special(?heap) <-
+  HeapAllocation:Merge[?heap] = _.
+AssignContextInsensitiveHeapAllocation(?mergeHeap, ?var, ?inmethod) <-
+  AssignHeapAllocation(?heap, ?var, ?inmethod),
+  HeapAllocation:Merge[?heap] = ?mergeHeap.
+AssignContextInsensitiveHeapAllocation(?heap, ?var, ?inmethod) <-
+  AssignHeapAllocation(?heap, ?var, ?inmethod),
+  HeapAllocation:ContextInsensitive(?heap).
+/*************************************************************
+
+ * String constants
+
+ *************************************************************/
+HeapAllocation:Merge[?heap] = ?constant <-
+  StringConstant(?heap),
+  ! ClassNameStringConstant(?heap),
+  InstructionRef:Value(?constant:"<<string-constant>>"), HeapAllocationRef(?constant).
+HeapAllocation:ContextInsensitive(?heap) <-
+  ClassNameStringConstant(?heap).
+/**
+
+ * String constants that refer to class names
+
+ */
+ClassNameStringConstant(?heap) ->
+  HeapAllocationRef(?heap).
+  /* StringConstant(?heap). TODO: bug? */
+ClassNameStringConstant:Type[?heap] = ?type ->
+  HeapAllocationRef(?heap),
+  /* StringConstant(?heap), TODO: bug? */
+  Type(?type).
+ClassNameStringConstant(?heap),
+ClassNameStringConstant:Type[?heap] = ?type
+  <-
+  StringConstant(?heap),
+  InstructionRef:Value(?heap:?string),
+  ReferenceType(?type),
+  Type:Value(?type:?string).
+/*************************************************************
+
+ * Class constants
+
+ *************************************************************/
+HeapAllocation:ContextInsensitive(?heap) <-
+  ClassConstant(?heap).
+/*************************************************************
+
+ * String buffers and builders
+
+ *************************************************************/
+/*************************************************************
+
+ * Throwable
+
+ *************************************************************/
+/*
+
+ // (Yannis) This is the original, precise and straightforward treatment
+
+ // of throwables. They were allocated context insensitively. This still
+
+ // produced huge ThrowPointsTo sets and caused slowdowns.
+
+ */
+// The optimized treatment represents every exception (i.e., throwable)
+// object by a unique representative of the same type. All exception
+// objects of the same type are therefore merged. This means that points-to
+// results for throwables are not accurate! Only the type will be right.
+//TypeToHeap2(?heap, ?heaptype) <-
+//  HeapAllocation:Type[?heap] = ?heaptype,
+ //  Type:Value(?throw:"java.lang.Throwable"),
+ //  AssignCompatible(?throw, ?heaptype),
+//  ExceptionHandler:Type[_] = ?handlertype,
+//  AssignCompatible(?handlertype, ?heaptype).
+TypeToHeap(?heap, ?heaptype) <-
+  HeapAllocation:Type[?heap] = ?heaptype,
+  Type:Value(?throw:"java.lang.Throwable"),
+  AssignCompatible(?throw, ?heaptype).
+// Quadratic but so local that it shouldn't matter, ever.
+HeapRepresentative[?heap] = ?representativeHeap <-
+  agg<<?representativeHeap = min(?otherHeap)>>(TypeToHeap(?otherHeap, HeapAllocation:Type[?heap])).
+HeapAllocation:Merge[?heap] = ?mergeHeap <-
+  HeapRepresentative[?heap] = ?mergeHeap.
+/*
+
+// An intermediate option is to only merge exception objects of the
+
+// same type that are thrown in the same method.
+
+SameTypeAndMethod(?heap1, ?heap2) <-
+
+  HeapAllocation:Type[?heap1] = ?heaptype,
+
+  Type:Value(?throw:"java.lang.Throwable"),
+
+  AssignCompatible(?throw, ?heaptype),
+
+  HeapAllocation:Type[?heap2] = ?heaptype,
+
+  AssignHeapAllocation(?heap1,_,?inmethod),
+
+  AssignHeapAllocation(?heap2,_,?inmethod).
+
+  
+
+// Similarly quadratic but efficient.
+
+HeapRepresentative[?heap] = ?representativeHeap <-
+
+  agg<<?representativeHeap = min(?otherHeap)>>(SameTypeAndMethod(?otherHeap,?heap)).
+
+
+
+HeapAllocation:Merge[?heap] = ?mergeHeap <-
+
+  HeapRepresentative[?heap] = ?mergeHeap.
+
+*/
+/*************************************************************
+
+ * Primitive arrays
+
+ *
+
+ * char[] or int[] don't have object elements, so it's useless to
+
+ * allocate them context-sensitively.
+
+ *
+
+ *************************************************************/
+HeapAllocation:ContextInsensitive(?heap) <-
+  HeapAllocation:Type[?heap] = ?type,
+  ArrayType(?type),
+  ComponentType[?type] = ?componentType,
+  PrimitiveType(?componentType).
+/*************************************************************
+
+ * Class without reference fields
+
+ *************************************************************/
+// This is completely in the noise level, not worth doing anything about
+/*
+
+HeapAllocation:ContextInsensitive(?heap) <-
+
+  HeapAllocation:Type[?heap] = ?heaptype,
+
+  Type:HasNoReferenceField(?heaptype).
+
+
+
+Type:HasNoReferenceField(?type) -> Type(?type).
+
+Type:DeclaresReferenceField(?type) -> Type(?type).
+
+
+
+Type:HasNoReferenceField(?type) <-
+
+  Type:Value(?type:"java.lang.Object").
+
+
+
+Type:HasNoReferenceField(?class) <-
+
+  ClassType(?class),
+
+  DirectSuperclass[?class] = ?super,
+
+  Type:HasNoReferenceField(?super),
+
+  ! Type:DeclaresReferenceField(?class).
+
+
+
+Type:DeclaresReferenceField(?class) <-
+
+  ClassType(?class),
+
+  Field:DeclaringClass[?signature] = ?class,
+
+  Field:Type[?signature] = ?type,
+
+  ReferenceType(?type).
+
+*/
+/**
+ * A class ?a is a direct subclass of class ?c.
+ *
+ * warning: this definition is somewhat counter-intuitive. In fact, it is the superclass predicate.
+ */
+DirectSubclass[?a] = ?c -> Type(?a), Type(?c).
+DirectSubclass[?a] = ?c <-
+  DirectSuperclass[?a] = ?c.
+/**
+ * A class ?a is a subclass of class ?c.
+ *
+ * Note: the ordering might be unnatural, so pay attention when you
+ * use this predicate.
+ */
+Subclass(?c, ?a) -> Type(?a), Type(?c).
+/**
+ * JVM Spec:
+ * - A class A is a subclass of a class C if A is a direct subclass of C
+ */
+Subclass(?c, ?a) <-
+  DirectSubclass[?a] = ?c.
+/**
+ * JVM Spec:
+ * - A class A is a subclass of a class C if there is a direct subclass B of C and class A is a subclass of B
+ */
+Subclass(?c, ?a) <-
+  Subclass(?b, ?a),
+  DirectSubclass[?b] = ?c.
+/**
+ * A class ?a is a superclass of class ?c.
+ *
+ * Note: this is really just a swapped subclass relation.
+ *
+ * Note: The ordering might be unnatural, so pay attention when you
+ * use this predicate.
+ */
+Superclass(?c, ?a) -> Type(?a), Type(?c).
+/**
+ * Class A is said to be a superclass of class C whenever C is a subclass of A.
+ */
+Superclass(?c, ?a) <-
+  Subclass(?a, ?c).
+/**
+ * An interface type K is a superinterface of class type C.
+ *
+ * TODO: report, C can actually also be an interface.
+ */
+Superinterface(?k, ?c) -> Type(?k), Type(?c).
+/**
+ * JVM Spec:
+ *   An interface type K is a superinterface of class type C if
+ *     - if K is direct superinterface of C
+ */
+Superinterface(?k, ?c) <-
+  DirectSuperinterface(?c, ?k).
+/**
+ * JVM Spec:
+ *   An interface type K is a superinterface of class type C if
+ *     - if C has a direct superinterface J that has K as a superinterface
+ *     
+ */
+Superinterface(?k, ?c) <-
+  DirectSuperinterface(?c, ?j),
+  Superinterface(?k, ?j).
+/**
+ * JVM Spec:
+ *   An interface type K is a superinterface of class type C if
+ *     - if K is a superinterface of the direct superclass of C
+ */
+Superinterface(?k, ?c) <-
+  DirectSuperclass[?c] = ?super,
+  Superinterface(?k, ?super).
+/**
+ * JVM Specification:
+ *
+ *    * The execution of any one of the Java virtual machine
+ *      instructions new, getstatic, putstatic, or invokestatic that
+ *      references the class or interface. Each of these instructions
+ *      corresponds to one of the conditions in 2.17.4. All of the
+ *      previously listed instructions reference a class directly or
+ *      indirectly through either a field reference or a method
+ *      reference. Upon execution of a new instruction, the referenced
+ *      class or interface is initialized if it has not been initialized
+ *      already. Upon execution of a getstatic, putstatic, or
+ *      invokestatic instruction, the class or interface that declared
+ *      the resolved field or method is initialized if it has not been
+ *      initialized already.
+ *
+ *    * Invocation of certain reflective methods in the class library,
+ *      for example, in class Class or in package java.lang.reflect.
+ *
+ *    * The initialization of one of its subclasses
+ *
+ *    * Its designation as the initial class at Java virtual machine
+ *      start-up (5.2)
+ */
+InitializedClass(?classOrInterface) ->
+  Type(?classOrInterface).
+/**
+ * A class is initialized if one of its subclass gets initialized.
+ */
+InitializedClass(?superclass) <-
+   InitializedClass(?classOrInterface),
+   DirectSuperclass[?classOrInterface] = ?superclass.
+/**
+ * Class of main method declaration.
+ */
+InitializedClass(?class) <-
+  MainMethodDeclaration(?method),
+  DeclaringClassMethod[?method] = ?class.
+/**
+ * JLS: T is a class and an instance of T is created.
+ *
+ * TODO Same join is performed in VarPointsTo. Maybe fold.
+ * TODO Consider to add strings?
+ */
+InitializedClass(?class) <-
+  Reachable(?inmethod),
+  AssignHeapAllocation(?heap, _, ?inmethod),
+  HeapAllocation:Type[?heap] = ?class.
+/**
+ * JLS: T is a class and a static method declared by T is invoked.
+ */
+InitializedClass(?class) <-
+  Reachable(?inmethod),
+  StaticMethodInvocation:In(?invocation, ?inmethod),
+  StaticMethodInvocation:Signature[?invocation] = ?signature,
+  DeclaringClassMethod[?signature] = ?class.
+/**
+ * JLS: A static field declared by T is assigned.
+ */
+InitializedClass(?classOrInterface) <-
+  Reachable(?inmethod),
+  StoreStaticField(_, ?signature, ?inmethod),
+  Field:DeclaringClass[?signature] = ?classOrInterface.
+InitializedClass(?classOrInterface) <-
+  Reachable(?inmethod),
+  StorePrimStaticField(?signature, ?inmethod),
+  Field:DeclaringClass[?signature] = ?classOrInterface.
+/**
+ * JLS: A static field declared by T is used and the field 
+ *      is not a constant variable.
+ *
+ * Check if the field is not constant is not necessary because we
+ * analyze bytecode. Nobody
+ */
+InitializedClass(?classOrInterface) <-
+  Reachable(?inmethod),
+  LoadStaticField(?signature, _, ?inmethod),
+  Field:DeclaringClass[?signature] = ?classOrInterface.
+InitializedClass(?classOrInterface) <-
+  Reachable(?inmethod),
+  LoadPrimStaticField(?signature, ?inmethod),
+  Field:DeclaringClass[?signature] = ?classOrInterface.
+/**
+ * JLS: T is a top-level class, and an assert statement
+ *      lexically nested within T is executed. 
+ *
+ * TODO: no idea how a statement can ever be executed 
+ *       in a class that has not been initialized?
+ */
+/*****************************************************************************
+ *
+ * Exceptions
+ *
+ * TODO Implicitly thrown exceptions are not included (neither are in Paddle)
+ *
+ * @author Martin Bravenboer
+ *
+ *****************************************************************************/
+/**
+ * Represents the heap abstractions of the exceptions a method can
+ * throw.
+ */
+ThrowPointsTo(?hctx, ?heap, ?ctx, ?method) ->
+  HContext(?hctx), HeapAllocationRef(?heap),
+  Context(?ctx), MethodSignatureRef(?method).
+/*****************************************************************************
+ *
+ * Throw statements
+ *
+ *****************************************************************************/
+/**
+ * A method throws an exception in a context if there is a throw
+ * statement in the method, and the thrown variable points to an
+ * object in this context, but this object is not immediately caught
+ * by an exception handler (ThrowPointsTo rule).
+ *
+ * If the object is a caught, then it is assigned to the formal
+ * parameter of the exeception handler (VarPointsTo rule).
+ */
+ThrowPointsTo(?hctx, ?heap, ?ctx, ?method) <-
+  Throw(?ref, ?var),
+  VarPointsTo(?hctx, ?heap, ?ctx, ?var),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  !(ExceptionHandler[?heaptype, ?ref]=_),
+  Instruction:Method[?ref] = ?method.
+VarPointsTo(?hctx, ?heap, ?ctx, ?param) <-
+  Throw(?ref, ?var),
+  VarPointsTo(?hctx, ?heap, ?ctx, ?var),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  ExceptionHandler[?heaptype, ?ref] = ?handler,
+  ExceptionHandler:FormalParam[?handler] = ?param.
+/*****************************************************************************
+ *
+ * Method invocations
+ *
+ *****************************************************************************/
+/**
+ * A method M1 throws an exception in a context if there is a call
+ * graph edge from an invocation in M1 to some method M2 and the
+ * method M2 throws a an exception for this specific
+ * (context-sensitive) call graph edge. Also, the exception should not
+ * be caught immediately by an exception handler in M1 (ThrowPointsTo
+ * rule).
+ *
+ * If there is such an exception handler, then the exception object is
+ * assigned to the formal parameter of the exception handler
+ * (VarPointsTo rule).
+ */
+ThrowPointsTo(?hctx, ?heap, ?callerCtx, ?callerMethod) <-
+  CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?tomethod),
+  ThrowPointsTo(?hctx, ?heap, ?calleeCtx, ?tomethod),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  !(ExceptionHandler[?heaptype,?invocation]=_),
+  Instruction:Method[?invocation] = ?callerMethod.
+VarPointsTo(?hctx, ?heap, ?callerCtx, ?param) <-
+  CallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?tomethod),
+  ThrowPointsTo(?hctx, ?heap, ?calleeCtx, ?tomethod),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  ExceptionHandler[?heaptype,?invocation] = ?handler,
+  ExceptionHandler:FormalParam[?handler] = ?param.
+/*****************************************************************************
+ *
+ * Compute for an instruction which exception handlers handle which
+ * exception types.
+ *
+ ****************************************************************************/
+// (REVIEW-Yannis) Note how this logic is superlinear. We keep
+// relations that link every exception handler to every relevant (i.e., throw
+// or methcall) instruction under its range, and to every type that the
+// exception handler can handle, including all subtypes of the declared type.
+// It is not easy to change this, nor perhaps too valuable. But it is certainly
+// a spot where bottom-up evaluation with an explicit representation hurts us.
+// We have very large ExceptionHandler, PossibleExceptionHandler, etc. relations.
+// Note: currently exception objects are allocated context-insensitively.
+/**
+ * An exception of a specific type, thrown at an instruction, is
+ * handled by an exception handler.
+ */
+ExceptionHandler[?type, ?instruction] = ?handler ->
+  ExceptionHandlerRef(?handler), Type(?type), InstructionRef(?instruction).
+ExceptionHandler[?type, ?instruction] = ?handler <-
+  PossibleExceptionHandler(?handler, ?type, ?instruction),
+  ! ImpossibleExceptionHandler(?handler, ?type, ?instruction).
+/**
+ * An exception type that is caught by an earlier exception handler
+ * (not ?handler).
+ */
+ImpossibleExceptionHandler(?handler, ?type, ?instruction) ->
+  ExceptionHandlerRef(?handler), Type(?type), InstructionRef(?instruction).
+ImpossibleExceptionHandler(?handler, ?type, ?instruction) <-
+  PossibleExceptionHandler(?handler, ?type, ?instruction),
+  ExceptionHandler:Before(?previous, ?handler),
+  PossibleExceptionHandler(?previous, ?type, ?instruction).
+/**
+ * All possible handlers of an exception type for an instruction.
+ */
+PossibleExceptionHandler(?handler, ?type, ?instruction) ->
+  ExceptionHandlerRef(?handler),
+  Type(?type),
+  InstructionRef(?instruction).
+PossibleExceptionHandler(?handler, ?type, ?instruction) <-
+  ExceptionHandler:InRange(?handler, ?instruction),
+  ExceptionHandler:Type[?handler] = ?type.
+PossibleExceptionHandler(?handler, ?subtype, ?instruction) <-
+  ExceptionHandler:InRange(?handler, ?instruction),
+  ExceptionHandler:Type[?handler] = ?type,
+  Superclass(?subtype, ?type).
+/**
+ * Instructions that are in the range of an exception handler.
+ */
+ExceptionHandler:InRange(?handler, ?instruction) ->
+  ExceptionHandlerRef(?handler),
+  InstructionRef(?instruction).
+ExceptionHandler:InRange(?handler, ?instruction) <-
+  Instruction:Method[?instruction] = ?method,
+  ExceptionHandler:Method(?handler, ?method),
+  Instruction:Index[?instruction] = ?index,
+  ExceptionHandler:Begin[?handler] = ?begin,
+  ?begin <= ?index,
+  ExceptionHandler:End[?handler] = ?end,
+  ?index < ?end.
+/**
+ * Transitive closure of ExceptionHandler:Previous.
+ */
+ExceptionHandler:Before(?before, ?handler) ->
+  ExceptionHandlerRef(?before),
+  ExceptionHandlerRef(?handler).
+ExceptionHandler:Before(?previous, ?handler) <-
+  ExceptionHandler:Previous[?handler] = ?previous.
+ExceptionHandler:Before(?before, ?handler) <-
+  ExceptionHandler:Before(?middle, ?handler),
+  ExceptionHandler:Previous[?middle] = ?before.
+InRangeOfExceptionHandler(?instruction) -> InstructionRef(?instruction).
+InRangeOfExceptionHandler(?instruction) <-
+  ExceptionHandler:InRange(_, ?instruction).
+/**********************************************************************
+ * Handles the implicit calls to java.lang.ref.Finalizer.register by
+ * the JVM.
+ *
+ * As opposed to Paddle, we don't make an explicit call graph edge
+ * from the method that allocates to the register method, since there
+ * is technically not such edge. Maybe we can add a notion of implicit
+ * call graph edges for that.
+ *
+ * @author Martin Bravenboer
+ ***********************************************************************/
+/**
+ * For a heap allocation of an object that overrides Object.finalize,
+ * invoke the method Finalizer.register to register the object for
+ * finalization. The allocated object becomes the actual parameter to
+ * Finalizer.register.
+ */
+ObjectSupportsFinalize(?heap, ?inmethod) <-
+  AssignHeapAllocation(?heap, _, ?inmethod),
+  HeapAllocation:Type[?heap] = ?class,
+  OverridesFinalize(?class).
+/*  the special merge decides the calling context of the register call */
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?callerCtx]] = ?hctx,
+CallGraphEdge(?callerCtx, ?heap, ?calleeCtx, ?register),
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?formal) <-
+  ReachableContext(?callerCtx, ?inmethod),
+  FinalizerRegisterInfo(?register, ?formal),
+  ObjectSupportsFinalize(?heap, ?inmethod),
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+/**
+ * Auxillary predicate providing the necessary information for
+ * generating implicit invocations to java.lang.ref.Finalizer.register.
+ *
+ * signature: method signature of java.lang.ref.Finalizer.register
+ * formal: the variable representing the formal parameter of java.lang.ref.Finalizer.register
+ */
+FinalizerRegisterInfo(?signature, ?formal) -> MethodSignatureRef(?signature), VarRef(?formal).
+FinalizerRegisterInfo(?register, ?formal) <-
+  MethodSignatureRef:Value(?register:"<java.lang.ref.Finalizer: void register(java.lang.Object)>"),
+  ParamIndexRef:Value(?zero:0),
+  FormalParam[?zero, ?register] = ?formal.
+/**
+ * Classes that override Object.finalize.
+ *
+ * TODO change Type to ClassType when BloxUnit supports it.
+ */
+OverridesFinalize(?class) -> Type(?class).
+OverridesFinalize(?class) <-
+  MethodLookup[?simplename, ?descriptor, ?class] = ?method,
+  MethodDescriptorRef:Value(?descriptor:"void()"),
+  SimpleNameRef:Value(?simplename:"finalize"),
+  MethodSignatureRef:Value(?finalizeObject:"<java.lang.Object: void finalize()>"),
+  ?finalizeObject != ?method.
+/**************************************************************************
+ *
+ * Indirect invocations of finalize methods from java.lang.ref.Finalizer.
+ *
+ * Object.finalize is a protected method, so it cannot be directly
+ * invoked.  Finalizer uses an indirection via native code to
+ * circumvent this.  This rule implements this indirection.
+ *
+ *
+ * Now implemented by fact generation in native-delta.logic.
+ *
+ ***************************************************************************/
+/**
+ * These methods are implicitly reachable according to Soot (see soot/EntryPoints.java)
+ */
+ImplicitReachable(?sig) ->
+  MethodSignatureRef(?sig).
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.System: void initializeSystemClass()>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.Thread: void exit()>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ThreadGroup: void uncaughtException(java.lang.Thread,java.lang.Throwable)>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ClassLoader: void <init>()>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ClassLoader: java.lang.Class loadClassInternal(java.lang.String)>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ClassLoader: void checkPackageAccess(java.lang.Class,java.security.ProtectionDomain)>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ClassLoader: void addClass(java.lang.Class)>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ClassLoader: long findNative(java.lang.ClassLoader,java.lang.String)>").
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.security.PrivilegedActionException: void <init>(java.lang.Exception)>").
+/*
+
+  TODO: this method does not seems to be implicitly reachable. There
+  is a method Finalizer.runFinalization, but this method is invoked
+  via a native call from Runtime.runFinalization. runFinalizer is
+  invoked from the FinalizerThread, which the analyses should be able
+  to figure out by itself.
+
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.ref.Finalizer: void runFinalizer()>").
+
+*/
+/*
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.Thread: void <init>(java.lang.ThreadGroup,java.lang.Runnable)>").
+*/
+/*
+ImplicitReachable(sig) <-
+  MethodSignatureRef:Value(sig:"<java.lang.Thread: void <init>(java.lang.ThreadGroup,java.lang.String)>").
+*/
+/**************************************************************************
+ *
+ * Abstractions for native method invocations.
+ *
+ * @author Martin Bravenboer
+ *
+ **************************************************************************/
+/**
+ * A native call graph edge is an indirect invocation of a method. The
+ * edge links the native method *declaration* to the Java method that
+ * is indirectly invoked.
+ */
+NativeCallGraphEdge(?callerCtx, ?nativeMethod, ?calleeCtx, ?method) ->
+  Context(?callerCtx), MethodSignatureRef(?nativeMethod),
+  Context(?calleeCtx), MethodSignatureRef(?method).
+/**
+ * Methods invoked through native call graph edges are reachable.
+ */
+ReachableContext(?calleeCtx, ?method) <-
+  NativeCallGraphEdge(_, _, ?calleeCtx, ?method).
+/**
+ * Implements the special status of java.lang.ref.Reference.
+ */
+/*
+
+  Complete implementation: 
+
+  The garbage collector assigns every reference to
+  Reference.pending. So, basically Reference.pending can point to
+  every reference. The ReferenceHandler takes care of enqueueing the
+  references in a reference queue. This is all pure Java.
+
+*/
+StaticFieldPointsTo(?hctx, ?heap, ?pending) <-
+  FieldSignatureRef:Value(?pending:"<java.lang.ref.Reference: java.lang.ref.Reference pending>"),
+  VarRef:Value(?this:"<java.lang.ref.Reference: void <init>(java.lang.Object,java.lang.ref.ReferenceQueue)>/@this"),
+  VarPointsTo(?hctx, ?heap, _, ?this).
+/*
+
+  Paddle implementation:
+
+  Paddle circumvents the JVM implementation of reference queues. It
+  has special support for the reference queue of finalizers. Other
+  reference queues are not supported.
+
+  Every `this' parameter of the constructor of Finalizer is assigned
+  to a global variable, the finalizer queue. This global finalize
+  queue is assigned to the `this' parameter of runFinalizer.
+
+
+
+VarPointsTo(?hctx, ?heap, ?ctx, ?this) <-
+  ReachableContext(?ctx, ?runFinalizer),
+  FinalizerQueue(?hctx, ?heap),
+  MethodSignatureRef:Value(?runFinalizer:"<java.lang.ref.Finalizer: void runFinalizer()>"),
+  VarRef:Value(?this:"java.lang.ref.Finalizer.runFinalizer/@this").
+
+FinalizerQueue(?hctx, ?heap) ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+
+FinalizerQueue(?hctx, ?heap) <-
+   VarRef:Value(?this:"java.lang.ref.Finalizer.<init>/@this"),
+   VarPointsTo(?hctx, ?heap, _, ?this). // any context
+
+*/
+/*************************************************************
+ * Implementation of points-to propagation for concrete,
+ * non-reflective, operations that have been discovered using
+ * reflection.
+ *
+ * @author Martin Bravenboer
+ *************************************************************/
+/*************************************************************
+ * Reflective method calls
+ *
+ * Issues in the documentation:
+ *   - Class.getDeclaredMethods does not specify that <init> is not returned.
+ *   - Method.invoke does not specify that private method calls do not do method lookup
+ *   - It is impossible to call an overridden method in a super class.
+ *
+ * Issues in Livshits' reflection analysis:
+ *   - no dynamic method lookup for instance methods (interface, abstract, overriden)
+ *   - no handling of exceptions
+ *   - unclear how to make context-sensitive
+ *   - not sound for reflective use of reflection
+ *   - no handling of boxing/unboxing
+ *
+ * Test:
+ *   - static initialization
+ *   - context-sensivitity
+ *   - virtual method lookup
+ *   - method declared in class of objParam
+ *
+ * TODO Boxing of primitive results
+ *
+ *************************************************************/
+/**
+ * Method invocations resulting from propagating Method and
+ * Constructor objects to reflective method invocations.
+ *
+ * As opposed to method invocations in the input facts, these must be
+ * context-sensitive for precision purposes: for a reflective method
+ * call sites, the invoked method can depend on the context.
+ */
+ReflectiveMethodInvocation(?ctx, ?caller, ?signature) ->
+  Context(?ctx), MethodInvocationRef(?caller),
+  MethodSignatureRef(?signature).
+/**
+ * The base variable of a reflective method call.
+ */
+ReflectiveBaseVar[?caller] = ?base ->
+  MethodInvocationRef(?caller),
+  VarRef(?base).
+/**
+ * The return variable of a reflective method call.
+ */
+ReflectiveAssignReturnValue[?caller] = ?base ->
+  MethodInvocationRef(?caller),
+  VarRef(?base).
+/**
+ * The variable that points-to an array of actual parameters of a
+ * reflective method call.
+ */
+ReflectiveActualParams[?caller] = ?actualParams ->
+  MethodInvocationRef(?caller),
+  VarRef(?actualParams).
+/*************************************************************
+ * Specific reflective method invocations
+ * 
+ * Reflective method invocations need to be specialized to determine
+ * what kind of method call this is.
+ *
+ *************************************************************/
+ReflectiveSpecialMethodInvocation(?ctx, ?caller, ?signature) ->
+  Context(?ctx), MethodInvocationRef(?caller),
+  MethodSignatureRef(?signature).
+ReflectiveStaticMethodInvocation(?ctx, ?caller, ?signature) ->
+  Context(?ctx), MethodInvocationRef(?caller),
+  MethodSignatureRef(?signature).
+/* YANNIS: reordered */
+ReflectiveVirtualMethodInvocation(?signature, ?ctx, ?caller) ->
+  Context(?ctx), MethodInvocationRef(?caller),
+  MethodSignatureRef(?signature).
+/**
+ * Private method invocations are special methods, unless they are static.
+ *
+ * Note that (for now) the other special method invocation cases are
+ * not possible: 1) instance initialization methods cannot be invoked
+ * reflectively using Method.invoke and 2) overriden superclass
+ * methods cannot be invoked through reflection.
+ */
+ReflectiveSpecialMethodInvocation(?ctx, ?caller, ?signature) <-
+  ReflectiveMethodInvocation(?ctx, ?caller, ?signature),
+  ModifierRef:Value(?private:"private"),
+  MethodModifier(?private, ?signature),
+  ModifierRef:Value(?static:"static"),
+  ! MethodModifier(?static, ?signature).
+/**
+ * Static method invocations
+ */
+ReflectiveStaticMethodInvocation(?ctx, ?caller, ?signature) <-
+  ReflectiveMethodInvocation(?ctx, ?caller, ?signature),
+  ModifierRef:Value(?static:"static"),
+  MethodModifier(?static, ?signature).
+/**
+ * All others are virtual method invocations
+ */
+ReflectiveVirtualMethodInvocation(?signature, ?ctx, ?caller) <-
+  ReflectiveMethodInvocation(?ctx, ?caller, ?signature),
+  ModifierRef:Value(?private:"private"),
+  ! MethodModifier(?private, ?signature),
+  ModifierRef:Value(?static:"static"),
+  ! MethodModifier(?static, ?signature).
+/*************************************************************
+ * Reflective call graph edges
+ *
+ * TODO Unfortunately we have to redo the implementation of method
+ *      calls here. It might be a good idea to consider generation of
+ *      method invocations (but those are input predicates).
+ *
+ *************************************************************/
+/**
+ * A reflective call graph edge has specific details for propagating
+ * parameters and handling return values, so we distinguish them from
+ * native and normal call graph edges.
+ */
+ReflectiveCallGraphEdge(?callerCtx, ?caller, ?calleeCtx, ?callee) ->
+  Context(?callerCtx), MethodInvocationRef(?caller),
+  Context(?calleeCtx), MethodSignatureRef(?callee).
+ReachableContext(?calleeCtx, ?callee) <-
+  ReflectiveCallGraphEdge(_, _, ?calleeCtx, ?callee).
+/**
+ * Static methods
+ *
+ * TODO Macro for context
+ */
+ReflectiveCallGraphEdge(?callerCtx, ?caller, ?callerCtx, ?callee) <-
+  ReflectiveStaticMethodInvocation(?callerCtx, ?caller, ?callee).
+/**
+ * Special methods
+ *
+ * TODO Check if object is an instance of the class declaring the
+ *      method (only overapproximation)
+ *
+ * TODO Macro for context
+ */
+ReflectiveCallGraphEdge(?callerCtx, ?caller, ?callerCtx, ?callee),
+VarPointsTo(?hctx, ?heap, ?callerCtx, ?this)
+  <-
+  ReflectiveBaseVar[?caller] = ?base, // TODO make ?caller specific
+  VarPointsTo(?hctx, ?heap, ?callerCtx, ?base), // recursive
+  ReflectiveSpecialMethodInvocation(?callerCtx, ?caller, ?callee), // recursive // TODO switch order
+  ThisVar[?callee] = ?this,
+  AssignCompatible(Var:Type[?this], HeapAllocation:Type[?heap]).
+/**
+ * Virtual methods
+ *
+ * TODO Check if object is an instance of the class declaring the
+ *      method (only overapproximation)
+ *
+ * TODO Macro for context
+ */
+ReflectiveCallGraphEdge(?callerCtx, ?caller, ?callerCtx, ?tomethod),
+VarPointsTo(?hctx, ?heap, ?callerCtx, ?this)
+  <-
+  ReflectiveBaseVar[?caller] = ?base,
+  VarPointsTo(?hctx, ?heap, ?callerCtx, ?base), // recursive
+  ReflectiveVirtualMethodInvocation(?signature, ?callerCtx, ?caller), // recursive
+  HeapAllocation:Type[?heap] = ?heaptype,
+  MethodSignature:Type[?signature] = ?type,
+  AssignCompatible(?type, ?heaptype), // TODO need nicer check
+  MethodSignature:SimpleName[?signature] = ?simplename,
+  MethodSignature:Descriptor[?signature] = ?descriptor,
+  MethodLookup[?simplename, ?descriptor, ?heaptype] = ?tomethod,
+  ThisVar[?tomethod] = ?this.
+/**
+ * Return values of reflective method invocations
+ */
+Assign(?type, ?callerCtx, ?local, ?calleeCtx, ?return) <-
+  ReturnVar(?return, ?callee),
+  ReflectiveCallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?callee),
+  ReflectiveAssignReturnValue[?invocation] = ?local,
+  Var:Type[?local] = ?type.
+ReflectiveLoadArrayIndex(?calleeCtx, ?formal, ?callerCtx, ?actual) <-
+  ReflectiveCallGraphEdge(?callerCtx, ?invocation, ?calleeCtx, ?callee),
+  FormalParam[_, ?callee] = ?formal,
+  ReflectiveActualParams[?invocation] = ?actual.
+/*************************************************************
+ *
+ * Reflective heap allocations
+ *
+ *************************************************************/
+ReflectiveAssignHeapAllocation(?instruction, ?type, ?ctx, ?var) ->
+  Context(?ctx), VarRef(?var), Type(?type), InstructionRef(?instruction).
+InitializedClass(?type),
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?var) <-
+  ReflectiveAssignHeapAllocation(?instruction, ?type, ?ctx, ?var), // recursive
+  ReflectiveHeapAllocation[?instruction, ?type] = ?heap,
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+/*************************************************************
+ *
+ * Reflective assignment of class constants
+ *
+ *************************************************************/
+ReflectiveAssignClassConstant(?ctx, ?invocation, ?type) ->
+  Context(?ctx), MethodInvocationRef(?invocation), Type(?type).
+/**
+ * Not every virtual method invocation has a return value, so we need
+ * to initialize classes separate from the VarPointsTo rule.
+ */
+InitializedClass(?type) <-
+  ReflectiveAssignClassConstant(_, _, ?type).
+/**
+ * TODO This doesn't make any sense without a 'to' variable.
+ */
+HContext(?immCtx), HContextFromRealHContext[ImmutableHeapValue[]] = ?immCtx,
+VarPointsTo(?immCtx, ?heap, ?ctx, ?return) <-
+  ReflectiveAssignClassConstant(?ctx, ?invocation, ?type),
+  ReifiedClass[?type] = ?heap,
+  AssignReturnValue[?invocation] = ?return.
+/*************************************************************
+ *
+ * Reflective load of array index.
+ *
+ *************************************************************/
+ReflectiveLoadArrayIndex(?calleeCtx, ?to, ?callerCtx, ?base) ->
+  Context(?calleeCtx), VarRef(?to),
+  Context(?callerCtx), VarRef(?base).
+/**
+ * Original predicate name LoadHeapArrayIndex is replaced by
+ * ReflectiveLoadHeapArrayIndex. The relative change is reflected in context-sensitive.logic.
+ * The original implementation causes reflective parameters assign failed.
+ */
+ReflectiveLoadHeapArrayIndex(?calleeCtx, ?to, ?basehctx, ?baseheap) ->
+  Context(?calleeCtx),
+  VarRef(?to),
+  HContext(?basehctx),
+  HeapAllocationRef(?baseheap).
+ReflectiveLoadHeapArrayIndex(?calleeCtx, ?to, ?basehctx, ?baseheap) <-
+  ReflectiveLoadArrayIndex(?calleeCtx, ?to, ?callerCtx, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?callerCtx, ?base).
+// Use types of objects to filter reflective interprocedural assignments.
+// Fix the reflective parameter passing bug.
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  ReflectiveLoadHeapArrayIndex(?ctx, ?to, ?basehctx, ?baseheap),
+  ArrayIndexPointsTo(?hctx, ?heap, ?basehctx, ?baseheap),
+  Var:Type[?to] = ?type,
+  HeapAllocation:Type[?heap] = ?heaptype,
+  AssignCompatible(?type, ?heaptype).
+/*************************************************************
+ *
+ * Reflective load of a static field
+ *
+ * TODO does this trigger class initialization?
+ *
+ *************************************************************/
+ReflectiveLoadStaticField(?ctx, ?var, ?signature) ->
+  FieldSignatureRef(?signature), Context(?ctx), VarRef(?var).
+VarPointsTo(?hctx, ?heap, ?ctx, ?var) <-
+  ReflectiveLoadStaticField(?ctx, ?var, ?signature),
+  StaticFieldPointsTo(?hctx, ?heap, ?signature).
+/*************************************************************
+ *
+ * Reflective store of a static field
+ *
+ * TODO does this trigger class initialization?
+ *
+ *************************************************************/
+ReflectiveStoreStaticField(?signature, ?ctx, ?var) ->
+  FieldSignatureRef(?signature), Context(?ctx), VarRef(?var).
+StaticFieldPointsTo(?hctx, ?heap, ?signature) <-
+  ReflectiveStoreStaticField(?signature, ?ctx, ?var),
+  VarPointsTo(?hctx, ?heap, ?ctx, ?var).
+/*************************************************************
+ *
+ * Reflective load of an instance field
+ *
+ *************************************************************/
+ReflectiveLoadInstanceField(?toCtx, ?to, ?signature, ?baseCtx, ?base) ->
+  Context(?baseCtx), VarRef(?base), FieldSignatureRef(?signature),
+  Context(?toCtx), VarRef(?to).
+LoadHeapInstanceField(?toCtx, ?to, ?sig, ?basehctx, ?baseheap) <-
+  ReflectiveLoadInstanceField(?toCtx, ?to, ?sig, ?baseCtx, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?baseCtx, ?base).
+/*************************************************************
+ *
+ * Reflective store of an instance field
+ *
+ *************************************************************/
+ReflectiveStoreInstanceField(?fromCtx, ?from, ?signature, ?baseCtx, ?base) ->
+  Context(?fromCtx), VarRef(?from), Context(?baseCtx), VarRef(?base),
+  FieldSignatureRef(?signature).
+StoreHeapInstanceField(?signature, ?basehctx, ?baseheap, ?fromCtx, ?from) <-
+  ReflectiveStoreInstanceField(?fromCtx, ?from, ?signature, ?baseCtx, ?base),
+  VarPointsTo(?basehctx, ?baseheap, ?baseCtx, ?base).
+/*************************************************************
+ * Reflection analysis
+ *
+ * We use a distinct heap abstraction for every java.lang.Class,
+ * i.e., for every class type that appears in the bytecode, for
+ * example '<class java.lang.String>'. The predicate ReifiedClass is
+ * used to look up the heap abstraction for a given type.
+ * 
+ * This allows us to track the type of a Class object and automate
+ * newInstance invocations (and in the future java.lang.reflect.Method
+ * and Constructor invocations as well).
+ *
+ * User configuration is required for Class.forName invocations. We
+ * might implement some string analysis in the future, but most common
+ * reflection cases use string manipulations for which a
+ * straightforward string analysis would not help.
+ * 
+ * Objects created by newInstance invocations are represented by a
+ * generated heap allocation, a combination of the invocation-site of
+ * newInstance and the type of the allocated object (see
+ * reflection-delta.logic).
+ *
+ * TODO Note that this analysis currently does not support reflective
+ *      use of reflection. If you really want to, you can hide uses of
+ *      reflection in this way. The issue here is that the current
+ *      code does not consider reflective method invocations, only
+ *      virtual method invocations. For example:
+ *      
+ *         MethodSignatureRef:Value(?getClass:"<java.lang.Object: java.lang.Class getClass()>"),
+ *         VirtualMethodInvocation:Signature[?invocation] = ?getClass,
+ *
+ *      Only checks for invocations of getClass in source code, not in
+ *      method invocations discovered during reflection analysis.
+ *
+ * @author Martin Bravenboer
+ *************************************************************/
+/*************************************************************
+ * Object.getClass
+ *
+ * stable public interface
+ *     public final native Class getClass()
+ *
+ * Although Object.getClass is a reflection operation, it is easy to
+ * analyse statically, because we know the type of every heap
+ * allocation.
+ *************************************************************/
+/**
+ * find uses of getClass
+ */
+java:lang:Object:getClass(?to, ?from) <-
+  MethodSignatureRef:Value(?getClass:"<java.lang.Object: java.lang.Class getClass()>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?getClass,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?from.
+/**
+ * evaluate getClass
+ */
+HContext(?immCtx), HContextFromRealHContext[ImmutableHeapValue[]] = ?immCtx,
+VarPointsTo(?immCtx, ?class, ?ctx, ?to) <-
+  java:lang:Object:getClass(?to, ?var),
+  VarPointsTo(_, ?heap, ?ctx, ?var),
+  HeapAllocation:Type[?heap] = ?type,
+  ReifiedClass[?type] = ?class.
+/*************************************************************
+ * Class.forName
+ *
+ * stable public interface
+ *     public static Class<?> forName(String className)
+ *     public static Class<?> forName(String name, boolean initialize, ClassLoader loader)
+ *
+ * native jre1.3
+ *     private static native Class forName0(String name, boolean initialize, ClassLoader loader)
+ *
+ * native openjdk
+ *     private static native Class forName0(String name, boolean initialize, ClassLoader loader)
+ *
+ *
+ * Class.forName is the main fragile point of a static pointer
+ * analysis. Arbitrary strings can be constructed by the program and
+ * used as an argument to Class.forName, so we cannot predict which
+ * classes they correspond to.
+ *
+ * Therefore, this is also the main user-configuration point (some
+ * other points-to analysis implementations configure newInstance, but
+ * we think Class.forName is the appropriate place)
+ *
+ * We do automatically support class name strings that occur as
+ * constants in the program. For those, configuration is not
+ * necessary.
+ *************************************************************/
+/**
+ * Find invocations of Class.forName
+ */
+java:lang:Class:forName(?invocation, ?inmethod) <-
+  MethodSignatureRef:Value(?forName:"<java.lang.Class: java.lang.Class forName(java.lang.String)>"),
+  StaticMethodInvocation(?invocation, ?forName, ?inmethod).
+java:lang:Class:forName(?invocation, ?inmethod) <-
+  MethodSignatureRef:Value(?forName:"<java.lang.Class: java.lang.Class forName(java.lang.String,boolean,java.lang.ClassLoader)>"),
+  StaticMethodInvocation(?invocation, ?forName, ?inmethod).
+/**
+ * Class.forName invocations with user-configured dynamic classes
+ */
+ReflectiveAssignClassConstant(?ctx, ?invocation, ?type) <-
+  java:lang:Class:forName(?invocation, ?inmethod),
+  ReachableContext(?ctx, ?inmethod),
+  Config:DynamicClass(?type, ?invocation).
+/**
+ * Class.forName invocations with string constant parameters
+ */
+//YANNIS (REVIEW): needs optimization. Create opt predicate computed
+//from first three below, but reordering the ?param, ?invocation
+//so that VarPointsTo can also index it efficiently.
+ReflectiveAssignClassConstant(?ctx, ?invocation, ?type) <-
+  java:lang:Class:forName(?invocation, ?inmethod),
+  ReachableContext(?ctx, ?inmethod), // recursive
+  java:lang:Class:forName:ActualParam[?invocation] = ?param,
+  VarPointsTo(_, ?constant, ?ctx, ?param), // recursive
+  ClassNameStringConstant:Type[?constant] = ?type.
+java:lang:Class:forName:ActualParam[?invocation] = ?param ->
+  MethodInvocationRef(?invocation),
+  VarRef(?param).
+java:lang:Class:forName:ActualParam[?invocation] = ?param <-
+  ParamIndexRef:Value(?zero:0),
+  ActualParam[?zero, ?invocation] = ?param,
+  java:lang:Class:forName(?invocation, _).
+/*************************************************************
+ * Class.getDeclaredMethods
+ *
+ * stable public interface
+ *    public Method[] getMethods()
+ *    public Method getMethod(String name, Class[] parameterTypes)
+ *    public Method[] getDeclaredMethods()
+ *    public Method getDeclaredMethod(String name, Class[] parameterTypes)
+ *
+ * jre1.3
+ *    private native Method[] getMethods0(int which);
+ *    private native Method getMethod0(String name, Class[] parameterTypes,
+ *
+ * openjdk
+ *    private native Method[] getDeclaredMethods0(boolean publicOnly);
+ *
+ *************************************************************/
+/**
+ * find invocations
+ */
+java:lang:Class:getDeclaredMethod(?to, ?from) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.Class: java.lang.reflect.Method getDeclaredMethod(java.lang.String,java.lang.Class[])>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?from.
+/**
+ * evaluate
+ */
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  java:lang:Class:getDeclaredMethod(?to, ?from),
+  VarPointsTo(_, ?class, ?ctx, ?from),
+  ReifiedClass[?type] = ?class,
+  MethodSignature:Type[?signature] = ?type,
+  ReifiedMethod[?signature] = ?heap,
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+/*************************************************************
+ * Class.getConstructors
+ *
+ * stable public interface
+ *    public Constructor getConstructor(Class[] parameterTypes)
+ *    public Constructor[] getConstructors()
+ *    public Constructor[] getDeclaredConstructors()
+ *    public Constructor getDeclaredConstructor(Class[] parameterTypes)
+ *
+ * native jre1.3
+ *    private native Constructor[] getConstructors0(int which);
+ *    private native Constructor getConstructor0(Class[] parameterTypes, int which)
+ *
+ * native openjdk
+ *    private native Constructor[] getDeclaredConstructors0(boolean publicOnly);
+ *
+ * Confusingly, the difference between getConstructor and getDeclaredConstructor is
+ * that getConstructor only considers public constructors.
+ *
+ *************************************************************/
+/**
+ * find invocations
+ */
+java:lang:Class:getConstructor(?to, ?from) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.Class: java.lang.reflect.Constructor getConstructor(java.lang.Class[])>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?from.
+java:lang:Class:getDeclaredConstructor(?to, ?from) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.Class: java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[])>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?from.
+/**
+ * evaluate
+ */
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  java:lang:Class:getConstructor(?to, ?from),
+  VarPointsTo(_, ?class, ?ctx, ?from),
+  ReifiedClass[?type] = ?class,
+  MethodSignature:Type[?signature] = ?type,
+  ModifierRef:Value(?public:"public"),
+  MethodModifier(?public, ?signature),
+  ReifiedConstructor[?signature] = ?heap,
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  java:lang:Class:getDeclaredConstructor(?to, ?from),
+  VarPointsTo(_, ?class, ?ctx, ?from),
+  ReifiedClass[?type] = ?class,
+  MethodSignature:Type[?signature] = ?type,
+  ReifiedConstructor[?signature] = ?heap,
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+/*************************************************************
+ * Method.invoke
+ *
+ * stable public interface
+ *     public Object invoke(Object obj, Object[] args)
+ *
+ * jre1.3
+ *     public native Object invoke(Object obj, Object[] args)
+ *
+ * openjdk
+ *     something way too complicated ...
+ *
+ * Notes:
+ *
+ *   - currently we're simulating the public interface
+ *
+ *   - The specification of reflective method invocations is
+ *     generic. The logic of this section makes Method.invoke
+ *     available as a reflective method invocation site.
+ *     
+ ************************************************************/
+java:lang:reflect:Method:invoke(?invocation, ?base) <-
+  MethodSignatureRef:Value(?invoke:"<java.lang.reflect.Method: java.lang.Object invoke(java.lang.Object,java.lang.Object[])>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?invoke,
+  VirtualMethodInvocation:Base[?invocation] = ?base.
+ReflectiveMethodInvocation(?ctx, ?instruction, ?signature) <-
+  java:lang:reflect:Method:invoke(?instruction, ?from),
+  VarPointsTo(_, ?method, ?ctx, ?from), // recursive
+  ReifiedMethod[?signature] = ?method.
+ReflectiveBaseVar[?invocation] = ?base <-
+  java:lang:reflect:Method:invoke(?invocation, _),
+  ActualParam[?zero, ?invocation] = ?base,
+  ParamIndexRef:Value(?zero:0).
+ReflectiveAssignReturnValue[?invocation] = ?var <-
+  java:lang:reflect:Method:invoke(?invocation, _),
+  AssignReturnValue[?invocation] = ?var.
+ReflectiveActualParams[?invocation] = ?argsParam <-
+  java:lang:reflect:Method:invoke(?invocation, _),
+  ActualParam[?one, ?invocation] = ?argsParam,
+  ParamIndexRef:Value(?one:1).
+/*************************************************************
+ * Constructor.newInstance
+ *
+ * stable public interface
+ *     public Object newInstance(Object[] initargs)
+ *
+ * native jre1.3
+ *     public native Object newInstance(Object[] initargs)
+ *
+ * openjdk
+ *     something way too complicated ...
+ *
+ *
+ * Notes:
+ *
+ *   - currently we're simulating the public interface
+ *
+ *   - a constructor does not have a return value, so we do set the
+ *     ReflectiveAssignReturnValue.
+ *
+ *   - although the return value of newInstance does not necessarily
+ *     get assigned to a local variable, we assume that is the case
+ *     here in prepration of the nice specification language that is
+ *     upcoming (where this will be replaced by a separate heap
+ *     allocation and constructor invocation).
+ *     
+ *************************************************************/
+ReflectiveAssignHeapAllocation(?invocation, ?type, ?ctx, ?to),
+ReflectiveSpecialMethodInvocation(?ctx, ?invocation, ?signature) <-
+  java:lang:reflect:Constructor:newInstance(?invocation, ?to, ?base),
+  VarPointsTo(_, ?constructor, ?ctx, ?base), // recursive
+  ReifiedConstructor[?signature] = ?constructor,
+  MethodSignature:Type[?signature] = ?type.
+ReflectiveBaseVar[?invocation] = ?to <-
+  java:lang:reflect:Constructor:newInstance(?invocation, ?to, _).
+ReflectiveActualParams[?invocation] = ?argsParam <-
+  java:lang:reflect:Constructor:newInstance(?invocation, _, _),
+  ActualParam[?zero, ?invocation] = ?argsParam,
+  ParamIndexRef:Value(?zero:0).
+/*************************************************************
+ * Class.newInstance
+ *
+ * stable public interface
+ *     public Object newInstance() 
+ *
+ * native jre1.3
+ *     private native Object newInstance0()
+ *
+ * native openjdk
+ *     none, implemented in java using java.lang.reflect.Constructor.newInstance
+ *
+ * Notes:
+ *
+ *    - Currently we're simulating the public interface
+ *
+ *    - For the OpenJDK there is a duplication of simulating, since we
+ *      also simulate reflective constructor invocations. We'll soon
+ *      sort out what needs to be in #ifdefs exactly.
+ *
+ *    - Class.newInstance is handled completely automatically. not
+ *      requiring any user-configuration. The reason why this is
+ *      possible is that we use a distinct heap abstraction for every
+ *      Class object of a distinct class.
+ *
+ *
+ * TODO This should really be replaced by assignments to method
+ *      declaration return values, but the JRE differences make this
+ *      slightly complicated right now: this would be restricted to
+ *      JRE1.3
+ *
+ * TODO For JRE1.4 and higher this should be replaced by a more
+ *      general simulation of reflective access to constructors
+ *      (newInstance is no longer native there).
+ *
+ *************************************************************/
+// (YANNIS) Simple optimization predicate. It matters. This used
+// to be inlined in its use site.
+OptClassToConstructor(?constructor, ?class) <-
+  ReifiedClass[?type] = ?class,
+  // find the constructor that will be invoked
+  MethodSignature:Type[?constructor] = ?type,
+  MethodSignature:SimpleName[?constructor] = ?simplename,
+  MethodSignature:Descriptor[?constructor] = ?descriptor,
+  MethodDescriptorRef:Value(?descriptor:"void()"),
+  SimpleNameRef:Value(?simplename:"<init>").
+ReflectiveAssignHeapAllocation(?invocation, ?type, ?ctx, ?to),
+ReflectiveSpecialMethodInvocation(?ctx, ?invocation, ?constructor)
+  <-
+  java:lang:Class:newInstance(?invocation, ?to, ?var),
+  VarPointsTo(_, ?class, ?ctx, ?var),
+  MethodSignature:Type[?constructor] = ?type,
+  OptClassToConstructor(?constructor, ?class).
+ReflectiveBaseVar[?invocation] = ?to <-
+  java:lang:Class:newInstance(?invocation, ?to, _).
+/*************************************************************
+ * Class.getFields
+ *
+ * stable public interface
+ *     public Field getDeclaredField(String name)
+ *     public Field[] getDeclaredFields()
+ *     public Field getField(String name)
+ *     public Field[] getFields()
+ *
+ * native jre1.3
+ *     private native Field getField0(String name, int which)
+ *     private native Field[] getFields0(int which)
+ *
+ * native openjdk
+ *     private native Field[] getDeclaredFields0(boolean publicOnly)
+ *
+ * Notes:
+ *
+ *     - getDeclaredField will not reflect the length field of an
+ *       array class (nor will getDeclaredFields, getField and
+ *       getFields, although that is not documented).
+ *
+ * TODO getField is often used with a constant string literal
+ *      argument. We should optimize for that.
+ *
+ *************************************************************/
+/**
+ * find invocations
+ */
+java:lang:Class:getDeclaredField(?to, ?from) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?from.
+/**
+ * evaluate
+ */
+HContext(?hctx), HContextFromRealHContext[RealContextFromContext[?ctx]] = ?hctx,
+VarPointsTo(?hctx, ?heap, ?ctx, ?to) <-
+  java:lang:Class:getDeclaredField(?to, ?from),
+  VarPointsTo(_, ?class, ?ctx, ?from),
+  ReifiedClass[?type] = ?class,
+  Field:DeclaringClass[?signature] = ?type,
+  ReifiedField[?signature] = ?heap,
+  ((NegativeObjectFilter("true"), ObjectToRefine(?heap)); (!NegativeObjectFilter("true"), !ObjectToRefine(?heap))).
+/*************************************************************
+ * Field.get
+ *
+ * stable public interface
+ *     public Object get(Object)
+ *
+ *************************************************************/
+/**
+ * Find invocations
+ *
+ * Notes:
+ *   - at this point, we cannot distinguish static fields from instance
+ *     fields.
+ *
+ * TODO refactor to have separate predicates.
+ */
+java:lang:reflect:Field:get(?invocation, ?to, ?field) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.reflect.Field: java.lang.Object get(java.lang.Object)>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  AssignReturnValue[?invocation] = ?to,
+  VirtualMethodInvocation:Base[?invocation] = ?field.
+java:lang:reflect:Field:get:base[?invocation] = ?base ->
+  MethodInvocationRef(?invocation),
+  VarRef(?base).
+java:lang:reflect:Field:get:base[?invocation] = ?base <-
+  java:lang:reflect:Field:get(?invocation, _, _),
+  ActualParam[?zero, ?invocation] = ?base,
+  ParamIndexRef:Value(?zero:0).
+/**
+ * Reflective load of field (instance or static)
+ */
+ReflectiveLoadField(?invocation, ?ctx, ?to, ?signature) ->
+  MethodInvocationRef(?invocation),
+  FieldSignatureRef(?signature),
+  Context(?ctx), VarRef(?to).
+ReflectiveLoadField(?invocation, ?ctx, ?to, ?signature) <-
+  java:lang:reflect:Field:get(?invocation, ?to, ?field),
+  VarPointsTo(_, ?fieldHeap, ?ctx, ?field),
+  ReifiedField[?signature] = ?fieldHeap.
+/**
+ * Load of static field. 
+ *
+ * Notes:
+ *
+ *   - For static fields, the actual argument of a call to get is not
+ *     relevant.
+ *
+ *   - The context of the reified field heap object does not matter:
+ *     it has no fields whose value is determined by the context of
+ *     the allocation.
+ *
+ * TODO Check if class initialization handled by reflective.logic.
+ */
+ReflectiveLoadStaticField(?ctx, ?to, ?signature) <-
+  ReflectiveLoadField(_, ?ctx, ?to, ?signature),
+  ModifierRef:Value(?static:"static"),
+  FieldModifier(?static, ?signature).
+/**
+ * Load of instance field.
+ */
+ReflectiveLoadInstanceField(?ctx, ?to, ?signature, ?ctx, ?base) <-
+  ReflectiveLoadField(?invocation, ?ctx, ?to, ?signature),
+  ModifierRef:Value(?static:"static"),
+  ! FieldModifier(?static, ?signature),
+  java:lang:reflect:Field:get:base[?invocation] = ?base.
+/*************************************************************
+ * Field.set
+ *
+ * stable public interface
+ *     public void set(Object, Object)
+ *
+ *************************************************************/
+/**
+ * Find invocations
+ */
+java:lang:reflect:Field:set(?invocation, ?field) ->
+  MethodInvocationRef(?invocation),
+  VarRef(?field).
+java:lang:reflect:Field:set(?invocation, ?field) <-
+  MethodSignatureRef:Value(?signature:"<java.lang.reflect.Field: void set(java.lang.Object,java.lang.Object)>"),
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  VirtualMethodInvocation:Base[?invocation] = ?field.
+/**
+ * The variable containing the new value of the field
+ */
+java:lang:reflect:Field:set:from[?invocation] = ?from ->
+  MethodInvocationRef(?invocation),
+  VarRef(?from).
+java:lang:reflect:Field:set:from[?invocation] = ?from <-
+  java:lang:reflect:Field:set(?invocation, _),
+  ActualParam[?one, ?invocation] = ?from,
+  ParamIndexRef:Value(?one:1).
+java:lang:reflect:Field:set:base[?invocation] = ?base ->
+  MethodInvocationRef(?invocation),
+  VarRef(?base).
+java:lang:reflect:Field:set:base[?invocation] = ?base <-
+  java:lang:reflect:Field:set(?invocation, _),
+  ActualParam[?zero, ?invocation] = ?base,
+  ParamIndexRef:Value(?zero:0).
+/**
+ * Store of field (instance or static)
+ */
+ReflectiveStoreField(?invocation, ?signature, ?ctx, ?var) ->
+  MethodInvocationRef(?invocation),
+  FieldSignatureRef(?signature),
+  Context(?ctx), VarRef(?var).
+ReflectiveStoreField(?invocation, ?signature, ?ctx, ?from) <-
+  java:lang:reflect:Field:set(?invocation, ?fieldVar),
+  VarPointsTo(_, ?fieldHeap, ?ctx, ?fieldVar),
+  ReifiedField[?signature] = ?fieldHeap,
+  java:lang:reflect:Field:set:from[?invocation] = ?from.
+/**
+ * Store of static field. 
+ *
+ * TODO Check if class initialization handled by reflective.logic.
+ */
+ReflectiveStoreStaticField(?signature, ?ctx, ?from) <-
+  ReflectiveStoreField(_, ?signature, ?ctx, ?from),
+  ModifierRef:Value(?static:"static"),
+  FieldModifier(?static, ?signature).
+/**
+ * Store of instance field.
+ */
+ReflectiveStoreInstanceField(?ctx, ?from, ?signature, ?ctx, ?base) <-
+  ReflectiveStoreField(?invocation, ?signature, ?ctx, ?from),
+  ModifierRef:Value(?static:"static"),
+  ! FieldModifier(?static, ?signature),
+  java:lang:reflect:Field:set:base[?invocation] = ?base.
+/***************************************************************************
+ *
+ * Threads
+ *
+ * @author Martin Bravenboer
+ *
+ ***************************************************************************/
+/**
+ * Thread allocations that might be running.
+ */
+RunningThread(?hctx, ?heap) ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+/**
+ * The main thread is never explicitly started, which would make it a
+ * RunningThread. Therefore, we make it a running thread explicitly.
+ */
+RunningThread(?hctx, ?heap) <-
+  MainThread(?hctx, ?heap).
+/**
+ * Calls to Thread.start() get redirected to Thread.run.
+ *
+ * TODO generalize to a redirect virtual method invocation. This takes
+ *      too much code.
+ *
+ * In JRE 1.3 and JRE 1.4 the Thread.start() method itself is
+ * native. In JRE 1.5 and JRE 1.6 Thread.start() is defined in Java
+ * and there is native method start0.
+ */
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+NativeCallGraphEdge(?callerCtx, ?start, ?calleeCtx, ?run),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?runThis),
+RunningThread(?hctx, ?heap)
+<-
+  MethodSignatureRef:Value(?start:"<java.lang.Thread: void start0()>"),
+  ThisVar[?start] = ?startThis,
+  VarPointsTo(?hctx, ?heap, ?callerCtx, ?startThis),
+  SimpleNameRef:Value(?simplename:"run"),
+  MethodDescriptorRef:Value(?descriptor:"void()"),
+  HeapAllocation:Type[?heap] = ?heaptype,
+  MethodLookup[?simplename, ?descriptor, ?heaptype] = ?run,
+  ThisVar[?run] = ?runThis.
+/**
+ * Thread.currentThread() return running threads.
+ *
+ * TODO In a thread sensitive analysis, we can return exactly one
+ *      thread here, namely the context thread. It would be great if
+ *      this rule would support that.
+ *
+ * TODO It seems more elegant to have a return variable for native methods
+ *      and assign the running threads to this return variable.
+ */
+VarPointsTo(?hctx, ?heap, ?callerCtx, ?local) <-
+  ReachableCurrentThreadInvocation(?callerCtx, ?local),
+  RunningThread(?hctx, ?heap).
+ReachableCurrentThreadInvocation(?callerCtx, ?local) ->
+  Context(?callerCtx), VarRef(?local).
+ReachableCurrentThreadInvocation(?callerCtx, ?local) <-
+  ReachableContext(?callerCtx, ?inmethod),
+  MethodSignatureRef:Value(?signature:"<java.lang.Thread: java.lang.Thread currentThread()>"),
+  StaticMethodInvocation(?invocation, ?signature, ?inmethod),
+  AssignReturnValue[?invocation] = ?local.
+/**
+ * Initialization of the system thread group
+ *
+ * The JVM creates an initial system thread group and initializes it
+ * by invoking the private ThreadGroup() constructor (openjdk:
+ * create_initial_thread_group).
+ */
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+ReachableContext(?calleeCtx, ?sig),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?this) <-
+  MethodSignatureRef:Value(?sig:"<java.lang.ThreadGroup: void <init>()>"),
+  ThisVar[?sig] = ?this,
+  SystemThreadGroup(?hctx, ?heap).
+/**
+ * Initialization of the main thread group
+ *
+ * The JVM creates a main thread group, which is a child of the system
+ * thread group (openjdk: create_initial_thread_group). It is
+ * initialized using the constructor ThreadGroup(ThreadGroup, String),
+ * with as the first argument the system thread group, and as the
+ * second argument the string "main".
+ *
+ * TODO: set the "main" argument.
+ */
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+ReachableContext(?calleeCtx, ?sig),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?this),
+VarPointsTo(?groupCtx, ?group, ?calleeCtx, ?groupParam) <-
+  MethodSignatureRef:Value(?sig:"<java.lang.ThreadGroup: void <init>(java.lang.ThreadGroup,java.lang.String)>"),
+  ThisVar[?sig] = ?this,
+  FormalParam[?zero, ?sig] = ?groupParam,
+  ParamIndexRef:Value(?zero:0),
+  MainThreadGroup(?hctx, ?heap),
+  SystemThreadGroup(?groupCtx, ?group).
+/**
+ * Initialization of the main thread.
+ *
+ * The JVM creates a main thread and initializes it using the
+ * constructor Thread(ThreadGroup, String), with as the first argument
+ * the main thread group, and as the second argument the string
+ * "main".
+ *
+ * TODO: set the "main" argument.
+ */
+Context(?calleeCtx), ContextFromRealContext[?heap] = ?calleeCtx,
+ReachableContext(?calleeCtx, ?sig),
+VarPointsTo(?hctx, ?heap, ?calleeCtx, ?this),
+VarPointsTo(?groupCtx, ?group, ?calleeCtx, ?groupParam) <-
+  MethodSignatureRef:Value(?sig:"<java.lang.Thread: void <init>(java.lang.ThreadGroup,java.lang.String)>"),
+  ThisVar[?sig] = ?this,
+  FormalParam[?zero, ?sig] = ?groupParam,
+  ParamIndexRef:Value(?zero:0),
+  MainThread(?hctx, ?heap),
+  MainThreadGroup(?groupCtx, ?group).
+/**
+ * Declaring class
+ */
+// TODO declare this as a ClassType
+DeclaringClassMethod[?method] = ?type ->
+  Type(?type),
+  MethodSignatureRef(?method).
+DeclaringClassMethod[?method] = ?type <-
+  MethodDeclaration[?signature] = ?method,
+  MethodSignature:Type[?signature] = ?type.
+// The Type is almost always a ClassType, except for Object methods
+// dispatched on arrays. The InstructionRef is almost always a 
+// HeapAllocationRef, except for reflectively allocated objects which
+// have a regular invocation site as their id.
+DeclaringClassAllocation[?heap] = ?type ->
+  Type(?type),
+  InstructionRef(?heap).
+DeclaringClassAllocation[?heap] = ?type <-
+  AssignHeapAllocation(?heap, _, ?inmethod),
+  DeclaringClassMethod[?inmethod] = ?type,
+  !StringConstant(?heap),
+  !ClassConstant(?heap).
+/*
+DeclaringClassAllocation[?heap] = ?type <-
+  ReflectiveHeapAllocation[_, _] = ?heap,
+  HeapAllocation:Type[?heap] = ?type.
+*/
+DeclaringClassAllocation[?heap] = ?type <-
+  ReflectiveHeapAllocation[_, ?type] = ?heap.
+DeclaringClassAllocation[?heap] = ?type <-
+  ReifiedConstructor[_] = ?heap,
+  HeapAllocation:Type[?heap] = ?type.
+DeclaringClassAllocation[?heap] = ?type <-
+  ReifiedMethod[_] = ?heap,
+  HeapAllocation:Type[?heap] = ?type.
+DeclaringClassAllocation[?heap] = ?type <-
+  ReifiedField[_] = ?heap,
+  HeapAllocation:Type[?heap] = ?type.
+DeclaringClassAllocation[?heap] = ?type <-
+  ClassConstant(?heap),
+  Type:Value(?type:"java.lang.String"), ClassType(?type).
+/* REVIEW: the problem is that currently reflective allocations
+   are not uniquely identified. This would produce way too many
+   facts. So instead we cheat and use the type of the reflective
+   allocation as the type *containing* the reflective allocation.
+   If we are to fix this in the future, it will look like this:
+
+DeclaringClassAllocation[?heap] = ?type <-
+  ReflectiveHeapAllocation[?invocation, _] = ?heap,
+  Instruction:Method[?invocation] = ?inmethod,
+  DeclaringClassMethod[?inmethod] = ?type,
+  !StringConstant(?heap).
+*/
+DeclaringClassAllocation[?heap] = ?type <-
+  StringConstant(?heap),
+  Type:Value(?type:"java.lang.String"), ClassType(?type).
+// The following are special cases. Not clear where they belong.
+DeclaringClassAllocation[?heap] = ?type <-
+  InstructionRef:Value(?heap:"<<string-constant>>"), HeapAllocationRef(?heap),
+  Type:Value(?type:"java.lang.String"), ClassType(?type).
+DeclaringClassAllocation[?heap] = ?type <-
+  InstructionRef:Value(?heap:"<<string-buffer>>"), HeapAllocationRef(?heap),
+  Type:Value(?type:"java.lang.String"), ClassType(?type).
+DeclaringClassAllocation[?heap] = ?type <-
+  InstructionRef:Value(?heap:"<<string-builder>>"), HeapAllocationRef(?heap),
+  Type:Value(?type:"java.lang.String"), ClassType(?type).
+/* Helpful macro for debugging. Should be empty.
+WhatAreWeMissing(?heap) -> HeapAllocationRef(?heap).
+WhatAreWeMissing(?heap) <- 
+  HeapAllocationRef(?heap),
+  !exists DeclaringClassAllocation[?heap].
+*/
+// TODO declare this as a ClassType
+Field:DeclaringClass[?signature] = ?type ->
+  Type(?type),
+  FieldSignatureRef(?signature).
+Field:DeclaringClass[?signature] = ?declaringClass <-
+  FieldSignature(?signature, ?declaringClass, _, _).
+Field:Type[?signature] = ?type ->
+  Type(?type),
+  FieldSignatureRef(?signature).
+Field:Type[?signature] = ?type <-
+  FieldSignature(?signature, _, _, ?type).
+/**
+ * Joins of input facts, useful for performance reasons.
+ */
+VirtualMethodInvocation:SimpleName[?invocation] = ?simplename ->
+  MethodInvocationRef(?invocation),
+  SimpleNameRef(?simplename).
+VirtualMethodInvocation:SimpleName[?invocation] = ?simplename <-
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  MethodSignature:SimpleName[?signature] = ?simplename.
+VirtualMethodInvocation:Descriptor[?invocation] = ?descriptor ->
+  MethodInvocationRef(?invocation),
+  MethodDescriptorRef(?descriptor).
+VirtualMethodInvocation:Descriptor[?invocation] = ?descriptor <-
+  VirtualMethodInvocation:Signature[?invocation] = ?signature,
+  MethodSignature:Descriptor[?signature] = ?descriptor.
+Instruction:Method[?instruction] = ?inmethod ->
+  InstructionRef(?instruction),
+  MethodSignatureRef(?inmethod).
+Instruction:Method[?invocation] = ?inmethod <-
+  SpecialMethodInvocation:In(?invocation, ?inmethod).
+Instruction:Method[?invocation] = ?inmethod <-
+  VirtualMethodInvocation:In(?invocation, ?inmethod).
+Instruction:Method[?invocation] = ?inmethod <-
+  StaticMethodInvocation:In(?invocation, ?inmethod).
+Instruction:Method[?invocation] = ?inmethod <-
+  Throw:Method[?invocation] = ?inmethod.
+/**
+ * Main methods
+ */
+MainMethodDeclaration(?method) ->
+  MethodSignatureRef(?method).
+MainMethodDeclaration(?method) <-
+  MainClass(?type),
+  SimpleNameRef:Value(?simplename:"main"),
+  MethodDescriptorRef:Value(?descriptor:"void(java.lang.String[])"),
+  ModifierRef:Value(?public:"public"),
+  ModifierRef:Value(?static:"static"),
+  MethodSignature:Type[?signature] = ?type,
+  MethodSignature:SimpleName[?signature] = ?simplename,
+  MethodSignature:Descriptor[?signature] = ?descriptor,
+  MethodDeclaration[?signature] = ?method,
+  MethodModifier(?public, ?method),
+  MethodModifier(?static, ?method).
+// In this analysis, both the real context and the real heap context 
+// are HeapAllocationRefs. Keeping mapping 
+// functions is the way to handle analyses where HContext = Context 
+// (since the language considers them different types).
+ContextFromRealContext[?heap] = ?ctx ->
+  Context(?ctx), HeapAllocationRef(?heap).
+lang:skolem(`ContextFromRealContext).
+RealContextFromContext[?ctx] = ?heap ->
+  Context(?ctx), HeapAllocationRef(?heap).
+RealContextFromContext[?ctx] = ?heap <-
+  ContextFromRealContext[?heap] = ?ctx.
+HContextFromRealHContext[?heap] = ?hctx ->
+  HContext(?hctx), HeapAllocationRef(?heap).
+lang:skolem(`HContextFromRealHContext).
+// Creating special immutable heap allocation constant
+ImmutableHeapValue[] = ?immHeap <-
+  InstructionRef:Value(?immHeap:"<<immutable>>"), HeapAllocationRef(?immHeap).
+// Create initial objects with their heapcontexts.
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+SystemThreadGroup(?hctx, ?alloc) <-
+  MySystemThreadGroup(?heap, ?alloc).
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+MainThreadGroup(?hctx, ?alloc) <-
+  MyMainThreadGroup(?heap, ?alloc).
+HContextFromRealHContext[?heap] = ?hctx,
+HContext(?hctx),
+MainThread(?hctx, ?alloc) <-
+  MyMainThread(?heap, ?alloc).
+/**
+ * Reachable
+ */
+ReachableContext(?ctx, ?method),
+ContextFromRealContext[?heap] = ?ctx,
+Context(?ctx)
+ <-
+  MainMethodDeclaration(?method),
+  InstructionRef:Value(?heap:"<<initial-context>>"), HeapAllocationRef(?heap).
+ReachableContext(?ctx, ?method),
+ContextFromRealContext[?heap] = ?ctx,
+Context(?ctx)
+ <-
+  ImplicitReachable(?method),
+  InstructionRef:Value(?heap:"<<jvm-startup>>"), HeapAllocationRef(?heap).
+ReachableContext(?ctx, ?clinit),
+ContextFromRealContext[?heap] = ?ctx,
+Context(?ctx)
+ <-
+  InitializedClass(?class),
+  ClassInitializer[?class] = ?clinit,
+  InstructionRef:Value(?heap:"<<class-initialization>>"), HeapAllocationRef(?heap).

@@ -1,0 +1,50 @@
+
+ReachableHeap(?heap) <-
+  Stats:Simple:InsensVarPointsTo(?heap, _).  
+
+FPG(?baseheap,?heap) <-   
+  Stats:Simple:InsensInstanceFieldPointsTo(?heap, _, ?baseheap). 
+
+FPG(?baseheap,?heap) <-
+  Stats:Simple:InsensArrayIndexPointsTo(?heap, ?baseheap). 
+
+
+
+OutgoingFPGEdges[?fromHeap] = ?n <-
+  agg<<?n = count()>> FPG(?fromHeap, _).  
+
+
+IncomingFPGEdges[?toHeap] = ?n <-
+  agg<<?n = count()>> FPG(_, ?toHeap).
+
+
+
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=236.
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingFPGEdges[?heap1]>=140.
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=24),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),IncomingFPGEdges[?heap0]>=97,FPG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingFPGEdges[?heap1]>=85,OutgoingFPGEdges[?heap1]<=93,FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=48).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!IncomingFPGEdges[?heap0]=_;IncomingFPGEdges[?heap0]<=24),FPG(?heap0,?heap1),ReachableHeap(?heap1).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=13),FPG(?heap0,?heap1),ReachableHeap(?heap1),OutgoingFPGEdges[?heap1]>=140.
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingFPGEdges[?heap2]=_;IncomingFPGEdges[?heap2]<=648).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=48),(!OutgoingFPGEdges[?heap1]=_;OutgoingFPGEdges[?heap1]<=27).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=5),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=48).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=6),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2),IncomingFPGEdges[?heap2]>=12,IncomingFPGEdges[?heap2]<=24.
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=55).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!IncomingFPGEdges[?heap0]=_;IncomingFPGEdges[?heap0]<=0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=1),FPG(?heap0,?heap1),ReachableHeap(?heap1),IncomingFPGEdges[?heap1]>=3,IncomingFPGEdges[?heap1]<=6,FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!IncomingFPGEdges[?heap0]=_;IncomingFPGEdges[?heap0]<=0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=1),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=1),(!OutgoingFPGEdges[?heap1]=_;OutgoingFPGEdges[?heap1]<=62).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!IncomingFPGEdges[?heap0]=_;IncomingFPGEdges[?heap0]<=0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=0).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=140),FPG(?heap0,?heap1),ReachableHeap(?heap1),IncomingFPGEdges[?heap1]>=97,OutgoingFPGEdges[?heap1]>=140.
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2).
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=1),FPG(?heap0,?heap1),ReachableHeap(?heap1),FPG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingFPGEdges[?heap2]=_;IncomingFPGEdges[?heap2]<=1832),(!OutgoingFPGEdges[?heap2]=_;OutgoingFPGEdges[?heap2]<=140).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=66),(!OutgoingFPGEdges[?heap1]=_;OutgoingFPGEdges[?heap1]<=62).
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=1),(!OutgoingFPGEdges[?heap1]=_;OutgoingFPGEdges[?heap1]<=27),FPG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingFPGEdges[?heap2]=_;IncomingFPGEdges[?heap2]<=3).
+CandidateHeap(?heap1)<-ReachableHeap(?heap0),(!IncomingFPGEdges[?heap0]=_;IncomingFPGEdges[?heap0]<=24),(!OutgoingFPGEdges[?heap0]=_;OutgoingFPGEdges[?heap0]<=3),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=1),(!OutgoingFPGEdges[?heap1]=_;OutgoingFPGEdges[?heap1]<=0).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),IncomingFPGEdges[?heap1]>=24,IncomingFPGEdges[?heap1]<=36,FPG(?heap1,?heap2),ReachableHeap(?heap2),IncomingFPGEdges[?heap2]>=97,IncomingFPGEdges[?heap2]<=225,(!OutgoingFPGEdges[?heap2]=_;OutgoingFPGEdges[?heap2]<=140).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),(!IncomingFPGEdges[?heap1]=_;IncomingFPGEdges[?heap1]<=191).
+CandidateHeap(?heap0)<-ReachableHeap(?heap0),FPG(?heap0,?heap1),ReachableHeap(?heap1),IncomingFPGEdges[?heap1]>=225,FPG(?heap1,?heap2),ReachableHeap(?heap2),(!IncomingFPGEdges[?heap2]=_;IncomingFPGEdges[?heap2]<=48).

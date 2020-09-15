@@ -1,0 +1,27 @@
+<java.util.ArrayList: java.util.ListIterator listIterator()>/new java.util.ArrayList$ListItr/0
+java.util.AbstractList.iterator/new java.util.AbstractList$Itr/0
+<java.text.BreakIterator: void setText(java.lang.String)>/new java.text.StringCharacterIterator/0
+java.util.HashMap.newEntryIterator/new java.util.HashMap$EntryIterator/0
+java.util.LinkedList.listIterator/new java.util.LinkedList$ListItr/0
+sun.misc.Launcher.getBootstrapClassPath/new sun.misc.URLClassPath/0
+java.util.Collections.synchronizedMap/new java.util.Collections$SynchronizedMap/0
+java.util.LinkedList.addBefore/new java.util.LinkedList$Entry/0
+<<main-thread>>
+sun.misc.Launcher.<init>/new java.lang.SecurityManager/0
+java.util.TreeMap.put/new java.util.TreeMap$Entry/0
+sun.misc.ExtensionDependency.getInstalledExtensions/new sun.misc.ExtensionDependency$3/0
+java.util.HashMap.newKeyIterator/new java.util.HashMap$KeyIterator/0
+java.util.Collections.unmodifiableSet/new java.util.Collections$UnmodifiableSet/0
+java.util.Hashtable.entrySet/new java.util.Hashtable$EntrySet/0
+java.util.Hashtable.getIterator/new java.util.Hashtable$Enumerator/0
+sun.misc.ExtensionDependency.checkExtensionExists/new sun.misc.ExtensionDependency$2/0
+java.util.WeakHashMap.put/new java.util.WeakHashMap$Entry/0
+java.util.LinkedHashMap.newKeyIterator/new java.util.LinkedHashMap$KeyIterator/0
+<java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+java.util.TreeMap.put/new java.util.TreeMap$Entry/1
+sun.util.LocaleServiceProviderPool.getPool/new sun.util.LocaleServiceProviderPool/0
+java.util.HashMap.values/new java.util.HashMap$Values/0
+<sun.text.normalizer.UnicodeSet: void <init>()>/new java.util.TreeSet/0
+java.util.Vector.elements/new java.util.Vector$1/0
+<java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>/new java.lang.Object[]/0
+java.util.HashMap.newValueIterator/new java.util.HashMap$ValueIterator/0
