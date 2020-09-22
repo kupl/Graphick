@@ -120,6 +120,7 @@ def getCmd(app,appDir):
   return cmd
 
 
+
 def runPTA(pta,app):
   if pta == 'mahjong':
     cmd = './mahjong.py M-3obj {}'.format(app)
@@ -131,6 +132,8 @@ def runPTA(pta,app):
     query = 'bloxbatch -db last-analysis -query ReachableHeap | sort > ../{}-Nodes.facts'.format(app)
     os.system(query)
     query = 'bloxbatch -db last-analysis -query FPG | sort > ../{}-Edges.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
     os.system(query)
   elif pta == 'heuristic':
     cmd = 'python process.py CanHeap.facts > doop/CanHeap.facts'

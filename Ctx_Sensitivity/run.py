@@ -101,7 +101,10 @@ def runPTA(pta,app):
     os.system(query)
     query = 'bloxbatch -db last-analysis -query OAG | sort > ../{}-Edges.facts'.format(app)
     os.system(query)
- 
+    query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
+    os.system(query)
+
+
   elif pta == 'heuristic':
     cmd = 'python process.py CanHeap2obj.facts > doop/CanHeap2obj.facts'
     os.system(cmd)
