@@ -204,6 +204,10 @@ ReachableHeap(?heap) <-
   Stats:Simple:InsensVarPointsTo(?heap, _).
 
 
+ReachableHeapAllocation:Type[?heap] = ?type <-
+  HeapAllocation:Type[?heap] = ?type,
+  ReachableHeap(?heap). 
+
 Invocation:In[?invocation] = ?inmethod <-
   SpecialMethodInvocation:In(?invocation, ?inmethod).
 
