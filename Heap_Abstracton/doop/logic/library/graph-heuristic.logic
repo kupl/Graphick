@@ -1,12 +1,5 @@
 
 
-OutgoingFPGEdges[?fromHeap] = ?n <-
-  agg<<?n = count()>> FPG(?fromHeap, _).  
-
-
-IncomingFPGEdges[?toHeap] = ?n <-
-  agg<<?n = count()>> FPG(_, ?toHeap).
-
 
 
 CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=666.
