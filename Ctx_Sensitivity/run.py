@@ -96,12 +96,28 @@ def runPTA(pta,app):
   elif pta == 'getGraph':
     cmd = './run_scaler.py ci {}'.format(app)
     os.system(cmd) 
-    os.chdir(DOOP_HOME)
-    query = 'bloxbatch -db last-analysis -query ReachableHeap | sort > ../{}-Nodes.facts'.format(app)
+    
+    query = 'bloxbatch -db doop/last-analysis -query ReachableHeap | sort > {}-Nodes.facts'.format(app)
     os.system(query)
-    query = 'bloxbatch -db last-analysis -query OAG | sort > ../{}-Edges.facts'.format(app)
+    query = 'bloxbatch -db doop/last-analysis -query FPG | sort > {}-FPGEdges.facts'.format(app)
     os.system(query)
-    query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
+    query = 'bloxbatch -db doop/last-analysis -query IncomingFPGEdges | sort > {}-IncomingFPGEdges.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db doop/last-analysis -query OutgoingFPGEdges | sort > {}-OutgoingFPGEdges.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db doop/last-analysis -query OAG | sort > {}-OAGEdges.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db doop/last-analysis -query IncomingOAGEdges | sort > {}-IncomingOAGEdges.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db doop/last-analysis -query OutgoingOAGEdges | sort > {}-OutgoingOAGEdges.facts'.format(app)
+    os.system(query)
+
+    query = 'bloxbatch -db doop/last-analysis -query HeapMethodModifier | sort > {}-MethodModifier.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db doop/last-analysis -query HeapMethodType | sort > {}-IncludingType.facts'.format(app)
+    os.system(query)
+    
+    query = 'bloxbatch -db doop/last-analysis -query ReachableHeapAllocation:Type | sort > {}-NodeType.facts'.format(app)
     os.system(query)
 
 

@@ -208,6 +208,16 @@ ReachableHeapAllocation:Type[?heap] = ?type <-
   HeapAllocation:Type[?heap] = ?type,
   ReachableHeap(?heap). 
 
+
+FPG(?baseheap,?heap) <-   
+  Stats:Simple:InsensInstanceFieldPointsTo(?heap, _, ?baseheap). 
+
+FPG(?baseheap,?heap) <-
+  Stats:Simple:InsensArrayIndexPointsTo(?heap, ?baseheap). 
+
+
+
+
 Invocation:In[?invocation] = ?inmethod <-
   SpecialMethodInvocation:In(?invocation, ?inmethod).
 
@@ -255,6 +265,26 @@ OAG(?fromHeap,?toHeap) <-
 
 
 
+OutgoingFPGEdges[?fromHeap] = ?n <-
+  agg<<?n = count()>> FPG(?fromHeap, _).  
+
+
+IncomingFPGEdges[?toHeap] = ?n <-
+  agg<<?n = count()>> FPG(_, ?toHeap).
+
+
+OutgoingOAGEdges[?fromHeap] = ?n <-
+  agg<<?n = count()>> OAG(?fromHeap, _).  
+
+
+
+
+IncomingOAGEdges[?toHeap] = ?n <-
+  ReachableHeap(?toHeap),
+  RIncomingOAGEdges[?toHeap] = ?n.
+
+RIncomingOAGEdges[?toHeap] = ?n <-
+  agg<<?n = count()>> OAG(_, ?toHeap).
 
 
 
@@ -268,5 +298,16 @@ OAG(?fromHeap,?toHeap) <-
 
 
 
+
+
+HeapMethodType(?heap, ?type)<-
+  MethodSignature:Type[?inmethod] = ?type,
+  ReachableHeap(?heap),
+  AssignHeapAllocation(?heap, _, ?inmethod).
+
+HeapMethodModifier(?heap, ?mod)<-
+  MethodModifier(?mod, ?inmethod),
+  ReachableHeap(?heap),
+  AssignHeapAllocation(?heap, _, ?inmethod).
 
 
