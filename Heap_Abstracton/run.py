@@ -152,6 +152,8 @@ def runPTA(pta,app):
     query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
     os.system(query)
   elif pta == 'heuristic':
+    cmd = './mahjong.py ci {}'.format(app)
+    os.system(cmd)
     cmd = 'python process.py CanHeap.facts > doop/CanHeap.facts'
     os.system(cmd)
     os.chdir(DOOP_DIR)
