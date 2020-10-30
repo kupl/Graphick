@@ -67,7 +67,11 @@ def getAppDir(app):
 
 def getCmd(app,appDir):
   cmd = './run -jre1.6 -phantom '
-  cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
+  if app == 'pmdm':
+    cmd += '-refl-log %s ' % os.path.join(appDir, 'pmd-refl.log')
+
+  else:
+    cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
   if app == 'briss':
     cmd += '-app %s ' % os.path.join(appDir, 'jai-core-1.0.jar ')
     cmd += '-l %s ' % os.path.join(appDir, 'bcmail-jdk15-1.46.jar ')
@@ -80,7 +84,6 @@ def getCmd(app,appDir):
     cmd += '-l %s ' % os.path.join(appDir, 'jpedal-4.74b27.jar ')
  
   if app == 'soot':
-    print 'aa'
     cmd += '-main soot.Main '
     cmd += '-l %s ' % os.path.join(appDir, 'coffer.jar ')
     cmd += '-l %s ' % os.path.join(appDir, 'jasminclasses-2.3.0.jar ')
@@ -181,9 +184,14 @@ def runPTA(pta,app):
     cmd_ci += cmd
     cmd_ci += '-data context-insensitive '
     if app in DACAPO:
-      cmd_ci += os.path.join(appDir, app + '.jar')
+      if app == 'pmdm':
+        cmd_ci += os.path.join(appDir, 'pmd.jar')
+      else:
+        cmd_ci += os.path.join(appDir, app + '.jar')
     else:
       cmd_ci += os.path.join(appDir, CP[app])
+    print cmd_ci
+    #sys.exit()
     os.system(cmd_ci)
     if pta == 'graphick':
       query = 'bloxbatch -db last-analysis -query CandidateHeap | sort > CanHeap.facts'

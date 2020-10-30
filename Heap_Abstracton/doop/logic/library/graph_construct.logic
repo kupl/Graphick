@@ -29,8 +29,8 @@ Succ(?heap0,?heap2)<-
 
 
 
-CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=250.
-CandidateHeap(?heap0)<-ReachableHeap(?heap0),Succ(?heap0,?heap1),OutgoingFPGEdges[?heap1]>=250.
+//CandidateHeap(?heap0)<-ReachableHeap(?heap0),OutgoingFPGEdges[?heap0]>=250.
+//CandidateHeap(?heap0)<-ReachableHeap(?heap0),Succ(?heap0,?heap1),OutgoingFPGEdges[?heap1]>=250.
 
 
 

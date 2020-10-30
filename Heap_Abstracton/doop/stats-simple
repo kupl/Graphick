@@ -35,6 +35,7 @@ function print4()
 
 echo '-----------------------------------------------------------'
 echo 'Client results:'
+#print2 "    number of FPG edges" $(size FPG) 
 #print2 "    reachable casts" $(size Stats:Simple:ReachableCast)
 print2 "    #may-fail casts" $(size Stats:Simple:PotentiallyFailingCast)
 #print2 "    reachable application casts" $(size Stats:Simple:Application:ReachableCast)
@@ -47,6 +48,5 @@ print2 "    #poly call sites" $(size Stats:Simple:PolymorphicCallSite)
 #print2 "    regular call graph edges" $(size Stats:Simple:InsensCallGraphEdge) #$(size CallGraphEdge)
 #print2 "    reflective call graph edges" $(size InsensReflectiveCallGraphEdge) #$(size ReflectiveCallGraphEdge)
 print2 "    #call graph edges" $(size Stats:Simple:AllCallGraphEdge)
-#print3 "    instance field points-to" $(size Stats:Simple:InsensInstanceFieldPointsTo) $(size InstanceFieldPointsTo)
 #print3 "    reachable methods" $(size Reachable) $(size ReachableContext)
 echo '-----------------------------------------------------------'

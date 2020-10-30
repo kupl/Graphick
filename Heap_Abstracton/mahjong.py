@@ -94,7 +94,11 @@ def runDoop(pta, app):
 def execDoop(analysis, withMahjong, app):
  appDir = getAppDir(app)
  cmd = './run -jre1.6 -phantom '
- cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
+ if app == 'pmd':
+  cmd += '-refl-log %s ' % os.path.join(appDir, 'pmd-refl.log')
+
+ else:
+  cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
  
  if app == 'briss':
   cmd += '-app %s ' % os.path.join(appDir, 'jai-core-1.0.jar ')
@@ -160,7 +164,10 @@ def execDoop(analysis, withMahjong, app):
   cmd += '-heap-abstraction %s ' % heapabs
  cmd += '%s ' % analysis
  if app in DACAPO:
-  cmd += os.path.join(appDir, app + '.jar')
+  if app == 'pmdm':
+   cmd += os.path.join(appDir, 'pmd.jar')
+  else:
+   cmd += os.path.join(appDir, app + '.jar')
  else:
   cmd += os.path.join(appDir, CP[app])
  print '==========================================================='
@@ -177,7 +184,6 @@ def execDoop(analysis, withMahjong, app):
    CYAN + BOLD + '(' + anaName + ')' + RESET + ' for ' +\
    CYAN + BOLD + app + RESET + ' ...'
  os.system(cmd)
- #print cmd + '\n'
  
  #print 'Writing all detailed client results to %s ...' % DOOP_OUTPUT_DIR
  #if not os.path.exists(DOOP_OUTPUT_DIR):
@@ -220,7 +226,7 @@ def runMahjong(app):
  execMahjong(DOOP_LAST_DIR, DOOP_RESULTS_DIR, app, MAHJONG_OUTPUT_DIR)
  afterMahjong = datetime.now()
  print 'Time End' 
- print 'Accruate Mahjong: {}'.format(afterMahjong-beforeMahjong) 
+ #print 'Accruate Mahjong: {}'.format(afterMahjong-beforeMahjong) 
 
 def execMahjong(dbPath, cachePath, app, outPath):
  cmd = 'java -Xmx128g -cp %s ' % MAHJONG_CP
