@@ -172,7 +172,32 @@ def runPTA(pta,app):
       cmd += os.path.join(appDir, CP[app])
     print cmd
     os.system(cmd)
-  
+
+  elif pta == 'principle':
+    os.chdir(DOOP_DIR)
+    appDir = getAppDir(app)
+    cmd = getCmd(app,appDir) 
+    cmd += '-principle context-insensitive '
+    if app in DACAPO:
+      cmd += os.path.join(appDir, app + '.jar')
+    else:
+      cmd += os.path.join(appDir, CP[app])
+    os.system(cmd)
+    query = 'bloxbatch -db last-analysis -query CandidateHeap | sort > CanHeap.facts'
+    os.system(query)
+    heapAbsCmd = 'python types_to_facts.py {} CanHeap.facts'.format(app)
+    os.system(heapAbsCmd)
+        
+    cmd = getCmd(app,appDir) 
+    cmd += '-heap-abstraction HeapAbstraction.myfacts '.format(app)
+    cmd += '3-object-sensitive+2-heap '
+    if app in DACAPO:
+      cmd += os.path.join(appDir, app + '.jar')
+    else:
+      cmd += os.path.join(appDir, CP[app])
+    os.system(cmd)
+
+
   elif pta == 'alloc_based':
     cmd = './mahjong.py 3obj '.format(app)
     os.system(cmd)

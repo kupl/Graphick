@@ -1,4 +1,4 @@
-
+/*
 ReachableHeap(?heap) <-
   Stats:Simple:InsensVarPointsTo(?heap, _).  
 
@@ -16,7 +16,7 @@ OutgoingFPGEdges[?fromHeap] = ?n <-
 
 IncomingFPGEdges[?toHeap] = ?n <-
   agg<<?n = count()>> FPG(_, ?toHeap).
-
+*/
 
 
 Succ(?heap0,?heap1)<-

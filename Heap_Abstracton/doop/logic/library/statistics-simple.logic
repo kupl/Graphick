@@ -277,7 +277,7 @@ FieldSetResults(?invo, ?field) <-
 ResolvedFieldSet(?invo) <-
   FieldSetResults(?invo, _).
 
-/*
+
 ReachableHeap(?heap) <-
   Stats:Simple:InsensVarPointsTo(?heap, _).  
   
@@ -373,4 +373,3 @@ OAG(?fromHeap,?toHeap) <-
   ThisVar[?inmethod] = ?var,
   AssignHeapAllocation(?toHeap, _, ?inmethod).
 
-*/
