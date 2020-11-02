@@ -1,4 +1,6 @@
-This is the artifact of our OOPLSA'20 paper "Learning Graph-based Heuristics for Pointer Analysis without Handcrafting Application-Specific Features".
+# Graphick
+
+This is the artifact of our OOPLSA'20 paper "Learning Graph-based Heuristics for Pointer Analysis without Handcrafting Application-Specific Features". It aims to reproduce the Table 1,2,3,4, and 5.
 
 
 We implemented Graphick on top Doop. Specifically, We used Graphick to generate context sensitivity heuristic on the artifact of Scaler which is a baseline graph-based context-sensitivity heuristic developed on Doop (Ctx_Sensitivity folder). We also used Graphick to generate heap abstraction heuristic on the artifact of Mahjong which is a baseline heap abstraction heuristic (Heap_Abstraction folder).
@@ -19,5 +21,6 @@ To run the pointer analyzer DOOP, you need to install a LogicBlox engine for int
 
 
 
+### Reproducing the evaluation
 
 To reproduce the evaulation results, please follow the manual (manual.pdf).
