@@ -879,8 +879,9 @@ function run-stats()
 
 	start=`date +%s`
         echo -n "computing graphs and abstraction"
-	timing $bloxbatch -db $database -addBlock -file logic/library/graph-heuristic.logic
-	$bloxbatch -db $database -execute "+Stats:Runtime($elapsedTime, \"loading graph heuristic (simple) time\")."
+	#timing $bloxbatch -db $database -addBlock -file logic/library/graph-heuristic.logic
+	timing $bloxbatch -db $database -addBlock -file logic/library/graph-heuristic_featureNum.logic
+        $bloxbatch -db $database -execute "+Stats:Runtime($elapsedTime, \"loading graph heuristic (simple) time\")."
 	end=`date +%s`
 	let elapsedTime="$end - $start"
 	echo "elapsed time: ${elapsedTime}s"

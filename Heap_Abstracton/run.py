@@ -218,6 +218,8 @@ def runPTA(pta,app):
     print cmd_ci
     #sys.exit()
     os.system(cmd_ci)
+    if pta == 'getFeatures':
+      sys.exit()
     if pta == 'graphick':
       query = 'bloxbatch -db last-analysis -query CandidateHeap | sort > CanHeap.facts'
       os.system(query)
@@ -233,8 +235,8 @@ def runPTA(pta,app):
     else:
       cmd += os.path.join(appDir, CP[app])
     os.system(cmd)
-    rm_cache = 'rm -r cache/*'
-    os.system(rm_cache)
+    #rm_cache = 'rm -r cache/*'
+    #os.system(rm_cache)
   
 
 def run(args):
