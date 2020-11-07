@@ -1,0 +1,50 @@
+  java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/0
+  java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/1
+  java.lang.Class.privateGetDeclaredFields/new java.lang.ref.SoftReference/0
+  java.lang.Class.privateGetDeclaredFields/new java.lang.ref.SoftReference/1
+  java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/0
+  java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/1
+  java.lang.ref.Finalizer.register/new java.lang.ref.Finalizer/0
+  java.lang.StringCoding.set/new java.lang.ref.SoftReference/0
+  java.lang.ThreadLocal$ThreadLocalMap.replaceStaleEntry/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+  java.lang.ThreadLocal$ThreadLocalMap.set/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+  <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+  <java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal$ThreadLocalMap)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+  java.nio.charset.CharsetEncoder.isLegalReplacement/new java.lang.ref.WeakReference/0
+  java.nio.charset.CoderResult$Cache.get/new java.lang.ref.WeakReference/0
+  java.security.Provider$Service.getImplClass/new java.lang.ref.WeakReference/0
+  java.text.AttributedString$AttributeMap.entrySet/new java.text.AttributeEntry/0
+  java.text.BreakIterator.getBreakInstance/new java.lang.ref.SoftReference/0
+  java.text.DateFormatSymbols.getCachedInstance/new java.lang.ref.SoftReference/0
+  <java.util.AbstractCollection: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  <java.util.ArrayList: void <init>(int)>/new java.lang.Object[]/0
+  <java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>/new java.lang.Object[]/0
+  java.util.HashMap.addEntry/new java.util.HashMap$Entry/0
+  java.util.HashMap.createEntry/new java.util.HashMap$Entry/0
+  java.util.Hashtable.put/new java.util.Hashtable$Entry/0
+  java.util.jar.JarFile.getManifestFromReference/new java.lang.ref.SoftReference/0
+  java.util.LinkedHashMap.createEntry/new java.util.LinkedHashMap$Entry/0
+  java.util.LinkedHashMap.init/new java.util.LinkedHashMap$Entry/0
+  java.util.LinkedList.addBefore/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  <java.util.LinkedList: void <init>()>/new java.util.LinkedList$Entry/0
+  java.util.logging.Logger.doSetParent/new java.lang.ref.WeakReference/0
+  java.util.logging.Logger.doSetParent/new java.util.logging.LogManager$LoggerWeakRef/0
+  java.util.logging.LogManager$LoggerContext.addLocalLogger/new java.util.logging.LogManager$LoggerWeakRef/0
+  java.util.ResourceBundle$CacheKey.clone/new java.util.ResourceBundle$LoaderReference/0
+  java.util.ResourceBundle$CacheKey.<init>/new java.util.ResourceBundle$LoaderReference/0
+  java.util.ResourceBundle.putBundleInCache/new java.util.ResourceBundle$BundleReference/0
+  java.util.TimeZone.getDisplayNames/new java.lang.ref.SoftReference/0
+  <java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>/new java.util.TreeMap$Entry/0
+  java.util.TreeMap.put/new java.util.TreeMap$Entry/0
+  java.util.TreeMap.put/new java.util.TreeMap$Entry/1
+  <java.util.Vector: void <init>(int,int)>/new java.lang.Object[]/0
+  java.util.WeakHashMap$EntrySet.iterator/new java.util.WeakHashMap$EntryIterator/0
+  java.util.WeakHashMap.put/new java.util.WeakHashMap$Entry/0
+  java.util.WeakHashMap$Values.iterator/new java.util.WeakHashMap$ValueIterator/0
+  sun.misc.SoftCache$ValueCell.create/new sun.misc.SoftCache$ValueCell/0
+  sun.util.calendar.ZoneInfoFile.getZoneInfoMappings/new java.lang.ref.SoftReference/0
+  sun.util.calendar.ZoneInfo.getAliasTable/new java.lang.ref.SoftReference/0
+  sun.util.TimeZoneNameUtility.getBundle/new java.lang.ref.SoftReference/0
+  sun.util.TimeZoneNameUtility.getZoneStrings/new java.lang.ref.SoftReference/0

@@ -1,0 +1,47 @@
+  java.lang.ClassLoader.getDefaultDomain/new java.security.ProtectionDomain/0
+  <java.net.URLClassLoader: java.lang.Class defineClass(java.lang.String,sun.misc.Resource,boolean)>/new java.lang.Object[]/0
+  <java.util.AbstractCollection: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  java.util.Calendar.createCalendar/new java.util.GregorianCalendar/0
+  java.util.Calendar.createCalendar/new java.util.JapaneseImperialCalendar/0
+  java.util.Calendar.createCalendar/new sun.util.BuddhistCalendar/0
+  <java.util.concurrent.ConcurrentHashMap$EntryIterator: java.util.Map$Entry next()>/new java.util.concurrent.ConcurrentHashMap$WriteThroughEntry/0
+  java.util.concurrent.ConcurrentHashMap$Segment.put/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+  java.util.concurrent.ConcurrentHashMap$Segment.rehash/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+  java.util.concurrent.ConcurrentHashMap$Segment.remove/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+  <java.util.Date: sun.util.calendar.BaseCalendar$Date normalize(sun.util.calendar.BaseCalendar$Date)>/new java.util.GregorianCalendar/0
+  <java.util.jar.JarFile$1: java.util.jar.JarFile$JarFileEntry nextElement()>/new java.util.jar.JarFile$JarFileEntry/0
+  java.util.jar.JarFile.getEntry/new java.util.jar.JarFile$JarFileEntry/0
+  java.util.jar.JarFile.initializeVerifier/new sun.security.util.ManifestEntryVerifier/0
+  java.util.jar.JarInputStream.checkManifest/new sun.security.util.ManifestEntryVerifier/0
+  java.util.jar.JarInputStream.createZipEntry/new java.util.jar.JarEntry/0
+  java.util.jar.JarVerifier$VerifierStream.<init>/new sun.security.util.ManifestEntryVerifier/0
+  java.util.LinkedList.addBefore/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  java.util.WeakHashMap$EntrySet.iterator/new java.util.WeakHashMap$EntryIterator/0
+  java.util.WeakHashMap$Values.iterator/new java.util.WeakHashMap$ValueIterator/0
+  <org.apache.lucene.index.IndexWriter: void mergeSegments(int,int)>/new org.apache.lucene.index.SegmentMerger/0
+  org.apache.lucene.index.SegmentMerger.createCompoundFile/new org.apache.lucene.index.CompoundFileWriter/0
+  org.apache.lucene.index.SegmentReader.initialize/new org.apache.lucene.index.CompoundFileReader/0
+  org.apache.lucene.store.FSDirectory.makeLock/new org.apache.lucene.store.FSDirectory$1/0
+  sun.security.provider.PolicyFile.addPermissions/new sun.security.provider.PolicyFile$8/0
+  <sun.security.provider.PolicyFile: java.security.PermissionCollection getPermissions(java.security.Permissions,java.security.ProtectionDomain)>/new sun.security.provider.PolicyFile$6/0
+  sun.text.resources.FormatData_en.getContents/new java.lang.Object[]/0
+  sun.text.resources.FormatData_en_US.getContents/new java.lang.Object[]/0
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/0
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/1
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/10
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/11
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/12
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/13
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/14
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/15
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/2
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/3
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/4
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/5
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/6
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/7
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/8
+  sun.text.resources.FormatData.getContents/new java.lang.Object[]/9
+  sun.util.calendar.Era.<init>/new sun.util.calendar.ImmutableGregorianDate/0

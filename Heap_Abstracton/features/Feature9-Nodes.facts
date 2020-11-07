@@ -1,0 +1,2 @@
+  java.util.LinkedList.addBefore/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0

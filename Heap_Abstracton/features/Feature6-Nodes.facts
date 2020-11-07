@@ -1,0 +1,145 @@
+  <java.io.ExpiringCache: void <init>(long)>/new java.io.ExpiringCache$1/0
+  java.lang.Character$UnicodeBlock.<clinit>/new java.util.HashMap/0
+  java.lang.ClassLoader.findClass/new java.lang.ClassNotFoundException/0
+  <java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.HashMap/0
+  <java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.Hashtable/0
+  java.lang.Class.newInstance0/new java.lang.Class$1/0
+  java.lang.ConditionalSpecialCasing.<clinit>/new java.util.Hashtable/0
+  java.lang.Package.<clinit>/new java.util.HashMap/0
+  java.lang.Package.<clinit>/new java.util.HashMap/1
+  java.lang.Package.<clinit>/new java.util.HashMap/2
+  java.lang.ProcessEnvironment.<clinit>/new java.util.HashMap/0
+  java.lang.ProcessEnvironment.emptyEnvironment/new java.util.HashMap/0
+  java.lang.System.initializeSystemClass/new java.util.Properties/0
+  java.lang.System.setProperties/new java.util.Properties/0
+  java.lang.Thread.auditSubclass/new java.lang.Thread$1/0
+  java.net.InetAddress$Cache.<init>/new java.util.LinkedHashMap/0
+  java.net.InetAddress.<clinit>/new java.util.HashMap/0
+  java.net.URL.<clinit>/new java.util.Hashtable/0
+  java.net.URLConnection.<clinit>/new java.util.Hashtable/0
+  <java.nio.charset.CharsetDecoder: java.nio.charset.CoderResult decode(java.nio.ByteBuffer,java.nio.CharBuffer,boolean)>/new java.nio.charset.CoderMalfunctionError/0
+  java.nio.charset.CoderResult$Cache.get/new java.util.HashMap/0
+  java.security.BasicPermissionCollection.<init>/new java.util.HashMap/0
+  java.security.PermissionsHash.<init>/new java.util.HashMap/0
+  java.security.Permissions.<init>/new java.util.HashMap/0
+  java.security.Provider.<clinit>/new java.util.HashMap/0
+  java.security.Provider.ensureLegacyParsed/new java.util.LinkedHashMap/0
+  java.security.Provider.implPut/new java.util.LinkedHashMap/0
+  java.security.Provider.implRemove/new java.util.LinkedHashMap/0
+  java.security.Provider$Service.addAttribute/new java.util.HashMap/0
+  java.security.Provider$Service.<clinit>/new java.lang.Class[]/0
+  <java.security.SecureClassLoader: void <init>(java.lang.ClassLoader)>/new java.util.HashMap/0
+  java.security.SecureRandom.getDefaultPRNG/new sun.security.provider.Sun/0
+  java.security.Security.initialize/new java.util.Properties/0
+  java.security.Security.initialize/new java.util.Properties/1
+  java.security.UnresolvedPermissionCollection.<init>/new java.util.HashMap/0
+  java.text.AttributedCharacterIterator$Attribute.<clinit>/new java.util.HashMap/0
+  java.text.AttributedString$AttributedStringIterator.getAttributes/new java.util.Hashtable/0
+  java.text.DateFormat$Field.<clinit>/new java.util.HashMap/0
+  java.text.DecimalFormatSymbols.<clinit>/new java.util.Hashtable/0
+  java.text.NumberFormat.<clinit>/new java.util.Hashtable/0
+  java.text.NumberFormat$Field.<clinit>/new java.util.HashMap/0
+  <java.util.AbstractCollection: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  java.util.AbstractList.iterator/new java.util.AbstractList$Itr/0
+  <java.util.AbstractList: java.util.ListIterator listIterator(int)>/new java.util.AbstractList$ListItr/0
+  java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet.contains/new java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$UnmodifiableEntry/0
+  java.util.concurrent.AbstractExecutorService.doInvokeAny/new java.util.concurrent.ExecutionException/0
+  <java.util.concurrent.FutureTask: void <init>(java.lang.Runnable,java.lang.Object)>/new java.util.concurrent.FutureTask$Sync/0
+  java.util.Currency.<clinit>/new java.util.HashMap/0
+  <java.util.HashSet: void <init>(int,float,boolean)>/new java.util.LinkedHashMap/0
+  <java.util.HashSet: void <init>(int)>/new java.util.HashMap/0
+  <java.util.HashSet: void <init>(java.util.Collection)>/new java.util.HashMap/0
+  <java.util.HashSet: void <init>()>/new java.util.HashMap/0
+  java.util.Hashtable.getEnumeration/new java.util.Hashtable$Enumerator/0
+  java.util.Hashtable.getIterator/new java.util.Hashtable$Enumerator/0
+  java.util.IdentityHashMap.init/new java.lang.Object[]/0
+  java.util.IdentityHashMap.resize/new java.lang.Object[]/0
+  <java.util.jar.Attributes: void <init>(int)>/new java.util.HashMap/0
+  java.util.jar.JarVerifier.<init>/new java.util.HashMap/0
+  java.util.jar.JarVerifier.<init>/new java.util.HashMap/1
+  java.util.jar.JarVerifier.<init>/new java.util.Hashtable/0
+  java.util.jar.JarVerifier.<init>/new java.util.Hashtable/1
+  java.util.jar.JarVerifier.<init>/new java.util.Hashtable/2
+  <java.util.jar.Manifest: void <init>(java.io.InputStream)>/new java.util.HashMap/0
+  <java.util.jar.Manifest: void <init>()>/new java.util.HashMap/0
+  java.util.LinkedList.addBefore/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+  <java.util.LinkedList: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+  <java.util.LinkedList: void <init>()>/new java.util.LinkedList$Entry/0
+  java.util.ListResourceBundle.loadLookup/new java.util.HashMap/0
+  java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/0
+  java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/1
+  java.util.logging.LogManager.<init>/new java.util.Properties/0
+  java.util.logging.LogManager$LoggerContext.getNode/new java.util.HashMap/0
+  <java.util.logging.LogManager$LoggerContext: void <init>()>/new java.util.Hashtable/0
+  <java.util.logging.LogManager$LoggerContext: void <init>()>/new java.util.logging.LogManager$LogNode/0
+  java.util.logging.LogManager.reset/new java.util.Properties/0
+  java.util.Properties.propertyNames/new java.util.Hashtable/0
+  java.util.PropertyPermissionCollection.<init>/new java.util.HashMap/0
+  <java.util.PropertyResourceBundle: void <init>(java.io.InputStream)>/new java.util.Properties/0
+  java.util.regex.Pattern$Branch.add/new java.util.regex.Pattern$Node[]/0
+  java.util.regex.Pattern$Branch.<init>/new java.util.regex.Pattern$Node[]/0
+  java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.HashMap/0
+  java.util.ResourceBundle.getBundleImpl/new java.util.ResourceBundle$CacheKey/0
+  java.util.ServiceLoader.<init>/new java.util.LinkedHashMap/0
+  java.util.WeakHashMap$EntrySet.iterator/new java.util.WeakHashMap$EntryIterator/0
+  java.util.WeakHashMap$Values.iterator/new java.util.WeakHashMap$ValueIterator/0
+  javax.crypto.Cipher$r.<clinit>/new java.util.HashMap/0
+  javax.crypto.SunJCE_d.<init>/new java.util.Hashtable/0
+  <javax.crypto.SunJCE_e: boolean a(java.lang.String,java.lang.String,java.util.Hashtable)>/new java.util.Hashtable/0
+  javax.crypto.SunJCE_h.<clinit>/new java.util.HashMap/0
+  org.apache.lucene.index.CompoundFileReader.<init>/new java.util.HashMap/0
+  <org.apache.lucene.index.DocumentWriter: void <init>(org.apache.lucene.store.Directory,org.apache.lucene.analysis.Analyzer,org.apache.lucene.index.IndexWriter)>/new java.util.Hashtable/0
+  <org.apache.lucene.index.FieldInfos: void <init>()>/new java.util.HashMap/0
+  <org.apache.lucene.index.FieldInfos: void <init>(org.apache.lucene.store.Directory,java.lang.String)>/new java.util.HashMap/0
+  org.apache.lucene.index.SegmentReader.<init>/new java.util.Hashtable/0
+  org.apache.lucene.store.FSDirectory.<clinit>/new java.util.Hashtable/0
+  <org.apache.lucene.store.RAMDirectory: void <init>()>/new java.util.Hashtable/0
+  org.apache.lucene.util.Parameter.<clinit>/new java.util.HashMap/0
+  sun.jkernel.BundleCheck.loadProperties/new java.util.Properties/0
+  <sun.jkernel.BundleCheck: void addProperty(java.lang.String)>/new java.util.Properties/0
+  sun.jkernel.Bundle.<clinit>/new java.util.HashMap/0
+  sun.jkernel.DownloadManager.getBundleProperties/new java.util.HashMap/0
+  sun.jkernel.DownloadManager.getBundleProperties/new java.util.Properties/0
+  sun.jkernel.DownloadManager.getBundleURLs/new java.util.Properties/0
+  sun.jkernel.DownloadManager.getFileMap/new java.util.HashMap/0
+  sun.jkernel.DownloadManager.getFileMap/new java.util.HashMap/1
+  sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/0
+  sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/1
+  sun.jkernel.DownloadManager.readTreeMap/new java.util.HashMap/0
+  <sun.misc.JarIndex: void <init>()>/new java.util.HashMap/0
+  <sun.misc.JarIndex: void <init>()>/new java.util.HashMap/1
+  sun.misc.MetaIndex.getJarMap/new java.util.HashMap/0
+  sun.misc.Signal.<clinit>/new java.util.Hashtable/0
+  sun.misc.Signal.<clinit>/new java.util.Hashtable/1
+  <sun.misc.SoftCache: void <init>(int)>/new java.util.HashMap/0
+  <sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.HashMap/0
+  sun.net.www.URLConnection.<clinit>/new java.util.HashMap/0
+  sun.reflect.Reflection.<clinit>/new java.util.HashMap/0
+  sun.security.ec.ECKeyFactory.engineGeneratePublic/new java.security.spec.InvalidKeySpecException/0
+  sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/0
+  sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/1
+  sun.security.pkcs.PKCS9Attributes.castToDerEncoder/new sun.security.util.DerEncoder[]/0
+  <sun.security.pkcs.PKCS9Attributes: void <init>(sun.security.util.DerInputStream,boolean)>/new java.util.Hashtable/0
+  sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.HashMap/0
+  sun.security.provider.Sun.<init>/new java.util.LinkedHashMap/0
+  sun.security.util.ManifestDigester.<init>/new java.util.HashMap/0
+  sun.security.util.ManifestEntryVerifier.<init>/new java.util.HashMap/0
+  sun.security.util.SignatureFileVerifier.getDigest/new java.util.HashMap/0
+  sun.security.validator.PKIXValidator.initCommon/new java.util.HashMap/0
+  sun.security.validator.SimpleValidator.<init>/new java.util.HashMap/0
+  sun.security.x509.AlgorithmId.<clinit>/new java.util.HashMap/0
+  sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/0
+  sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/1
+  sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/0
+  sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/1
+  <sun.security.x509.RDN: void <init>(java.lang.String,java.util.Map)>/new sun.security.x509.AVA[]/0
+  <sun.security.x509.RDN: void <init>(sun.security.util.DerValue)>/new sun.security.x509.AVA[]/0
+  sun.security.x509.X500Name.<clinit>/new java.util.HashMap/0
+  sun.security.x509.X509CertInfo.<clinit>/new java.util.HashMap/0
+  sun.text.normalizer.VersionInfo.<clinit>/new java.util.HashMap/0
+  sun.util.calendar.LocalGregorianCalendar$1.run/new java.util.Properties/0
+  sun.util.calendar.TzIDOldMapping.<clinit>/new java.util.HashMap/0
+  sun.util.calendar.ZoneInfoFile.addToCache/new java.util.HashMap/0
+  sun.util.LocaleDataMetaInfo.<clinit>/new java.util.HashMap/0
+  sun.util.resources.OpenListResourceBundle.createMap/new java.util.HashMap/0
