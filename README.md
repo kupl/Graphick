@@ -12,11 +12,7 @@ We implemented Graphick on top Doop. Specifically, We used Graphick to generate 
   * [Setup Instruction](#Setup-Instruction)
   * [Verifying Installation](#Verifying Installation)
   * [Reproducing the evaluation](#Reproducing the evaluation)
-* [Implementation Details](#Implementation-Details)
-  * [Data-Driven-Doop](#Data-Driven-Doop)
-  * [eval.py](#eval.py)
-  * [learn.py](#learn.py)
-* [VirtualBox Image](#VirtualBox-Image)
+* [Artifact](#Artfact)
 
 ## Getting-Started Guide
 
@@ -106,4 +102,10 @@ For example, if you want to analyze antlr with Graphick, type:
 ```
 $./run.py graphick antlr
 ```
+ 
+ 
+ ## Artfact
 
+VirtualBox Image
+
+We've archived a ready-to-run version of our implementation in zenodo([Link](https://zenodo.org/record/4040341#.X7pZ1a6RWpc)).
