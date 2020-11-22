@@ -96,7 +96,7 @@ graphick, mahjong, allos_based, type_based.
 
 <pgm> can be a program in our evaluation:
 ```
-  luindex, lusearch, antlr, pmd, fop, chart, bloat, pmdm, eclipse, xalan, JPC, checkstyle, findbugs, soot, jython, briss, jedit
+luindex, lusearch, antlr, pmd, fop, chart, bloat, pmdm, eclipse, xalan, JPC, checkstyle, findbugs, soot, jython, briss, jedit
   ```
 For example, if you want to analyze antlr with Graphick, type:
 ```
