@@ -10,8 +10,8 @@ We implemented Graphick on top Doop. Specifically, We used Graphick to generate 
 * [Getting-Started Guide](#Getting-Started-Guide)
   * [Requirements](#Requirements)
   * [Setup Instruction](#Setup-Instruction)
-  * [Verifying Installation](#Verifying Installation)
-  * [Reproducing the evaluation](#Reproducing the evaluation)
+  * [Verifying Installation](#Verifying-Installation)
+  * [Reproducing the evaluation](#Reproducing-the-evaluation)
 * [Artifact](#Artfact)
 
 ## Getting-Started Guide
