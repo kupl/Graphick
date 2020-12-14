@@ -1,0 +1,1446 @@
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/128
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/439
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/438
+sun.java2d.loops.Blit.<clinit>/new sun.java2d.loops.RenderCache/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/433
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/432
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/431
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/430
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/125
+com.lowagie.text.pdf.PdfTable.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/127
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/126
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/69
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/68
+sun.font.AttributeValues.toMap/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/63
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/62
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/61
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/60
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/67
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/66
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/65
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/64
+sun.text.resources.BreakIteratorInfo.getContents/new java.lang.Object[][]/0
+sun.text.resources.FormatData_en.getContents/new java.lang.Object[]/0
+sun.awt.geom.AreaOp.calculate/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/356
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/357
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/354
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/355
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/352
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/353
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/350
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/351
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/123
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/358
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/359
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/122
+sun.util.LocaleServiceProviderPool.<init>/new java.util.LinkedHashSet/0
+com.lowagie.text.pdf.PdfTable.<init>/new java.util.ArrayList/1
+<java.io.File: java.lang.String[] list(java.io.FilenameFilter)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/124
+sun.awt.motif.MFontConfiguration.<clinit>/new java.util.HashMap/0
+<java.util.Collections: java.util.Set synchronizedSet(java.util.Set,java.lang.Object)>/new java.util.Collections$SynchronizedSet/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/435
+javax.swing.JComponent.getManagingFocusForwardTraversalKeys/new java.util.HashSet/0
+java.util.logging.LogManager.contexts/new java.util.ArrayList/0
+sun.misc.LRUCache.forName/new java.lang.Object[]/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/188
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/183
+java.awt.geom.Area.pathToCurves/new java.util.Vector/0
+sun.misc.JarIndex.read/new java.util.Vector/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/184
+sun.awt.X11.XSelection.<clinit>/new java.util.Hashtable/0
+java.text.DictionaryBasedBreakIterator.divideUpDictionaryRange/new java.util.Vector/0
+java.util.LinkedList.clone/new java.util.LinkedList$Entry/0
+com.lowagie.text.pdf.PdfFormField.setUsed/new com.lowagie.text.pdf.PdfDictionary/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/32
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String)>/new java.lang.Object[]/0
+sun.security.jca.ProviderList.getJarList/new java.util.ArrayList/0
+<java.awt.RenderingHints: void <init>(java.util.Map)>/new java.util.HashMap/0
+sun.security.provider.PolicyParser.parseGrantEntry/new java.util.LinkedList/0
+java.util.IdentityHashMap.resize/new java.lang.Object[]/0
+java.util.ServiceLoader.<init>/new java.util.LinkedHashMap/0
+sun.security.x509.X500Name.<clinit>/new java.util.HashMap/0
+sun.security.jca.GetInstance$Instance.toArray/new java.lang.Object[]/0
+<java.util.LinkedList: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/4
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/6
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/7
+<sun.security.x509.CertificateExtensions: void <init>(sun.security.util.DerInputStream)>/new java.util.TreeMap/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/2
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new org.jfree.util.ObjectList/2
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new org.jfree.util.ObjectList/3
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new org.jfree.util.ObjectList/0
+sun.util.calendar.ZoneInfoFile.getZoneAliases/new java.util.HashMap/0
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new org.jfree.util.ObjectList/5
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/140
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/141
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/85
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/84
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/87
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/86
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/81
+com.lowagie.text.pdf.BaseFont.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/83
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/82
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/147
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/89
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/88
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/410
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/547
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/546
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/545
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/544
+javax.swing.event.EventListenerList.add/new java.lang.Object[]/0
+javax.swing.event.EventListenerList.add/new java.lang.Object[]/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/541
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/540
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/226
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/227
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/224
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/225
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/222
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/223
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/549
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/221
+sun.font.Font2D.<init>/new java.util.HashMap/0
+sun.util.calendar.ZoneInfoFile.addToCache/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/18
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/19
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/16
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/17
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/14
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/15
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/12
+javax.crypto.Cipher$r.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/10
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/11
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/532
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/533
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/530
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.SpanClipRenderer/2
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/536
+org.jfree.base.modules.PackageManager.addModule/new java.util.ArrayList/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/534
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/535
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/538
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/539
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/145
+sun.awt.X11.XToolkit.callTimeoutTasks/new java.lang.Object[]/0
+sun.awt.X11.XToolkit.callTimeoutTasks/new java.lang.Object[]/1
+sun.security.validator.PKIXValidator.doBuild/new java.util.ArrayList/0
+javax.swing.JComponent.getManagingFocusBackwardTraversalKeys/new java.util.HashSet/0
+org.jfree.resources.JCommonResources.<clinit>/new java.lang.Object[][]/0
+sun.font.GlyphLayout$SDCache.get/new java.util.concurrent.ConcurrentHashMap/0
+sun.security.util.ManifestDigester.<init>/new java.util.HashMap/0
+javax.crypto.SunJCE_e.<init>/new java.util.Vector/0
+javax.crypto.SunJCE_h.<clinit>/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfOutline: void <init>(com.lowagie.text.pdf.PdfOutline,com.lowagie.text.pdf.PdfDestination,com.lowagie.text.Paragraph,boolean)>/new java.util.ArrayList/0
+java.security.Provider$Service.newInstance/new java.lang.Object[]/0
+org.jfree.chart.plot.XYPlot.drawAxes/new java.util.HashMap/0
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/40
+sun.misc.Launcher$1.run/new java.util.HashSet/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/150
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/33
+sun.java2d.loops.ScaledBlit.<clinit>/new sun.java2d.loops.RenderCache/0
+sun.java2d.loops.MaskFill.<clinit>/new sun.java2d.loops.RenderCache/0
+java.util.Collections$SynchronizedMap.values/new java.util.Collections$SynchronizedCollection/0
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/11
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/37
+sun.awt.image.BufImgSurfaceData.createDataIC/new sun.awt.image.BufImgSurfaceData/0
+java.nio.charset.CoderResult$Cache.get/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfLine: void <init>(float,float,int,float)>/new java.util.ArrayList/0
+<javax.crypto.SunJCE_e: javax.crypto.SunJCE_f[] a()>/new java.util.Vector/0
+com.lowagie.text.pdf.CFFFont.getCID/new java.util.LinkedList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[][]/0
+sun.font.GlyphLayout.<init>/new java.util.ArrayList/0
+<java.util.logging.LogManager$LoggerContext: void <init>()>/new java.util.Hashtable/0
+java.awt.GradientPaintContext.putCachedRaster/new java.lang.ref.WeakReference/0
+com.lowagie.text.pdf.PdfDocument.flushLines/new java.util.ArrayList/0
+com.lowagie.text.pdf.FontDetails.writeFont/new java.lang.Object[]/1
+com.lowagie.text.pdf.FontDetails.writeFont/new java.lang.Object[]/0
+com.lowagie.text.pdf.FontDetails.writeFont/new java.lang.Object[]/2
+sun.awt.image.CachingSurfaceManager.flush/new java.util.HashMap/0
+<java.util.zip.ZipFile: void <init>(java.io.File,int)>/new java.util.Vector/0
+<com.lowagie.text.pdf.PdfTextArray: void <init>(java.lang.String)>/new java.util.ArrayList/0
+sun.font.FontManager.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+<java.util.HashMap: void <init>()>/new java.util.HashMap$Entry[]/0
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/0
+java.text.CharacterIteratorFieldDelegate.<init>/new java.util.ArrayList/0
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/7
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/6
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/5
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/4
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/3
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/2
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/1
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new org.jfree.util.ObjectList/0
+sun.awt.X11.XAtom.<clinit>/new java.util.HashMap/0
+sun.awt.X11.XAtom.<clinit>/new java.util.HashMap/1
+javax.swing.UIManager.<clinit>/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/21
+org.jfree.chart.renderer.xy.AbstractXYItemRenderer.<init>/new org.jfree.util.ObjectList/0
+<java.text.AttributedString: void <init>(java.lang.String,java.util.Map)>/new java.util.Vector/1
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[][]/0
+org.jfree.chart.plot.CategoryPlot.drawAxes/new org.jfree.chart.axis.AxisCollection/0
+<com.lowagie.text.pdf.PdfDictionary: void <init>()>/new java.util.HashMap/0
+sun.awt.X11GraphicsEnvironment.registerFontDir/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfChunk: void <init>(com.lowagie.text.Chunk,com.lowagie.text.pdf.PdfAction)>/new java.util.HashMap/0
+com.lowagie.text.pdf.PdfDocument.<init>/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/13
+<java.security.AccessControlContext: void <init>(java.security.ProtectionDomain[])>/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/18
+sun.awt.X11GraphicsEnvironment.getFileNameFromPlatformName/new java.util.Vector/0
+<java.security.cert.PKIXParameters: void <init>(java.util.Set)>/new java.util.ArrayList/1
+<java.security.cert.PKIXParameters: void <init>(java.util.Set)>/new java.util.ArrayList/0
+javax.swing.event.EventListenerList.remove/new java.lang.Object[]/0
+org.jfree.chart.plot.XYPlot.getDataRange/new java.util.ArrayList/0
+sun.security.util.SignatureFileVerifier.getDigest/new java.util.HashMap/0
+java.awt.DefaultKeyboardFocusManager.dequeueKeyEvents/new java.lang.Object[]/0
+org.jfree.chart.axis.CategoryAxis.draw/new org.jfree.chart.axis.AxisState/1
+com.lowagie.text.pdf.PdfChunk.split/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/440
+javax.swing.UIDefaults.getResourceCache/new java.util.HashMap/0
+org.jfree.data.DefaultKeyedValues.<init>/new java.util.ArrayList/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/7
+org.jfree.base.modules.PackageManager.<init>/new java.util.ArrayList/0
+org.jfree.base.modules.PackageManager.<init>/new java.util.ArrayList/1
+javax.crypto.SunJCE_d.<init>/new java.util.Hashtable/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.ArrayList/0
+java.io.DeleteOnExitHook.runHooks/new java.util.ArrayList/0
+sun.awt.X11.XToolkit.<clinit>/new java.util.HashMap/1
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.HashMap/0
+javax.crypto.SunJCE_b$1.run/new java.security.cert.X509Certificate[]/0
+java.util.PropertyPermissionCollection.<init>/new java.util.HashMap/0
+<sun.security.provider.PolicyFile$PolicyEntry: void <init>(java.security.CodeSource,java.util.List)>/new java.util.ArrayList/0
+java.util.ListResourceBundle.loadLookup/new java.util.HashMap/0
+java.text.AttributedString.setAttributes/new java.util.Vector/1
+<sun.misc.SoftCache: void <init>(int)>/new java.util.HashMap/0
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/3
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/8
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/554
+sun.security.validator.PKIXValidator.initCommon/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/556
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/557
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/550
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/551
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/552
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/553
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/253
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/251
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/250
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/257
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/256
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/255
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/254
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/8
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/3
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/5
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/4
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/7
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/6
+<sun.font.PhysicalFont: void <init>(java.lang.String,java.lang.Object)>/new sun.font.Font2DHandle/0
+java.io.FilePermissionCollection.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/136
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/137
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/134
+<com.lowagie.text.pdf.PdfOutline: void <init>(com.lowagie.text.pdf.PdfWriter)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/132
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/133
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/130
+<java.util.HashSet: void <init>()>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/138
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/139
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/428
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/429
+org.jfree.chart.plot.XYPlot.getDatasetsMappedToDomainAxis/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/420
+sun.awt.X11.XProtocol.<init>/new java.util.HashMap/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/422
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/423
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/424
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/425
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/426
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/427
+sun.font.FontFamily.<clinit>/new java.util.HashMap/0
+java.text.BreakIterator.createBreakInstance/new java.lang.Object[]/0
+javax.swing.ArrayTable.getKeys/new java.lang.Object[]/1
+javax.swing.ArrayTable.getKeys/new java.lang.Object[]/0
+<org.jfree.base.modules.AbstractModule: void loadModuleInfo(java.io.InputStream)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/323
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/322
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/321
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/320
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/327
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/326
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/325
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/324
+com.lowagie.text.pdf.PdfDocument.<init>/new java.util.ArrayList/2
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/329
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/12
+<java.util.Arrays: java.lang.Object[] copyOf(java.lang.Object[],int,java.lang.Class)>/new java.lang.Object[]/0
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/31
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/30
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/36
+sun.nio.ch.Util.newMappedByteBuffer/new java.lang.Object[]/0
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/5
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/4
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/9
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/2
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/1
+sun.awt.datatransfer.DataTransferer$DataFlavorComparator.<clinit>/new java.util.HashMap/0
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/5
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/4
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/7
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/6
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/1
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/0
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/3
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/2
+java.util.concurrent.ConcurrentHashMap$Segment.rehash/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+sun.awt.image.FetcherInfo.<init>/new java.util.Vector/0
+<org.jfree.data.xy.XYSeries: void <init>(java.lang.Comparable,boolean,boolean)>/new java.util.ArrayList/0
+<sun.security.pkcs.PKCS7: sun.security.pkcs.SignerInfo[] verify(byte[])>/new java.util.Vector/0
+java.text.MessageFormat.formatToCharacterIterator/new java.util.ArrayList/0
+java.util.LinkedHashMap.init/new java.util.LinkedHashMap$Entry/0
+com.lowagie.text.pdf.PdfDocument.getLocalGotoAction/new java.lang.Object[]/0
+<class sun.text.normalizer.ICUData>
+sun.font.FontManager.createLCIDMap/new java.util.HashMap/0
+java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/0
+java.util.logging.Level$KnownLevel.<clinit>/new java.util.HashMap/1
+sun.security.x509.OtherName.getGNI/new java.lang.Object[]/0
+<java.awt.AWTKeyStroke: java.awt.AWTKeyStroke getAWTKeyStroke(java.lang.String)>/new java.util.HashMap/0
+sun.util.LocaleServiceProviderPool.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.lang.Class.privateGetDeclaredFields/new java.lang.ref.SoftReference/0
+java.lang.Class.privateGetDeclaredFields/new java.lang.ref.SoftReference/1
+sun.awt.geom.AreaOp.pruneEdges/new java.util.Vector/3
+sun.awt.image.BufImgSurfaceData.createDataBP/new sun.awt.image.BufImgSurfaceData/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/9
+<sun.font.SunLayoutEngine: void <init>(sun.font.GlyphLayout$LayoutEngineKey)>/new java.lang.ref.SoftReference/0
+com.lowagie.text.Row.<init>/new java.lang.Object[]/0
+<sun.awt.image.PNGImageDecoder: void property(java.lang.String,java.lang.Object)>/new java.util.Hashtable/0
+sun.awt.X11.XProtocol.<init>/new java.util.HashMap/0
+sun.awt.FontConfiguration.splitSequence/new java.util.Vector/0
+org.jfree.chart.plot.CategoryPlot.getDataRange/new java.util.ArrayList/0
+javax.swing.event.EventListenerList.<clinit>/new java.lang.Object[]/0
+<org.jfree.data.DefaultKeyedValues2D: void <init>(boolean)>/new java.util.ArrayList/0
+<org.jfree.data.DefaultKeyedValues2D: void <init>(boolean)>/new java.util.ArrayList/1
+<org.jfree.data.DefaultKeyedValues2D: void <init>(boolean)>/new java.util.ArrayList/2
+<com.lowagie.text.pdf.PdfGraphics2D: void <init>(com.lowagie.text.pdf.PdfContentByte,float,float,com.lowagie.text.pdf.FontMapper)>/new java.awt.RenderingHints/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/1
+java.security.Provider.implPut/new java.util.LinkedHashMap/0
+sun.security.x509.X500Name.asX500Principal/new java.lang.Object[]/0
+<com.lowagie.text.pdf.PdfGraphics2D: void <init>(com.lowagie.text.pdf.PdfContentByte,float,float,com.lowagie.text.pdf.FontMapper)>/new java.util.ArrayList/0
+java.awt.image.FilteredImageSource.startProduction/new java.util.Hashtable/0
+<sun.font.Font2D: sun.font.FontStrike getStrike(sun.font.FontStrikeDesc,boolean)>/new java.lang.ref.SoftReference/1
+sun.java2d.pipe.AlphaPaintPipe.renderPathTile/new java.lang.ref.WeakReference/0
+sun.java2d.pipe.AlphaPaintPipe.renderPathTile/new java.lang.ref.WeakReference/1
+<sun.misc.SoftCache: void <init>()>/new java.util.HashMap/0
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new org.jfree.util.ObjectList/1
+sun.util.TimeZoneNameUtility.getZoneStrings/new java.lang.ref.SoftReference/0
+sun.security.provider.Sun.<init>/new java.util.LinkedHashMap/0
+sun.security.x509.RDN.toRFC2253StringInternal/new java.util.ArrayList/0
+sun.awt.X11GraphicsEnvironment.initObliqueLucidaFontMap/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfChunk: void <init>(java.lang.String,com.lowagie.text.pdf.PdfChunk)>/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfChunk: void <init>(java.lang.String,com.lowagie.text.pdf.PdfChunk)>/new java.util.HashMap/1
+sun.awt.image.CachingSurfaceManager.<init>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/328
+javax.crypto.SunJCE_g.<init>/new java.util.Vector/0
+com.lowagie.text.pdf.PdfDocument.localDestination/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/135
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/239
+sun.util.PreHashedMap.<init>/new java.lang.Object[]/0
+org.jfree.data.general.AbstractDataset.<init>/new javax.swing.event.EventListenerList/0
+com.lowagie.text.pdf.BaseFont.<clinit>/new java.util.HashMap/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/80
+sun.awt.X11.XToolkit.addEventDispatcher/new java.util.Vector/0
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/9
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/8
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/5
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/4
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/7
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/6
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/1
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/0
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/3
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/2
+<org.jfree.chart.plot.XYPlot: void <init>(org.jfree.data.xy.XYDataset,org.jfree.chart.axis.ValueAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.xy.XYItemRenderer)>/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfDocument.<init>/new java.util.ArrayList/1
+<sun.security.x509.GeneralSubtrees: void <init>()>/new java.util.ArrayList/0
+sun.awt.X11InputMethod.<clinit>/new java.util.HashMap/3
+sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/1
+sun.awt.X11InputMethod.<clinit>/new java.util.HashMap/1
+sun.awt.X11InputMethod.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/216
+sun.java2d.x11.X11CachingSurfaceManager.createX11Surface/new java.util.Hashtable/0
+java.security.Signature.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+<java.awt.datatransfer.MimeTypeParameterList: void <init>()>/new java.util.Hashtable/0
+<java.util.Arrays: java.lang.Object[] copyOfRange(java.lang.Object[],int,int,java.lang.Class)>/new java.lang.Object[]/0
+sun.misc.PerformanceLogger.<clinit>/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/387
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/386
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/11
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/380
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/13
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/12
+sun.misc.MetaIndex.getJarMap/new java.util.HashMap/0
+javax.swing.plaf.metal.OceanTheme.addCustomEntriesToTable/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/389
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/131
+<org.jfree.util.Log$SimpleMessage: void <init>(java.lang.String,java.lang.Object)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/543
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/542
+<sun.security.validator.PKIXValidator: void <init>(java.lang.String,java.util.Collection)>/new java.util.HashSet/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/228
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.ArrayList/0
+java.awt.DefaultKeyboardFocusManager.dispatchEvent/new java.lang.ref.WeakReference/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/229
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/330
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/331
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/332
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/333
+com.lowagie.text.pdf.PdfAcroForm.<init>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/335
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/336
+java.security.Provider$Service.newInstanceGeneric/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/338
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/339
+java.text.DecimalFormat.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.lang.SystemClassLoaderAction.run/new java.lang.Object[]/0
+sun.security.validator.SimpleValidator.<init>/new java.util.ArrayList/0
+sun.java2d.pipe.GeneralCompositePipe.renderPathTile/new java.awt.image.BufferedImage/0
+<javax.crypto.SunJCE_d: javax.crypto.SunJCE_f[] a(int,java.security.PermissionCollection)>/new java.util.Vector/0
+<org.jfree.chart.title.Title: void <init>(org.jfree.ui.RectangleEdge,org.jfree.ui.HorizontalAlignment,org.jfree.ui.VerticalAlignment,org.jfree.ui.RectangleInsets)>/new javax.swing.event.EventListenerList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/106
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/548
+com.lowagie.text.pdf.TrueTypeFontSubSet.<init>/new java.util.ArrayList/0
+java.lang.ClassLoader.<clinit>/new java.util.Stack/0
+java.util.Locale.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+org.jfree.util.AbstractObjectList.set/new java.lang.Object[]/0
+sun.util.calendar.ZoneInfoFile.getZoneInfoMappings/new java.lang.ref.SoftReference/0
+<java.util.Vector: void <init>(int,int)>/new java.lang.Object[]/0
+<com.lowagie.text.Document: void <init>(com.lowagie.text.Rectangle,float,float,float,float)>/new java.util.ArrayList/0
+<java.util.TreeSet: void <init>()>/new java.util.TreeMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/451
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/519
+java.awt.VKCollection.<init>/new java.util.HashMap/1
+java.awt.VKCollection.<init>/new java.util.HashMap/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/43
+java.awt.font.StyledParagraph.addInputMethodAttrs/new java.util.HashMap/0
+org.jfree.chart.LegendItemCollection.<init>/new java.util.ArrayList/0
+sun.awt.FontConfiguration.getCoreScripts/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/412
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/457
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/524
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/456
+<java.lang.ProcessBuilder: void <init>(java.lang.String[])>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/459
+java.lang.ThreadLocal$ThreadLocalMap.replaceStaleEntry/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/458
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/521
+java.util.logging.Logger.doSetParent/new java.lang.ref.WeakReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/512
+sun.security.util.DerInputStream.readVector/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/561
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/249
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/563
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/562
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/565
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/564
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/567
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/566
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/240
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/241
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/242
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/243
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/244
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/245
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/246
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/515
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/101
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/517
+java.nio.charset.Charset.cache/new java.lang.Object[]/0
+java.text.BreakIterator.getBreakInstance/new java.lang.ref.SoftReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/38
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/39
+java.util.HashMap.clone/new java.util.HashMap$Entry[]/0
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new java.util.HashMap/3
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/30
+sun.java2d.Disposer.pollRemove/new java.util.ArrayList/0
+<com.lowagie.text.Table: void <init>(int,int)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/33
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/34
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/35
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/36
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/37
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/415
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/414
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/417
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/416
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/411
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/146
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/413
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/144
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/149
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/148
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/419
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/418
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/44
+java.util.jar.JarVerifier.<init>/new java.util.Hashtable/2
+java.util.jar.JarVerifier.<init>/new java.util.Hashtable/0
+java.util.jar.JarVerifier.<init>/new java.util.Hashtable/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/30
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/31
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/32
+<java.awt.RenderingHints: void <init>(java.awt.RenderingHints$Key,java.lang.Object)>/new java.util.HashMap/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/34
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/35
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/36
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/10
+<java.util.jar.Manifest: void <init>(java.io.InputStream)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/528
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/119
+java.security.Permissions.<init>/new java.util.HashMap/0
+java.util.logging.Level$KnownLevel.add/new java.util.ArrayList/0
+sun.util.LocaleServiceProviderPool.<init>/new java.util.concurrent.ConcurrentHashMap/0
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.SpanClipRenderer/0
+sun.font.XMap.<clinit>/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/5
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/6
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/531
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/1
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/2
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/3
+org.jfree.base.modules.PackageManager.addModule/new java.util.ArrayList/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/8
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/444
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/537
+org.jfree.chart.plot.CategoryPlot.datasetsMappedToRangeAxis/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/117
+sun.font.FontManager.getPathDirs/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/110
+sun.security.x509.CertificateExtensions.parseExtension/new java.util.TreeMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/443
+java.nio.charset.CharsetEncoder.isLegalReplacement/new java.lang.ref.WeakReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/112
+sun.java2d.opengl.OGLGeneralBlit.Blit/new java.lang.ref.WeakReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/113
+java.text.SimpleDateFormat.<clinit>/new java.util.concurrent.ConcurrentHashMap/1
+java.text.SimpleDateFormat.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/383
+<java.util.HashMap: void <init>(int,float)>/new java.util.HashMap$Entry[]/0
+sun.util.resources.OpenListResourceBundle.createMap/new java.util.HashMap/0
+java.security.Security.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.awt.resources.awt.getContents/new java.lang.Object[][]/0
+org.jfree.base.modules.PackageSorter.collectSubsystemModules/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfDocument.flushLines/new java.lang.Object[]/0
+java.lang.ThreadLocal.createMap/new java.lang.ThreadLocal$ThreadLocalMap/0
+<sun.font.SunLayoutEngine: sun.font.GlyphLayout$LayoutEngine getEngine(sun.font.GlyphLayout$LayoutEngineKey)>/new java.lang.ref.SoftReference/0
+sun.font.Font2D.<init>/new java.lang.ref.SoftReference/0
+<org.jfree.chart.JFreeChart: void <init>(java.lang.String,java.awt.Font,org.jfree.chart.plot.Plot,boolean)>/new java.util.ArrayList/0
+<sun.util.TimeZoneNameUtility: java.lang.String[] retrieveDisplayNames(sun.util.resources.OpenListResourceBundle,java.lang.String,java.util.Locale)>/new java.lang.Object[]/0
+java.lang.StringCoding.set/new java.lang.ref.SoftReference/0
+com.lowagie.text.pdf.TrueTypeFont.getNames/new java.util.ArrayList/0
+java.awt.font.StyledParagraph.addFont/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/179
+java.awt.font.StyledParagraph.addDecoration/new java.util.Vector/0
+sun.security.x509.X500Name$1.run/new java.lang.Object[]/0
+sun.awt.X11.XDropTargetRegistry.updateEmbedderDropSite/new java.util.ArrayList/0
+java.awt.RenderingHints$Key.<clinit>/new java.util.HashMap/0
+sun.awt.X11.XRootWindow.<init>/new java.lang.Object[]/0
+org.jfree.base.modules.PackageManager.createInstance/new java.util.HashMap/0
+java.util.logging.Level$KnownLevel.add/new java.util.ArrayList/1
+com.lowagie.text.pdf.PdfDocument.carriageReturn/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/529
+java.security.UnresolvedPermissionCollection.<init>/new java.util.HashMap/0
+<sun.misc.JarIndex: void <init>()>/new java.util.HashMap/0
+<sun.misc.JarIndex: void <init>()>/new java.util.HashMap/1
+java.security.PermissionsHash.<init>/new java.util.HashMap/0
+<sun.awt.X11.XAwtState: void setGrabWindow(sun.awt.X11.XBaseWindow,boolean)>/new java.lang.ref.WeakReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/384
+<sun.security.x509.GeneralNames: void <init>()>/new java.util.ArrayList/0
+org.jfree.chart.axis.Axis.<init>/new javax.swing.event.EventListenerList/0
+sun.awt.AppContext.<init>/new java.util.HashMap/0
+sun.awt.FontConfiguration.needToSearchForFile/new java.util.HashMap/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/30
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/31
+sun.font.FontManager.<clinit>/new java.util.Hashtable/5
+sun.font.FontManager.<clinit>/new java.util.Hashtable/3
+<org.jfree.chart.plot.CategoryPlot: void addRangeMarker(int,org.jfree.chart.plot.Marker,org.jfree.ui.Layer)>/new java.util.ArrayList/1
+sun.awt.X11.XPropertyCache.storeCache/new java.util.HashMap/0
+<java.lang.ThreadLocal$ThreadLocalMap: void <init>(java.lang.ThreadLocal,java.lang.Object)>/new java.lang.ThreadLocal$ThreadLocalMap$Entry[]/0
+sun.util.TimeZoneNameUtility.<clinit>/new java.util.concurrent.ConcurrentHashMap/1
+sun.security.jca.ProviderList$ServiceList.addService/new java.util.ArrayList/0
+<sun.awt.color.CMMImageLayout: void <init>(byte[],int,int)>/new java.lang.Object[]/0
+<java.util.concurrent.ThreadPoolExecutor: void <init>(int,int,long,java.util.concurrent.TimeUnit,java.util.concurrent.BlockingQueue,java.util.concurrent.ThreadFactory,java.util.concurrent.RejectedExecutionHandler)>/new java.util.HashSet/0
+sun.awt.image.GifImageDecoder.<init>/new java.util.Hashtable/0
+sun.font.FontManager.<clinit>/new java.util.Hashtable/4
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/379
+<java.util.LinkedList: boolean addAll(int,java.util.Collection)>/new java.util.LinkedList$Entry/0
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/14
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/15
+sun.nio.ch.Util.newMappedByteBufferR/new java.lang.Object[]/0
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/10
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/11
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/12
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/13
+org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.<init>/new org.jfree.util.ObjectList/1
+org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.<init>/new org.jfree.util.ObjectList/0
+org.jfree.chart.renderer.category.AbstractCategoryItemRenderer.<init>/new org.jfree.util.ObjectList/2
+<sun.security.provider.PolicyFile: boolean init(java.net.URL,sun.security.provider.PolicyFile$PolicyInfo)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/377
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/371
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/207
+sun.awt.X11.XBaseWindow.getChildren/new java.util.HashSet/0
+sun.security.x509.X509CertInfo.<clinit>/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfGraphics2D: void <init>(com.lowagie.text.pdf.PdfContentByte,float,float,com.lowagie.text.pdf.FontMapper)>/new java.util.HashMap/0
+java.text.DateFormat.get/new java.lang.Object[]/0
+<java.util.ArrayList: void <init>(int)>/new java.lang.Object[]/0
+sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/1
+sun.security.pkcs.PKCS9Attribute.<clinit>/new java.util.Hashtable/0
+org.jfree.chart.plot.Plot.<init>/new javax.swing.event.EventListenerList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/477
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/476
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/475
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/474
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/473
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/472
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/578
+java.awt.Cursor.<clinit>/new java.util.Hashtable/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/576
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/577
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/574
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/575
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/572
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/573
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/479
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/478
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/27
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/26
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/25
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/24
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/23
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/22
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/21
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/20
+org.jfree.chart.renderer.xy.AbstractXYItemRenderer.<init>/new java.util.ArrayList/1
+org.jfree.chart.renderer.xy.AbstractXYItemRenderer.<init>/new java.util.ArrayList/0
+sun.awt.X11.XToolkit.<clinit>/new java.util.TreeMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/402
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/403
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/152
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/401
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/406
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/407
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/404
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/405
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/158
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/159
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/408
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/409
+com.lowagie.text.pdf.CJKFont.<clinit>/new java.util.Hashtable/1
+sun.awt.X11.XWM.getProtocols/new java.util.LinkedList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/392
+<java.io.SequenceInputStream: void <init>(java.io.InputStream,java.io.InputStream)>/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/390
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/391
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/396
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/397
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/394
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/395
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/398
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/399
+sun.util.TimeZoneNameUtility.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/312
+java.util.TimeZone.getDisplayNames/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.resources.CurrencyNames_en_US.getContents/new java.lang.Object[][]/0
+java.awt.EventDispatchThread.handleException/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/499
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/498
+java.util.IdentityHashMap.init/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/495
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/316
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/497
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/496
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/491
+<java.beans.PropertyChangeSupport: void addPropertyChangeListener(java.lang.String,java.beans.PropertyChangeListener)>/new java.util.Hashtable/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/493
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/492
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/309
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/308
+<java.util.PropertyResourceBundle: void <init>(java.io.InputStream)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/304
+sun.java2d.loops.GraphicsPrimitive.tracePrimitive/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/306
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/301
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/300
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/303
+sun.security.x509.CertificateExtensions.parseExtension/new java.lang.Object[]/0
+<org.jfree.chart.block.BlockContainer: void <init>(org.jfree.chart.block.Arrangement)>/new java.util.ArrayList/0
+sun.awt.X11.XMSelection.addSelectionListener/new java.util.Vector/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/3
+sun.awt.X11.XPropertyCache.<clinit>/new java.util.HashMap/0
+<java.security.SecureClassLoader: void <init>(java.lang.ClassLoader)>/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getBundleProperties/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getBundleProperties/new java.util.HashMap/1
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/70
+org.jfree.chart.axis.CategoryAxis.refreshTicks/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/74
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/75
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/78
+sun.awt.X11.XMSelection.<clinit>/new java.util.HashMap/0
+sun.java2d.Disposer.<clinit>/new java.util.Hashtable/0
+javax.swing.ArrayTable.shrink/new java.lang.Object[]/0
+com.lowagie.text.pdf.TrueTypeFont.writeFont/new java.util.HashMap/0
+sun.java2d.loops.MaskBlit$General.MaskBlit/new java.lang.ref.WeakReference/1
+sun.java2d.loops.MaskBlit$General.MaskBlit/new java.lang.ref.WeakReference/0
+sun.security.x509.AlgorithmId.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/275
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/274
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/277
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/276
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/271
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/270
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/273
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/272
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/279
+java.util.TimeZone$DisplayNames.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.awt.RenderingHints$Key.recordIdentity/new java.lang.ref.WeakReference/0
+<java.text.DecimalFormatSymbols: java.text.DecimalFormatSymbols getInstance(java.util.Locale)>/new java.lang.Object[]/0
+java.lang.ConditionalSpecialCasing.<clinit>/new java.util.Hashtable/0
+java.text.DecimalFormatSymbols.initialize/new java.lang.Object[]/0
+sun.awt.image.BufImgSurfaceData.createDataSC/new sun.awt.image.BufImgSurfaceData/0
+com.lowagie.text.pdf.PdfEncodings.<clinit>/new java.util.HashMap/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/28
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/27
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/25
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/23
+org.jfree.chart.renderer.AbstractRenderer.<init>/new javax.swing.event.EventListenerList/0
+java.security.Provider.<clinit>/new java.util.HashMap/0
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.loops.RenderCache/0
+sun.util.calendar.CalendarSystem.initNames/new java.util.concurrent.ConcurrentHashMap/0
+sun.util.calendar.CalendarSystem.initNames/new java.util.concurrent.ConcurrentHashMap/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/29
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/28
+sun.java2d.SunCompositeContext.compose/new java.awt.image.BufferedImage/0
+sun.java2d.SunCompositeContext.compose/new java.awt.image.BufferedImage/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/23
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/22
+org.jfree.chart.renderer.xy.AbstractXYItemRenderer.<init>/new org.jfree.util.ObjectList/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/20
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/27
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/26
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/25
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/24
+org.jfree.chart.block.FlowArrangement.arrangeFN/new java.util.ArrayList/0
+com.lowagie.text.pdf.TrueTypeFont.readFormat0/new java.util.HashMap/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new java.util.HashMap/4
+sun.java2d.loops.Blit$GeneralXorBlit.Blit/new java.lang.ref.WeakReference/0
+sun.java2d.loops.Blit$GeneralXorBlit.Blit/new java.lang.ref.WeakReference/1
+org.jfree.chart.axis.TickUnits.<init>/new java.util.ArrayList/0
+sun.awt.motif.MFontConfiguration.initReorderMap/new java.util.HashMap/0
+sun.awt.X11.XToolkit.dispatchEvent/new java.util.Vector/0
+sun.security.util.ManifestEntryVerifier.<init>/new java.util.ArrayList/1
+<java.util.LinkedList: void <init>()>/new java.util.LinkedList$Entry/0
+<sun.awt.FontConfiguration: void <init>(sun.java2d.SunGraphicsEnvironment)>/new java.util.HashMap/0
+sun.misc.Signal.<clinit>/new java.util.Hashtable/1
+sun.misc.Signal.<clinit>/new java.util.Hashtable/0
+java.awt.font.TextAttribute.<clinit>/new java.util.HashMap/0
+java.awt.AWTKeyStroke.getCachedStroke/new java.util.HashMap/0
+<com.lowagie.text.pdf.TrueTypeFont: void <init>()>/new java.util.HashMap/0
+sun.font.FontManager.loadLocaleNames/new java.util.HashMap/0
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new java.util.HashMap/2
+<sun.font.Font2D: sun.font.FontStrike getStrike(sun.font.FontStrikeDesc,boolean)>/new java.lang.ref.SoftReference/0
+sun.security.validator.PKIXValidator.engineValidate/new java.security.cert.X509Certificate[]/0
+sun.awt.X11GraphicsEnvironment.registerFontDir/new java.util.Vector/0
+java.awt.KeyboardFocusManager.addKeyEventPostProcessor/new java.util.LinkedList/0
+sun.security.x509.AVA.parseString/new java.util.ArrayList/0
+<sun.security.x509.CRLExtensions: void <init>(sun.security.util.DerInputStream)>/new java.util.TreeMap/0
+<java.awt.KeyboardFocusManager: void setMostRecentFocusOwner(java.awt.Window,java.awt.Component)>/new java.lang.ref.WeakReference/0
+<com.lowagie.text.pdf.PdfArray: void <init>(float[])>/new java.util.ArrayList/0
+<javax.crypto.SunJCE_d: javax.crypto.SunJCE_f[] a(java.security.PermissionCollection,java.security.PermissionCollection)>/new java.util.Vector/0
+sun.java2d.SunGraphicsEnvironment$2.run/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfAcroForm.isValid/new com.lowagie.text.pdf.PdfDictionary/0
+java.security.UnresolvedPermissionCollection.add/new java.util.ArrayList/0
+org.jfree.chart.block.ColumnArrangement.arrangeNF/new java.util.ArrayList/0
+java.net.SocketPermissionCollection.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/247
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/369
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/368
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/367
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/366
+javax.swing.ArrayTable.remove/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/364
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/363
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/362
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/361
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/360
+java.util.jar.JarVerifier.processEntry/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/393
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/494
+<com.lowagie.text.Cell: void <init>(com.lowagie.text.Element)>/new java.util.ArrayList/0
+<org.jfree.data.xy.XYSeriesCollection: void <init>(org.jfree.data.xy.XYSeries)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/488
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/489
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/482
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/483
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/480
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/481
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/486
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/487
+<com.lowagie.text.pdf.TrueTypeFont: void <init>(java.lang.String,java.lang.String,boolean,byte[],boolean)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/485
+org.jfree.base.modules.PackageSorter.sort/new java.util.ArrayList/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/318
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/319
+org.jfree.base.modules.PackageSorter.sort/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/154
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/313
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/310
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/311
+<sun.security.provider.PolicyParser$ParsingException: void <init>(int,java.lang.String,java.lang.String)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/317
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/314
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/315
+java.text.AttributedString$AttributeMap.entrySet/new java.util.HashSet/0
+<sun.security.x509.RDN: void <init>(java.lang.String,java.util.Map)>/new java.util.ArrayList/0
+org.jfree.chart.plot.XYPlot.getDatasetsMappedToRangeAxis/new java.util.ArrayList/0
+<java.text.AttributedString: void <init>(java.text.AttributedCharacterIterator,int,int,java.text.AttributedCharacterIterator$Attribute[])>/new java.util.HashSet/0
+javax.swing.ArrayTable.put/new java.lang.Object[]/0
+javax.swing.ArrayTable.put/new java.lang.Object[]/1
+sun.text.resources.FormatData.getContents/new java.lang.Object[][]/0
+java.util.TreeMap.put/new java.util.TreeMap$Entry/1
+java.security.BasicPermissionCollection.<init>/new java.util.HashMap/0
+sun.font.StandardGlyphVector.getGlyphVisualBounds/new java.lang.ref.SoftReference/0
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.LinkedList/0
+javax.swing.plaf.metal.MetalLookAndFeel.initSystemColorDefaults/new java.lang.Object[]/0
+<sun.awt.FontConfiguration: void <init>(sun.java2d.SunGraphicsEnvironment)>/new java.util.HashSet/1
+<sun.awt.FontConfiguration: void <init>(sun.java2d.SunGraphicsEnvironment)>/new java.util.HashSet/0
+sun.security.x509.X500Name.parseDN/new java.util.ArrayList/0
+sun.awt.image.CachingSurfaceManager.setLocalAccelerationEnabled/new java.util.HashMap/0
+<java.text.NumberFormat: java.text.NumberFormat getInstance(java.util.Locale,int)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/31
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/217
+sun.text.resources.FormatData_en_US.getContents/new java.lang.Object[][]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/215
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/214
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/213
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/212
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/211
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/210
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/219
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/218
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/187
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/186
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/185
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/184
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/183
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/182
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/181
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/180
+sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/0
+sun.jkernel.DownloadManager.getResourceMap/new java.util.HashMap/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/189
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/188
+org.jfree.chart.plot.CategoryPlot.drawAxes/new java.util.HashMap/0
+sun.reflect.misc.MethodUtil.invoke/new java.lang.Object[]/0
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/7
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/263
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/5
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/261
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/3
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/267
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/264
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/0
+sun.awt.XSettings$Update.<init>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/268
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/269
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/9
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/8
+<java.util.HashSet: void <init>(int,float,boolean)>/new java.util.LinkedHashMap/0
+<java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/509
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/508
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/460
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/461
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/462
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/463
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/503
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/502
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/501
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/500
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/468
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/469
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/505
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/504
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/52
+java.util.Currency.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/50
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/51
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/56
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/57
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/54
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/55
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/58
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/59
+java.lang.ThreadLocal$ThreadLocalMap.resize/new java.lang.ThreadLocal$ThreadLocalMap$Entry[]/0
+sun.security.x509.CRLExtensions.parseExtension/new java.lang.Object[]/0
+sun.misc.MetaIndex.registerDirectory/new java.util.ArrayList/0
+javax.swing.UIManager.initializeInstalledLAFs/new java.util.Vector/0
+org.jfree.chart.axis.AxisCollection.<init>/new java.util.ArrayList/2
+org.jfree.chart.axis.AxisCollection.<init>/new java.util.ArrayList/1
+org.jfree.chart.axis.AxisCollection.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/169
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/168
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/121
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/165
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/164
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/167
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/166
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/161
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/160
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/163
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/162
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/18
+sun.text.resources.FormatData_en.getContents/new java.lang.Object[][]/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/16
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/17
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/14
+<com.lowagie.text.pdf.PdfChunk: void <init>(com.lowagie.text.Chunk,com.lowagie.text.pdf.PdfAction)>/new java.lang.Object[]/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/12
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/13
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/10
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/11
+sun.security.pkcs.SignerInfo.getCertificateChain/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/120
+java.security.UnresolvedPermissionCollection.elements/new java.util.ArrayList/0
+java.util.TreeSet.clone/new java.util.TreeMap/0
+sun.security.provider.PolicyFile.addPermissions/new java.util.HashSet/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/262
+java.util.concurrent.ConcurrentHashMap$Segment.put/new java.util.concurrent.ConcurrentHashMap$HashEntry/0
+com.lowagie.text.pdf.CJKFont.readFontProperties/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/471
+java.util.Hashtable.getIterator/new java.util.Hashtable$Enumerator/0
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/6
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/470
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/260
+org.jfree.base.modules.PackageSorter.sort/new java.util.HashMap/0
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/4
+<java.net.URLClassLoader: java.lang.Class defineClass(java.lang.String,sun.misc.Resource,boolean)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/266
+sun.nio.cs.ThreadLocalCoders$Cache.forName/new java.lang.Object[]/0
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/2
+sun.awt.X11.XWM.initAtoms/new java.lang.Object[]/1
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/14
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/18
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/265
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/570
+sun.jkernel.DownloadManager.downloadRequestedBundles/new java.util.ArrayList/0
+org.jfree.util.Log.<init>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/571
+com.lowagie.text.pdf.TrueTypeFont.process/new java.util.HashMap/0
+sun.security.validator.PKIXValidator.toArray/new java.security.cert.X509Certificate[]/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/67
+java.security.cert.PKIXParameters.clone/new java.util.ArrayList/1
+java.security.cert.PKIXParameters.clone/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/464
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/465
+sun.security.x509.OIDMap.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/466
+sun.awt.X11InputMethod.<clinit>/new java.util.HashMap/2
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/467
+sun.security.provider.PolicyParser$GrantEntry.clone/new java.util.Vector/0
+<com.lowagie.text.Cell: void <init>()>/new java.util.ArrayList/0
+<com.lowagie.text.pdf.PdfArray: void <init>()>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/29
+javax.crypto.SunJCE_l.elements/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/28
+com.lowagie.text.pdf.PdfWriter$PdfBody.<init>/new java.util.ArrayList/0
+java.util.regex.Pattern$CharPropertyNames.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/507
+<javax.crypto.SunJCE_c: java.util.List a(java.security.cert.Certificate[])>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/506
+java.text.DateFormat$Field.<clinit>/new java.util.HashMap/0
+java.util.ResourceBundle.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+com.lowagie.text.pdf.PdfCell.getLines/new java.util.ArrayList/1
+com.lowagie.text.pdf.PdfCell.getLines/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/53
+sun.security.x509.NetscapeCertTypeExtension.<clinit>/new java.util.Vector/0
+sun.font.FontManager.getFullNameToFileMap/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/365
+java.net.InetAddress$Cache.<init>/new java.util.LinkedHashMap/0
+sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/1
+sun.security.x509.AVAKeyword.<clinit>/new java.util.HashMap/0
+com.lowagie.text.pdf.PdfContentByte.<init>/new java.util.ArrayList/0
+<java.util.jar.Attributes: void <init>(int)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/143
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/385
+java.util.TimeZone.getDisplayNames/new java.lang.ref.SoftReference/0
+sun.text.normalizer.RuleCharacterIterator.getPos/new java.lang.Object[]/0
+<sun.security.pkcs.PKCS9Attributes: void <init>(sun.security.util.DerInputStream,boolean)>/new java.util.Hashtable/0
+<sun.security.provider.PolicyFile: void <init>()>/new java.util.concurrent.atomic.AtomicReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/381
+sun.awt.FontConfiguration$PropertiesHandler.initHashMaps/new java.util.HashMap/10
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/150
+<sun.security.jca.ProviderList: void <init>()>/new java.util.ArrayList/0
+java.text.AttributedString$AttributedStringIterator.getAttributes/new java.util.Hashtable/0
+sun.awt.color.ProfileDeferralMgr.registerDeferral/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/151
+org.jfree.chart.entity.StandardEntityCollection.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/382
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/400
+<sun.font.StrikeCache: java.lang.ref.Reference getStrikeRef(sun.font.FontStrike,boolean)>/new java.lang.ref.SoftReference/0
+java.util.ResourceBundle$Control.getCandidateLocales/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/153
+<com.lowagie.text.pdf.PdfArray: void <init>(com.lowagie.text.pdf.PdfObject)>/new java.util.ArrayList/0
+sun.awt.datatransfer.DataTransferer.<clinit>/new java.util.HashMap/0
+sun.text.resources.FormatData_en_US.getContents/new java.lang.Object[]/0
+sun.awt.image.ImageWatched$WeakLink.<init>/new java.lang.ref.WeakReference/0
+sun.awt.datatransfer.DataTransferer.<clinit>/new java.util.HashMap/1
+<java.awt.datatransfer.MimeTypeParameterList: void <init>(java.lang.String)>/new java.util.Hashtable/0
+sun.awt.datatransfer.DataTransferer.<clinit>/new java.util.HashMap/2
+sun.awt.datatransfer.DataTransferer.<clinit>/new java.util.HashMap/3
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/388
+java.util.jar.JarFile.getManifestFromReference/new java.lang.ref.SoftReference/0
+sun.nio.cs.StandardCharsets$Classes.init/new java.lang.Object[]/15
+sun.font.FontManager.resolveWindowsFonts/new java.util.ArrayList/1
+sun.font.FontManager.resolveWindowsFonts/new java.util.ArrayList/0
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/8
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/9
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/6
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/7
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/4
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/5
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/2
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/3
+sun.text.resources.FormatData.getContents/new java.lang.Object[]/0
+sun.awt.image.BufImgSurfaceData.createDataBC/new sun.awt.image.BufImgSurfaceData/0
+sun.util.calendar.LocalGregorianCalendar.getLocalGregorianCalendar/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfPages.writePageTree/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfPages.writePageTree/new java.util.ArrayList/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/518
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/450
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/453
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/452
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/455
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/454
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/109
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/108
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/510
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/511
+sun.java2d.opengl.OGLSurfaceData.<clinit>/new sun.java2d.pipe.PixelToParallelogramConverter/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/513
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/514
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/102
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/516
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/100
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/41
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/40
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/43
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/42
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/45
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/142
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/47
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/46
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/49
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/48
+<sun.awt.color.CMMImageLayout: void <init>(short[],int,int)>/new java.lang.Object[]/0
+org.jfree.chart.axis.AxisCollection.<init>/new java.util.ArrayList/3
+com.lowagie.text.pdf.TrueTypeFontSubSet.createTableDirectory/new java.util.HashMap/0
+sun.util.resources.CurrencyNames.getContents/new java.lang.Object[][]/0
+java.text.NumberFormat$Field.<clinit>/new java.util.HashMap/0
+sun.font.FontFamily.addLocaleNames/new java.util.HashMap/0
+sun.text.normalizer.VersionInfo.<clinit>/new java.util.HashMap/0
+java.util.jar.JarVerifier.<init>/new java.util.ArrayList/1
+java.util.jar.JarVerifier.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/178
+<javax.crypto.SunJCE_c: java.security.cert.X509Certificate[] a(java.security.cert.Certificate[],int)>/new java.security.cert.X509Certificate[]/0
+<class sun.jkernel.DownloadManager>
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/172
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/173
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/170
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/171
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/176
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/177
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/174
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/175
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/378
+com.lowagie.text.pdf.TrueTypeFont.readFormat4/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/374
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/375
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/376
+com.lowagie.text.pdf.TrueTypeFont.readFormat6/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/370
+java.util.logging.LogManager$LoggerContext.getNode/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/372
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/373
+<java.util.AbstractCollection: java.lang.Object[] toArray()>/new java.lang.Object[]/0
+java.net.URL.<clinit>/new java.util.Hashtable/0
+sun.font.FontDesignMetrics.<clinit>/new java.util.HashMap/0
+java.text.DecimalFormatSymbols.<clinit>/new java.util.Hashtable/0
+java.lang.Package.<clinit>/new java.util.HashMap/0
+sun.util.calendar.TzIDOldMapping.<clinit>/new java.util.HashMap/0
+sun.jkernel.DownloadManager.println/new java.util.ArrayList/0
+sun.misc.ExtensionDependency.getExtFiles/new java.util.Vector/0
+java.text.DateFormatSymbols.<clinit>/new java.util.concurrent.ConcurrentHashMap/0
+java.awt.KeyboardFocusManager.<clinit>/new java.util.LinkedList/0
+org.jfree.chart.ChartFactory.createStackedBarChart/new org.jfree.chart.JFreeChart/0
+java.text.AttributedString.createRunAttributeDataVectors/new java.util.Vector[]/1
+java.util.Hashtable.rehash/new java.util.Hashtable$Entry[]/0
+java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/0
+java.lang.Class.privateGetDeclaredConstructors/new java.lang.ref.SoftReference/1
+sun.awt.X11.XToolkit.<init>/new java.util.LinkedList/0
+sun.awt.X11.XToolkit.getChildren/new java.util.HashSet/0
+<org.jfree.util.AbstractObjectList: void <init>(int,int)>/new java.lang.Object[]/0
+java.lang.ProcessEnvironment.emptyEnvironment/new java.util.HashMap/0
+<org.jfree.util.Log$SimpleMessage: void <init>(java.lang.String,java.lang.Object,java.lang.Object,java.lang.Object,java.lang.Object)>/new java.lang.Object[]/0
+sun.jkernel.DownloadManager.readTreeMap/new java.util.HashMap/0
+com.lowagie.text.pdf.Type1Font.<init>/new java.util.HashMap/0
+sun.java2d.loops.SurfaceType.<clinit>/new java.util.HashMap/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/19
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/289
+<com.lowagie.text.pdf.PdfChunk: void <init>(com.lowagie.text.Chunk,com.lowagie.text.pdf.PdfAction)>/new java.lang.Object[]/2
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/569
+java.awt.Toolkit.<init>/new java.util.HashMap/0
+sun.security.util.DerIndefLenConverter.<init>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/334
+<com.lowagie.text.pdf.PdfChunk: void <init>(com.lowagie.text.Chunk,com.lowagie.text.pdf.PdfAction)>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/204
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/205
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/206
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/15
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/200
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/201
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/202
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/203
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/337
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/208
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/209
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/194
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/195
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/196
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/197
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/190
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/191
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/192
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/193
+sun.font.FontManager$3.run/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/198
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/199
+java.lang.ThreadLocal$ThreadLocalMap.set/new java.lang.ThreadLocal$ThreadLocalMap$Entry/0
+java.awt.DefaultKeyboardFocusManager.<init>/new java.util.LinkedList/0
+java.awt.DefaultKeyboardFocusManager.<init>/new java.util.LinkedList/1
+com.lowagie.text.pdf.Type1Font.process/new java.lang.Object[]/1
+com.lowagie.text.pdf.Type1Font.process/new java.lang.Object[]/0
+<sun.security.x509.X509CRLImpl: void <init>(sun.security.util.DerValue)>/new java.util.LinkedList/0
+com.lowagie.text.pdf.Type1Font.process/new java.lang.Object[]/2
+sun.awt.AppContext.<clinit>/new java.util.IdentityHashMap/0
+<sun.font.SunLayoutEngine: void <init>()>/new java.lang.ref.SoftReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/299
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/298
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/297
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/296
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/295
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/294
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/293
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/292
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/291
+<java.util.HashSet: void <init>(int)>/new java.util.HashMap/0
+com.lowagie.text.pdf.PdfDocument.<init>/new java.util.TreeMap/0
+org.jfree.chart.axis.NumberAxis.refreshTicksHorizontal/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/490
+<javax.crypto.SunJCE_e: boolean a(java.lang.String,java.lang.String,java.util.Hashtable)>/new java.util.Vector/0
+<javax.crypto.SunJCE_e: boolean a(java.lang.String,java.lang.String,java.util.Hashtable)>/new java.util.Vector/1
+com.lowagie.text.pdf.Type1Font.<init>/new java.util.ArrayList/0
+<javax.swing.UIDefaults: void <init>(int,float)>/new java.util.HashMap/0
+<java.util.logging.Logger: void log(java.util.logging.Level,java.lang.String,java.lang.Object)>/new java.lang.Object[]/0
+<sun.font.Type1Font: void <init>(java.lang.String,java.lang.Object,boolean)>/new java.lang.ref.WeakReference/0
+sun.security.x509.AVA.parseQuotedString/new java.util.ArrayList/0
+sun.font.AttributeMap.delegate/new java.util.HashMap/0
+sun.font.Type1Font.getBuffer/new java.lang.ref.WeakReference/0
+java.security.Provider.getServices/new java.util.LinkedHashSet/0
+<sun.security.provider.PolicyParser: void <init>()>/new java.util.Vector/0
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.PixelToShapeConverter/2
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.PixelToShapeConverter/1
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.PixelToShapeConverter/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/305
+sun.misc.Service.parse/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfDocument.initPage/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/307
+sun.jkernel.DownloadManager.readTreeMap/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfCell.<init>/new java.util.ArrayList/2
+com.lowagie.text.pdf.PdfCell.<init>/new java.util.ArrayList/3
+com.lowagie.text.pdf.PdfCell.<init>/new java.util.ArrayList/0
+com.lowagie.text.pdf.PdfCell.<init>/new java.util.ArrayList/1
+org.jfree.chart.renderer.AbstractRenderer.<init>/new org.jfree.util.ObjectList/2
+org.jfree.chart.renderer.AbstractRenderer.<init>/new org.jfree.util.ObjectList/1
+org.jfree.chart.renderer.AbstractRenderer.<init>/new org.jfree.util.ObjectList/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.Stack/0
+<java.util.jar.Manifest: void <init>()>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/302
+sun.security.provider.PolicyFile.addPermissions/new java.util.ArrayList/0
+sun.reflect.Reflection.<clinit>/new java.util.HashMap/0
+java.lang.ConditionalSpecialCasing.<clinit>/new java.util.HashSet/0
+javax.swing.UIManager.initializeInstalledLAFs/new java.util.Vector/1
+sun.jkernel.Bundle.<clinit>/new java.util.HashMap/0
+java.util.logging.LogManager.parseClassNames/new java.util.Vector/0
+<com.lowagie.text.pdf.PdfChunk: void <init>(com.lowagie.text.Chunk,com.lowagie.text.pdf.PdfAction)>/new java.util.HashMap/1
+<java.text.DecimalFormat: java.text.FieldPosition[] expandAffix(java.lang.String)>/new java.util.ArrayList/0
+<java.text.DecimalFormat: java.text.FieldPosition[] expandAffix(java.lang.String)>/new java.util.ArrayList/1
+java.awt.DefaultKeyboardFocusManager.<clinit>/new java.lang.ref.WeakReference/1
+java.awt.DefaultKeyboardFocusManager.<clinit>/new java.lang.ref.WeakReference/0
+com.lowagie.text.pdf.PdfPages.<init>/new java.util.ArrayList/1
+com.lowagie.text.pdf.PdfPages.<init>/new java.util.ArrayList/0
+java.util.HashMap.createEntry/new java.util.HashMap$Entry/0
+sun.security.validator.Validator.<clinit>/new java.security.cert.X509Certificate[]/0
+java.awt.Font.defaultLineMetrics/new java.lang.ref.SoftReference/0
+javax.swing.plaf.metal.MetalLookAndFeel.initComponentDefaults/new java.lang.Object[]/10
+sun.java2d.loops.CompositeType.<clinit>/new java.util.HashMap/0
+sun.util.TimeZoneNameUtility.loadZoneStrings/new java.util.LinkedList/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.ArrayList/1
+javax.swing.plaf.metal.MetalHighContrastTheme.addCustomEntriesToTable/new java.lang.Object[]/0
+<java.util.regex.Pattern: java.lang.String[] split(java.lang.CharSequence,int)>/new java.util.ArrayList/0
+<sun.misc.URLClassPath: void <init>(java.net.URL[],java.net.URLStreamHandlerFactory)>/new java.util.HashMap/0
+org.jfree.chart.axis.NumberAxis.refreshTicks/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/349
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/348
+<sun.font.StrikeCache: java.lang.ref.Reference getStrikeRef(sun.font.FontStrike,boolean)>/new java.lang.ref.WeakReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/341
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/340
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/343
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/342
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/345
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/344
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/347
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/346
+java.nio.charset.CoderResult$Cache.get/new java.lang.ref.WeakReference/0
+<java.lang.ClassLoader: void <init>(java.lang.Void,java.lang.ClassLoader)>/new java.util.Hashtable/0
+sun.font.Type1Font.<clinit>/new java.util.HashMap/0
+sun.security.provider.PolicyFile.getPrincipalInfo/new java.util.ArrayList/0
+java.awt.EventDispatchThread.<init>/new java.util.Vector/0
+<javax.crypto.SunJCE_e: javax.crypto.SunJCE_e$q b(java.util.Hashtable)>/new java.util.Vector/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/220
+java.text.NumberFormat.<clinit>/new java.util.Hashtable/0
+sun.awt.X11.XDropTargetProtocol.<init>/new java.util.HashMap/0
+dacapo.chart.ChartHarness.iterate/new java.util.Vector/0
+sun.security.validator.SimpleValidator.<init>/new java.util.HashMap/0
+sun.util.TimeZoneNameUtility.getBundle/new java.lang.ref.SoftReference/0
+sun.util.resources.CalendarData.getContents/new java.lang.Object[][]/0
+<org.jfree.chart.plot.CategoryPlot: void <init>(org.jfree.data.category.CategoryDataset,org.jfree.chart.axis.CategoryAxis,org.jfree.chart.axis.ValueAxis,org.jfree.chart.renderer.category.CategoryItemRenderer)>/new java.util.ArrayList/0
+<com.lowagie.text.pdf.PdfWriter: void <init>(com.lowagie.text.pdf.PdfDocument,java.io.OutputStream)>/new com.lowagie.text.pdf.PdfDictionary/0
+java.security.Provider$Service.addAttribute/new java.util.HashMap/0
+javax.swing.UIDefaults.getUI/new java.lang.Object[]/0
+sun.awt.geom.AreaOp.pruneEdges/new java.util.Vector/2
+<org.jfree.chart.plot.CategoryPlot: void addRangeMarker(int,org.jfree.chart.plot.Marker,org.jfree.ui.Layer)>/new java.util.ArrayList/0
+sun.awt.geom.AreaOp.pruneEdges/new java.util.Vector/0
+sun.awt.geom.AreaOp.pruneEdges/new java.util.Vector/1
+com.lowagie.text.Table.getChunks/new java.util.ArrayList/0
+com.lowagie.text.Phrase.getChunks/new java.util.ArrayList/0
+sun.font.GlyphLayout$SDCache.get/new java.lang.ref.SoftReference/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/231
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/230
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/233
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/232
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/235
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/234
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/237
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/236
+sun.misc.ClassFileTransformer.<clinit>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/238
+com.lowagie.text.pdf.FontDetails.<init>/new java.util.HashMap/0
+javax.swing.plaf.metal.OceanTheme.addCustomEntriesToTable/new java.lang.Object[]/4
+javax.swing.plaf.metal.OceanTheme.addCustomEntriesToTable/new java.lang.Object[]/3
+javax.swing.plaf.metal.OceanTheme.addCustomEntriesToTable/new java.lang.Object[]/2
+javax.swing.plaf.metal.OceanTheme.addCustomEntriesToTable/new java.lang.Object[]/1
+org.jfree.chart.axis.NumberAxis.refreshTicksVertical/new java.util.ArrayList/0
+javax.swing.KeyboardManager.<init>/new java.util.Hashtable/0
+sun.misc.Launcher$ExtClassLoader.getExtURLs/new java.util.Vector/0
+java.awt.DefaultKeyboardFocusManager.dispatchEvent/new java.lang.ref.WeakReference/0
+<java.util.Currency: java.lang.String getSymbol(java.util.Locale)>/new java.lang.Object[]/0
+java.util.ServiceLoader.parse/new java.util.ArrayList/0
+<java.util.HashSet: void <init>(java.util.Collection)>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/525
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/45
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/527
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/526
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/288
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/520
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/523
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/522
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/284
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/285
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/286
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/287
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/280
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/281
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/282
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/283
+sun.java2d.SurfaceData$AA.<clinit>/new sun.java2d.pipe.DuctusShapeRenderer/0
+sun.java2d.SurfaceData$AA.<clinit>/new sun.java2d.pipe.DuctusShapeRenderer/1
+sun.java2d.SurfaceData$AA.<clinit>/new sun.java2d.pipe.DuctusShapeRenderer/2
+sun.java2d.SurfaceData$AA.<clinit>/new sun.java2d.pipe.DuctusShapeRenderer/3
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/118
+sun.java2d.SurfaceData$AA.<clinit>/new sun.java2d.pipe.DuctusShapeRenderer/5
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/448
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/449
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/114
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/115
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/116
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/445
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/442
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/111
+<org.jfree.base.modules.AbstractModule: void loadModuleInfo(java.io.InputStream)>/new java.util.ArrayList/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/441
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/78
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/79
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/74
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/75
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/76
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/77
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/70
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/71
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/72
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/73
+java.text.DateFormatSymbols.getCachedInstance/new java.lang.ref.SoftReference/0
+java.text.AttributedString$AttributedStringIterator.getAllAttributeKeys/new java.util.HashSet/1
+sun.font.FontManager.<clinit>/new java.util.Hashtable/2
+sun.font.FontManager.<clinit>/new java.util.Hashtable/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/437
+sun.security.pkcs.PKCS7.populateCertIssuerNames/new java.security.Principal[]/0
+sun.awt.FontConfiguration$PropertiesHandler.initLogicalNameStyle/new java.util.HashMap/1
+sun.awt.FontConfiguration$PropertiesHandler.initLogicalNameStyle/new java.util.HashMap/0
+javax.swing.plaf.basic.BasicLookAndFeel.initComponentDefaults/new java.lang.Object[]/39
+<sun.security.x509.X509CRLImpl: void <init>(sun.security.util.DerValue)>/new java.util.TreeMap/0
+sun.font.FontManager.<clinit>/new java.util.HashMap/0
+<javax.crypto.Cipher: java.util.List b(java.lang.String)>/new java.util.ArrayList/0
+sun.security.validator.PKIXValidator.initCommon/new java.util.HashMap/0
+sun.security.util.SignatureFileVerifier.getSigners/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/421
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/436
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/4
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/5
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/6
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/7
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/1
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/2
+java.util.logging.Logger.doSetParent/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/8
+sun.nio.cs.StandardCharsets$Cache.init/new java.lang.Object[]/9
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.HashMap/0
+sun.awt.X11.XDragAndDropProtocols.<clinit>/new java.util.ArrayList/1
+sun.awt.X11.XDragAndDropProtocols.<clinit>/new java.util.ArrayList/0
+java.lang.Character$UnicodeBlock.<clinit>/new java.util.HashMap/0
+java.security.ProtectionDomain.mergePermissions/new java.util.ArrayList/1
+java.security.ProtectionDomain.mergePermissions/new java.util.ArrayList/0
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/36
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/7
+java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/0
+java.lang.Class.privateGetDeclaredMethods/new java.lang.ref.SoftReference/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/290
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/39
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/107
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/13
+sun.util.resources.TimeZoneNamesBundle.createMap/new java.util.LinkedHashMap/0
+<org.jfree.chart.axis.AxisState: void <init>(double)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/129
+java.security.Provider$Service.getImplClass/new java.lang.ref.WeakReference/0
+sun.font.FontManager.resolveWindowsFonts/new java.util.HashSet/0
+<sun.awt.X11.XBaseWindow: void <init>(sun.awt.X11.XCreateWindowParams)>/new java.util.HashSet/0
+<java.util.TreeMap: java.util.TreeMap$Entry buildFromSorted(int,int,int,int,java.util.Iterator,java.io.ObjectInputStream,java.lang.Object)>/new java.util.TreeMap$Entry/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/96
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/97
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/94
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/95
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/92
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/93
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/90
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/91
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/82
+sun.nio.cs.StandardCharsets$Aliases.init/new java.lang.Object[]/84
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/98
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/99
+sun.java2d.loops.TransformHelper.<clinit>/new sun.java2d.loops.RenderCache/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/555
+<java.util.Hashtable: void <init>(int,float)>/new java.util.Hashtable$Entry[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/259
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.ArrayList/0
+sun.security.provider.PolicyFile$PolicyInfo.<init>/new java.util.ArrayList/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/258
+java.lang.ProcessEnvironment.<clinit>/new java.util.HashMap/0
+sun.util.LocaleDataMetaInfo.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/104
+sun.awt.FontConfiguration.getInitELC/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/484
+sun.awt.datatransfer.DataTransferer$CharsetComparator.<clinit>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/252
+org.jfree.chart.resources.JFreeChartResources.<clinit>/new java.lang.Object[][]/0
+sun.java2d.SunGraphicsEnvironment.getAllInstalledFonts/new java.util.TreeMap/0
+java.lang.ClassLoader.<clinit>/new java.util.Vector/0
+java.lang.ClassLoader.<clinit>/new java.util.Vector/1
+sun.text.resources.BreakIteratorInfo.getContents/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/558
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/103
+java.lang.Package.<clinit>/new java.util.HashMap/2
+java.lang.Package.<clinit>/new java.util.HashMap/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/559
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/434
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/154
+com.lowagie.text.pdf.GlyphList.<clinit>/new java.util.HashMap/0
+com.lowagie.text.pdf.GlyphList.<clinit>/new java.util.HashMap/1
+sun.java2d.SurfaceData.<clinit>/new sun.java2d.pipe.SpanShapeRenderer$Composite/0
+com.lowagie.text.pdf.CFFFont.<init>/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/446
+com.lowagie.text.pdf.PdfWriter.addDirectTemplateSimple/new java.lang.Object[]/0
+java.text.AttributedCharacterIterator$Attribute.<clinit>/new java.util.HashMap/0
+sun.font.FontResolver.getAllSCFonts/new java.util.ArrayList/1
+sun.font.FontResolver.getAllSCFonts/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/155
+<sun.text.normalizer.UnicodeSet: void <init>()>/new java.util.TreeSet/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/248
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/447
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/560
+java.util.Hashtable$Entry.clone/new java.util.Hashtable$Entry/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/156
+sun.java2d.loops.BlitBg.<clinit>/new sun.java2d.loops.RenderCache/0
+java.text.AttributedString.addAttributeRunData/new java.util.Vector/1
+sun.awt.X11.XDropTargetProtocol.forwardClientMessageToToplevel/new java.lang.Object[]/1
+javax.swing.MenuSelectionManager.<init>/new java.util.Vector/0
+sun.awt.X11.XWM.<init>/new java.util.HashMap/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/157
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/105
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/568
+sun.awt.X11GraphicsEnvironment.<clinit>/new java.util.HashMap/0
+sun.awt.X11GraphicsEnvironment.<clinit>/new java.util.HashMap/1
+<org.jfree.chart.JFreeChart: void <init>(java.lang.String,java.awt.Font,org.jfree.chart.plot.Plot,boolean)>/new javax.swing.event.EventListenerList/0
+<org.jfree.chart.JFreeChart: void <init>(java.lang.String,java.awt.Font,org.jfree.chart.plot.Plot,boolean)>/new javax.swing.event.EventListenerList/1
+com.lowagie.text.Table.mergeInsertedTables/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/8
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/9
+<org.jfree.base.BasicProjectInfo: void <init>()>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/4
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/5
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/6
+<org.jfree.text.TextLine: void <init>(java.lang.String,java.awt.Font,java.awt.Paint)>/new java.util.ArrayList/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/1
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/2
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/3
+com.lowagie.text.pdf.PdfCell.getImages/new java.util.ArrayList/1
+com.lowagie.text.pdf.PdfCell.getImages/new java.util.ArrayList/0
+<sun.security.provider.PolicyParser$GrantEntry: void <init>()>/new java.util.LinkedList/0
+<java.text.AttributedString: int ensureRunBreak(int,boolean)>/new java.util.Vector[]/1
+sun.util.calendar.ZoneInfo.getAliasTable/new java.lang.ref.SoftReference/0
+com.lowagie.text.pdf.CJKFont.<clinit>/new java.util.Hashtable/0
+sun.util.resources.TimeZoneNames.getContents/new java.lang.Object[]/278
+javax.crypto.SunJCE_e$o.<init>/new java.util.Vector/0
+<sun.font.SunLayoutEngine: sun.font.GlyphLayout$LayoutEngine getEngine(sun.font.GlyphLayout$LayoutEngineKey)>/new java.util.concurrent.ConcurrentHashMap/0
+javax.swing.UIDefaults.addResourceBundle/new java.util.Vector/0
+java.text.DateFormatSymbols.getProviderInstance/new java.lang.Object[]/0
