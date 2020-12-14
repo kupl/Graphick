@@ -29,7 +29,7 @@ APP = [
 ]
 
 
-DACAPO = ['antlr', 'fop', 'luindex', 'pmdm', 'bloat', 'chart', 'xalan', 'lusearch', 'eclipse',]
+DACAPO = ['antlr', 'fop', 'luindex', 'pmdm', 'bloat', 'chart', 'xalan', 'lusearch', 'eclipse','jython']
 
 
 CP = {
@@ -96,7 +96,8 @@ def execDoop(analysis, withMahjong, app):
  cmd = './run -jre1.6 -phantom '
  if app == 'pmd':
   cmd += '-refl-log %s ' % os.path.join(appDir, 'pmd-refl.log')
-
+ elif app == 'jython':
+  cmd = cmd
  else:
   cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
  
@@ -183,6 +184,7 @@ def execDoop(analysis, withMahjong, app):
   print 'Running ' + anaStr + ' points-to analysis ' +\
    CYAN + BOLD + '(' + anaName + ')' + RESET + ' for ' +\
    CYAN + BOLD + app + RESET + ' ...'
+ print 'cmd: {}'.format(cmd)
  os.system(cmd)
  
  #print 'Writing all detailed client results to %s ...' % DOOP_OUTPUT_DIR
