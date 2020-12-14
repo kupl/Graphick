@@ -27,7 +27,7 @@ APP = [
    'pmd','eclipse','jedit','briss','soot','jython',
 ]
 
-DACAPO = ['antlr', 'fop', 'luindex', 'pmdm', 'bloat', 'chart', 'xalan', 'lusearch', 'eclipse',]
+DACAPO = ['antlr', 'fop', 'luindex', 'pmdm', 'bloat', 'chart', 'xalan', 'lusearch', 'eclipse','jython']
 
 
 CP = {
@@ -70,6 +70,8 @@ def getCmd(app,appDir):
   if app == 'pmdm':
     cmd += '-refl-log %s ' % os.path.join(appDir, 'pmd-refl.log')
 
+  elif app == 'jython':
+    cmd = cmd
   else:
     cmd += '-refl-log %s ' % os.path.join(appDir, app + '-refl.log')
   if app == 'briss':
@@ -219,6 +221,8 @@ def runPTA(pta,app):
     #sys.exit()
     os.system(cmd_ci)
     if pta == 'getFeatures':
+      query = 'bloxbatch -db last-analysis -query ReachableHeap | sort > ../Nodes.facts'.format(app)
+      os.system(query)
       sys.exit()
     if pta == 'graphick':
       query = 'bloxbatch -db last-analysis -query CandidateHeap | sort > CanHeap.facts'
