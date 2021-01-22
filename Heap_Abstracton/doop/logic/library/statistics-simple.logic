@@ -478,6 +478,16 @@ HeapFieldDouble(?heap,?ref)<-
 HeapDoubleCnt[?heap] = ?n <-
   agg<<?n = count()>> HeapFieldDouble(?heap, _).  
 
+
+
+HeapMethods(?heap, ?signature)<-
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?type,
+  MethodSignature:Type[?signature] = ?type.
+
+HeapMethodCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapMethods(?heap, _).  
+
 /*
 boolean
 byte

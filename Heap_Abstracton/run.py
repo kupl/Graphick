@@ -172,6 +172,8 @@ def runPTA(pta,app):
     os.system(query)
     query = 'bloxbatch -db last-analysis -query HeapBooleanCnt | sort > ../{}-BooleanFields.facts'.format(app)
     os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapMethodCnt | sort > ../{}-Methods.facts'.format(app)
+    os.system(query)
     
     query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
     os.system(query)
