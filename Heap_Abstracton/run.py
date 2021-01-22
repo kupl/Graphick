@@ -154,6 +154,25 @@ def runPTA(pta,app):
     query = 'bloxbatch -db last-analysis -query HeapMethodType | sort > ../{}-IncludingType.facts'.format(app)
     os.system(query)
     
+    query = 'bloxbatch -db last-analysis -query HeapElseCnt | sort > ../{}-ElseFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapIntCnt | sort > ../{}-IntFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapFloatCnt | sort > ../{}-FloatFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapDoubleCnt | sort > ../{}-DoubleFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapByteCnt | sort > ../{}-ByteFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapCharCnt | sort > ../{}-CharFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapShortCnt | sort > ../{}-ShortFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapLongCnt | sort > ../{}-LongFields.facts'.format(app)
+    os.system(query)
+    query = 'bloxbatch -db last-analysis -query HeapBooleanCnt | sort > ../{}-BooleanFields.facts'.format(app)
+    os.system(query)
+    
     query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
     os.system(query)
   elif pta == 'heuristic':
@@ -223,10 +242,13 @@ def runPTA(pta,app):
     if pta == 'getFeatures':
       query = 'bloxbatch -db last-analysis -query ReachableHeap | sort > ../Nodes.facts'.format(app)
       os.system(query)
+      query = 'bloxbatch -db last-analysis -query Edges | sort > ../Edges.facts'.format(app)
+      os.system(query)
       sys.exit()
     if pta == 'graphick':
       query = 'bloxbatch -db last-analysis -query CandidateHeap | sort > CanHeap.facts'
       os.system(query)
+      #sys.exit(1)
       heapAbsCmd = 'python types_to_facts.py {} CanHeap.facts'.format(app)
       os.system(heapAbsCmd)
     if pta == 'type_based': 

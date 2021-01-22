@@ -301,6 +301,9 @@ HeapMethodModifier(?heap, ?mod)<-
   AssignHeapAllocation(?heap, _, ?inmethod).
 
 
+Edges[] = ?n <-
+  agg<<?n = count()>> FPG(_, _).
+
 FPG(?baseheap,?heap) <-   
   Stats:Simple:InsensInstanceFieldPointsTo(?heap, _, ?baseheap). 
 
@@ -372,4 +375,131 @@ OAG(?fromHeap,?toHeap) <-
   !StaticMethod(?inmethod),
   ThisVar[?inmethod] = ?var,
   AssignHeapAllocation(?toHeap, _, ?inmethod).
+
+
+
+///////////////////////////////////////////////////////////////Feature
+
+//FieldSignature(?ref, ?declaringClass, _, ?type) ->
+
+//PrimitiveType(?x) -> Type(?x).
+
+
+HeapFieldElse(?heap,?ref)<-
+  !PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapElseCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldElse(?heap, _).  
+
+
+HeapFieldBoolean(?heap,?ref)<-
+  string:like(?type,"%boolean%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapBooleanCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldBoolean(?heap, _).  
+
+
+HeapFieldByte(?heap,?ref)<-
+  string:like(?type,"%byte%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapByteCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldByte(?heap, _).  
+
+
+HeapFieldChar(?heap,?ref)<-
+  string:like(?type,"%char%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapCharCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldChar(?heap, _).  
+
+HeapFieldShort(?heap,?ref)<-
+  string:like(?type,"%short%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapShortCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldShort(?heap, _).  
+
+HeapFieldInt(?heap,?ref)<-
+  string:like(?type,"%int%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapIntCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldInt(?heap, _).  
+
+HeapFieldLong(?heap,?ref)<-
+  string:like(?type,"%long%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapLongCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldLong(?heap, _).  
+
+HeapFieldFloat(?heap,?ref)<-
+  string:like(?type,"%float%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapFloatCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldFloat(?heap, _).  
+
+
+HeapFieldDouble(?heap,?ref)<-
+  string:like(?type,"%double%"),
+  PrimitiveType(?type),
+  FieldSignature(?ref, ?declaringClass, _, ?type),
+  ReachableHeap(?heap),
+  HeapAllocation:Type[?heap] = ?declaringClass.
+
+HeapDoubleCnt[?heap] = ?n <-
+  agg<<?n = count()>> HeapFieldDouble(?heap, _).  
+
+/*
+boolean
+byte
+char
+short
+int
+long
+float
+double
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
