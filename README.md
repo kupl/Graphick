@@ -78,7 +78,7 @@ The results say that
 
 ### Reproducing the evaluation
 
-Following the instruction below reproduces Table 1,2,3, and 4. The command for running pointer analysis is as follows:
+Following the instruction below reproduces Table 1, 2, 3, 4, and 6. The command for running pointer analysis is as follows:
 
 ```
 ./run.py <analysis> <pgm>
