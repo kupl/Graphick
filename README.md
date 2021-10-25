@@ -87,9 +87,9 @@ Following the instruction below reproduces Table 1,2,3, and 4. The command for r
 If your current directory is "Ctx_Sensitivity", <analysis> can be one of the following analyses:
 
 ```
-graphick, scaler, zipper, data, 2objh, insens.
+graphick, scaler, zipper, data, 2objh, insens, s2objh, graphick_sobj.
 ```
-The above command will reproduce Table 1 and 2. If you are in "Heap_Abstraciton",  <analysis> can be:
+The above command will reproduce Table 1, 2, or 6. If you are in "Heap_Abstraciton",  <analysis> can be:
 ```
 graphick, mahjong, allos_based, type_based.
 ```
