@@ -54,10 +54,15 @@ MAIN={
 #PTA['2obj'] = '2-object-sensitive+heap'
 #PTA['3obj'] = '3-object-sensitive+2-heap'
 
-#UNSCALABLE = {
-#'alloc_based':['bloat', 'chart', 'checkstyle', 'xalan', 'lusearch', 'JPC', 'findbugs', 'eclipse'],
-#'mahjong':['bloat', 'chart', 'eclipse'],
-#}
+'''
+UNSCALABLE = {
+'type_based':['briss']
+'alloc_based':['bloat', 'chart', 'checkstyle', 'xalan', 'lusearch', 'JPC', 'findbugs', 'eclipse','pmd','briss','soot','jython'],
+'mahjong':['bloat', 'chart', 'eclipse','pmd','soot','jython'],
+'graphick':['eclipse','pmd','briss','soot','jython']
+}
+'''
+
 
 def getAppDir(app):
  if app in DACAPO:
@@ -128,32 +133,7 @@ def runPTA(pta,app):
   if pta == 'mahjong':
     cmd = './mahjong.py M-3obj {}'.format(app)
     os.system(cmd)
-  elif pta == 'getGraph':
-    cmd = './mahjong.py ci {}'.format(app)
-    os.system(cmd)
-    os.chdir(DOOP_DIR)
-    query = 'bloxbatch -db last-analysis -query ReachableHeap | sort > ../{}-Nodes.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query FPG | sort > ../{}-FPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query IncomingFPGEdges | sort > ../{}-IncomingFPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query OutgoingFPGEdges | sort > ../{}-OutgoingFPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query OAG | sort > ../{}-OAGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query IncomingOAGEdges | sort > ../{}-IncomingOAGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query OutgoingOAGEdges | sort > ../{}-OutgoingOAGEdges.facts'.format(app)
-    os.system(query)
 
-    query = 'bloxbatch -db last-analysis -query HeapMethodModifier | sort > ../{}-MethodModifier.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db last-analysis -query HeapMethodType | sort > ../{}-IncludingType.facts'.format(app)
-    os.system(query)
-    
-    query = 'bloxbatch -db last-analysis -query ReachableHeapAllocation:Type | sort > ../{}-NodeType.facts'.format(app)
-    os.system(query)
   elif pta == 'heuristic':
     cmd = './mahjong.py ci {}'.format(app)
     os.system(cmd)
@@ -235,8 +215,6 @@ def runPTA(pta,app):
     else:
       cmd += os.path.join(appDir, CP[app])
     os.system(cmd)
-    #rm_cache = 'rm -r cache/*'
-    #os.system(rm_cache)
   
 
 def run(args):
@@ -245,6 +223,8 @@ def run(args):
   for app in APP:
    if not UNSCALABLE.has_key(pta) or app not in UNSCALABLE[pta]:
     runPTA(pta, app)
+    rm_cache = 'rm -r doop/cache/*'
+    os.system(rm_cache)
  else:
   runPTA(pta, args[1])
 

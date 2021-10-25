@@ -280,7 +280,8 @@ ResolvedFieldSet(?invo) <-
 
 ReachableHeap(?heap) <-
   Stats:Simple:InsensVarPointsTo(?heap, _).  
-  
+
+/*
 ReachableHeapAllocation:Type[?heap] = ?type<-
   HeapAllocation:Type[?heap] = ?type,
   ReachableHeap(?heap).
@@ -299,7 +300,7 @@ HeapMethodModifier(?heap, ?mod)<-
   MethodModifier(?mod, ?inmethod),
   ReachableHeap(?heap),
   AssignHeapAllocation(?heap, _, ?inmethod).
-
+*/
 
 FPG(?baseheap,?heap) <-   
   Stats:Simple:InsensInstanceFieldPointsTo(?heap, _, ?baseheap). 
@@ -314,62 +315,4 @@ OutgoingFPGEdges[?fromHeap] = ?n <-
 IncomingFPGEdges[?toHeap] = ?n <-
   agg<<?n = count()>> FPG(_, ?toHeap).
 
-
-OutgoingOAGEdges[?fromHeap] = ?n <-
-  agg<<?n = count()>> OAG(?fromHeap, _).  
-
-
-
-
-IncomingOAGEdges[?toHeap] = ?n <-
-  ReachableHeap(?toHeap),
-  RIncomingOAGEdges[?toHeap] = ?n.
-
-RIncomingOAGEdges[?toHeap] = ?n <-
-  agg<<?n = count()>> OAG(_, ?toHeap).
-
-
-
-Invocation:In[?invocation] = ?inmethod <-
-  SpecialMethodInvocation:In(?invocation, ?inmethod).
-
-Invocation:In[?invocation] = ?inmethod <-
-  VirtualMethodInvocation:In(?invocation, ?inmethod).
-
-Invocation:In[?invocation] = ?inmethod <-
-  StaticMethodInvocation:In(?invocation, ?inmethod).
-
-StaticMethod(?meth) <-
-  StaticMethodInvocation:Signature[_] = ?meth.
-
-
-StaticToStatic(?inmeth, ?tometh) <-
-  StaticMethod(?inmeth),
-  StaticMethodInvocation:Signature[?invo] = ?tometh,
-  StaticMethodInvocation:In(?invo, ?inmeth).
-
-NonStaticToStatic(?fromMethod,?tomethod) <-
-  !StaticMethod(?fromMethod),
-  StaticMethodInvocation:In(?invocation, ?fromMethod),
-  StaticMethodInvocation:Signature[?invocation] = ?tomethod.
-
-
-NonStaticToStatic(?fromMethod,?tomethod2) <-
-  StaticToStatic(?tomethod,?tomethod2),
-  NonStaticToStatic(?fromMethod,?tomethod).
-
-
-OAG(?fromHeap,?toHeap) <-
-  Stats:Simple:InsensVarPointsTo(?fromHeap, ?var),
-  NonStaticToStatic(?fromMethod,?inmethod),
-  StaticMethod(?inmethod),
-  ThisVar[?fromMethod] = ?var,
-  AssignHeapAllocation(?toHeap, _, ?inmethod).
-
-
-OAG(?fromHeap,?toHeap) <-
-  Stats:Simple:InsensVarPointsTo(?fromHeap, ?var),
-  !StaticMethod(?inmethod),
-  ThisVar[?inmethod] = ?var,
-  AssignHeapAllocation(?toHeap, _, ?inmethod).
 

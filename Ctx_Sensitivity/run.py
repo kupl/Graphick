@@ -23,6 +23,8 @@ ALLOW_PHANTOM=['briss', 'eclipse', 'findbugs', 'jedit', 'pmd', 'soot', 'JPC', 'c
 UNSCALABLE={
     '2objh':['jython','soot','pmd','briss','jedit','eclipse'],
     'zipper':['jython','soot','pmd','briss','jedit','eclipse'],
+    's2objh':['jython','soot','pmd','briss','jedit','eclipse'],
+    'graphick_sobj':['jython','soot','eclipse'],
     'graphick':['jython','soot'],
     'data':['soot'],
 }
@@ -92,35 +94,6 @@ def runPTA(pta,app):
   if pta == 'insens':
     cmd = './run_scaler.py ci {}'.format(app)
     os.system(cmd) 
-
-  elif pta == 'getGraph':
-    cmd = './run_scaler.py ci {}'.format(app)
-    os.system(cmd) 
-    
-    query = 'bloxbatch -db doop/last-analysis -query ReachableHeap | sort > {}-Nodes.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query FPG | sort > {}-FPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query IncomingFPGEdges | sort > {}-IncomingFPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query OutgoingFPGEdges | sort > {}-OutgoingFPGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query OAG | sort > {}-OAGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query IncomingOAGEdges | sort > {}-IncomingOAGEdges.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query OutgoingOAGEdges | sort > {}-OutgoingOAGEdges.facts'.format(app)
-    os.system(query)
-
-    query = 'bloxbatch -db doop/last-analysis -query HeapMethodModifier | sort > {}-MethodModifier.facts'.format(app)
-    os.system(query)
-    query = 'bloxbatch -db doop/last-analysis -query HeapMethodType | sort > {}-IncludingType.facts'.format(app)
-    os.system(query)
-    
-    query = 'bloxbatch -db doop/last-analysis -query ReachableHeapAllocation:Type | sort > {}-NodeType.facts'.format(app)
-    os.system(query)
-
-
   elif pta == 'heuristic':
     cmd = 'python process.py CanHeap2obj.facts > doop/CanHeap2obj.facts'
     os.system(cmd)
@@ -151,6 +124,16 @@ def runPTA(pta,app):
   elif pta == 'zipper':
     os.chdir(DOOP_HOME)
     cmd = getZipperCommand(app)
+    os.system(cmd) 
+  elif pta == 'graphick_sobj':
+    cmd = './run_scaler.py graph_ci {}'.format(app)
+    os.system(cmd) 
+    cmd = './query.sh'
+    os.system(cmd) 
+    cmd = './run_scaler.py s2obj-Graphick {}'.format(app)
+    os.system(cmd) 
+  elif pta == 's2objh':
+    cmd = './run_scaler.py s2obj {}'.format(app)
     os.system(cmd) 
     
 def clean():
