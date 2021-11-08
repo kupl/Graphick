@@ -104,8 +104,6 @@ $./run.py graphick antlr
 ```
  
  
- ## Artfact
-
-VirtualBox Image
+ ## Artifact (VirtualBox Image)
 
 We've archived a ready-to-run version of our implementation in zenodo([Link](https://zenodo.org/record/4040341#.X7pZ1a6RWpc)).
