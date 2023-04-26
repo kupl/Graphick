@@ -91,7 +91,7 @@ graphick, scaler, zipper, data, 2objh, insens, s2objh, graphick_sobj.
 ```
 The above command will reproduce Table 1, 2, or 6. If you are in "Heap_Abstraciton",  <analysis> can be:
 ```
-graphick, mahjong, allos_based, type_based.
+graphick, mahjong, alloc_based, type_based.
 ```
 
 <pgm> can be a program in our evaluation:
